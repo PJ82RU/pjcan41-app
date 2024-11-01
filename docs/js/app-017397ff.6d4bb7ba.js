@@ -870,6 +870,7 @@ class Canbus extends eventemitter3/* default */.A {
   updateStart(rollback = false) {
     getFirmware(!rollback ? this.update.firmware.url : this.update.rollback.url).then(res => {
       if (res?.byteLength > 0) {
+        this.loopFree();
         this.update.firmwareData = new Uint8Array(res);
         this.update.total = res.byteLength;
         this.update.offset = 0;

@@ -373,11 +373,11 @@ var bluetooth = __webpack_require__(52126);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
 var pjcan_device = __webpack_require__(94027);
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
-var buttons = __webpack_require__(8871);
-// EXTERNAL MODULE: ./src/models/pjcan/teyes/index.ts + 3 modules
-var teyes = __webpack_require__(87380);
-// EXTERNAL MODULE: ./src/models/pjcan/mazda/index.ts + 4 modules
-var mazda = __webpack_require__(19164);
+var buttons = __webpack_require__(84596);
+// EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
+var head_unit = __webpack_require__(19661);
+// EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
+var onboard = __webpack_require__(32280);
 // EXTERNAL MODULE: ./src/models/pjcan/datetime/index.ts + 1 modules
 var datetime = __webpack_require__(9917);
 // EXTERNAL MODULE: ./src/models/pjcan/bose/index.ts + 2 modules
@@ -397,11 +397,11 @@ var sensors = __webpack_require__(57411);
 // EXTERNAL MODULE: ./src/models/pjcan/temperature/index.ts + 1 modules
 var temperature = __webpack_require__(42570);
 // EXTERNAL MODULE: ./src/models/pjcan/volume/index.ts + 1 modules
-var volume = __webpack_require__(12619);
+var volume = __webpack_require__(82882);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/models/pjcan/choice/index.ts + 1 modules
-var choice = __webpack_require__(19103);
+var pjcan_choice = __webpack_require__(19103);
 // EXTERNAL MODULE: ./src/models/pjcan/base/BaseModel.ts
 var BaseModel = __webpack_require__(22575);
 // EXTERNAL MODULE: ./src/models/pjcan/device/EDeviceUpdateError.ts
@@ -469,8 +469,6 @@ class Canbus extends eventemitter3/* default */.A {
     (0,defineProperty/* default */.A)(this, "__onActivation", ev => canbus.onActivation(ev));
     (0,defineProperty/* default */.A)(this, "scannerInterval", void 0);
     (0,defineProperty/* default */.A)(this, "scannerValue", void 0);
-    (0,defineProperty/* default */.A)(this, "loopInterval", void 0);
-    (0,defineProperty/* default */.A)(this, "loopChoice", void 0);
     this.bluetooth.addListener(bluetooth/* BLUETOOTH_EVENT_CONNECTED */.Sl, ev => this.onConnected(ev));
     this.bluetooth.addListener(bluetooth/* BLUETOOTH_EVENT_RECEIVE */.Sm, ev => this.onReceive(ev));
   }
@@ -671,7 +669,7 @@ class Canbus extends eventemitter3/* default */.A {
       case pjcan_device/* API_DEVICE_UPDATE_EXEC */.K5: // Обновление прошивки
       case pjcan_device/* API40_DEVICE_UPDATE_EXEC */.Gj:
         this.update.set(data);
-        if (this.update.offset < this.update.total) this.updateUpload();
+        if (this.update.offset < this.update.total) this.updateUpload().then();
         this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT */.BO, this.update);
         break;
       case pjcan_device/* API_DEVICE_SCANNER_VALUE_EXEC */.nG:
@@ -687,33 +685,33 @@ class Canbus extends eventemitter3/* default */.A {
         // Отображение напряжения бортовой сети
         this.emit(pjcan_device/* API_DEVICE_VIEW_VOLTMETER_EVENT */.CN, data);
         break;
-      case choice/* API_CHOICE_EXEC */.h:
+      case pjcan_choice/* API_CHOICE_EXEC */.h:
         // Выборочные данные
-        new choice/* ChoiceValue */.L(data, res => this.onReceive(res));
+        new pjcan_choice/* ChoiceValue */.L(data, res => this.onReceive(res));
         break;
-      case buttons/* API_BUTTONS_SW1_CONFIG_EXEC */.ed:
+      case buttons/* API_SW1_CONFIG_EXEC */.E7:
         // Конфигурация кнопок SW1
-        this.emit(buttons/* API_BUTTONS_SW1_CONFIG_EVENT */.dE, data);
+        this.emit(buttons/* API_SW1_CONFIG_EVENT */.$o, data);
         break;
-      case buttons/* API_BUTTON_SW1_VALUE_EXEC */.IF:
+      case buttons/* API_SW1_VALUE_EXEC */.py:
         // Значения кнопки SW1
-        this.emit(buttons/* API_BUTTON_SW1_VALUE_EVENT */.Du, data);
+        this.emit(buttons/* API_SW1_VALUE_EVENT */._u, data);
         break;
-      case buttons/* API_BUTTONS_SW3_CONFIG_EXEC */.SI:
+      case buttons/* API_SW3_CONFIG_EXEC */.kU:
         // Конфигурация кнопок SW3
-        this.emit(buttons/* API_BUTTONS_SW3_CONFIG_EVENT */.Dg, data);
+        this.emit(buttons/* API_SW3_CONFIG_EVENT */.F, data);
         break;
-      case buttons/* API_BUTTON_SW3_VALUE_EXEC */.UK:
+      case buttons/* API_SW3_VALUE_EXEC */.Tk:
         // Значения кнопки SW3
-        this.emit(buttons/* API_BUTTON_SW3_VALUE_EVENT */.fB, data);
+        this.emit(buttons/* API_SW3_VALUE_EVENT */.iL, data);
         break;
-      case mazda/* API_MAZDA_CONFIG_EXEC */.Es:
+      case onboard/* API_ONBOARD_CONFIG_EXEC */.SX:
         // Конфигурация автомобиля
-        this.emit(mazda/* API_MAZDA_CONFIG_EVENT */.fz, data);
+        this.emit(onboard/* API_ONBOARD_CONFIG_EVENT */.Vw, data);
         break;
-      case mazda/* API_MAZDA_VIEW_EXEC */.N5:
+      case onboard/* API_ONBOARD_VIEW_EXEC */.F5:
         // Конфигурация отображения текста приветствия
-        this.emit(mazda/* API_MAZDA_VIEW_EVENT */.UI, data);
+        this.emit(onboard/* API_ONBOARD_VIEW_EVENT */.Ew, data);
         break;
       case datetime/* API_DATETIME_CONFIG_EXEC */.GI:
         // Конфигурация времени
@@ -723,17 +721,17 @@ class Canbus extends eventemitter3/* default */.A {
         // Конфигурация отображения времени
         this.emit(datetime/* API_DATETIME_VIEW_EVENT */.kP, data);
         break;
-      case teyes/* API_TEYES_CONFIG_EXEC */.Nr:
-        // Конфигурация Teyes
-        this.emit(teyes/* API_TEYES_CONFIG_EVENT */.sK, data);
+      case head_unit/* API_HEAD_UNIT_CONFIG_EXEC */.kZ:
+        // Конфигурация Head Unit
+        this.emit(head_unit/* API_HEAD_UNIT_CONFIG_EVENT */.xD, data);
         break;
-      case teyes/* API_TEYES_TEXT_EXEC */.KI:
-        // Текст Teyes
-        this.emit(teyes/* API_TEYES_TEXT_EVENT */.HS, data);
+      case head_unit/* API_HEAD_UNIT_VALUE_EXEC */.Xd:
+        // Текст Head Unit
+        this.emit(head_unit/* API_HEAD_UNIT_VALUE_EVENT */.wF, data);
         break;
-      case teyes/* API_TEYES_TEXT_VIEW_EXEC */.cH:
-        // Параметры отображения Teyes
-        this.emit(teyes/* API_TEYES_TEXT_VIEW_EVENT */.lb, data);
+      case head_unit/* API_HEAD_UNIT_VIEW_EXEC */.NA:
+        // Параметры отображения Head Unit
+        this.emit(head_unit/* API_HEAD_UNIT_VIEW_EVENT */.Ut, data);
         break;
       case bose/* API_BOSE_CONFIG_EXEC */.YG:
         // Конфигурация Bose
@@ -858,9 +856,9 @@ class Canbus extends eventemitter3/* default */.A {
         // Параметры отображения температуры
         this.emit(temperature/* API_TEMPERATURE_VIEW_EVENT */.P5, data);
         break;
-      case volume/* API_VOLUME_CONFIG_EXEC */.fo:
+      case volume/* API_VOLUME_VALUE_EXEC */.UN:
         // Конфигурация уровня звука
-        this.emit(volume/* API_VOLUME_CONFIG_EVENT */.u7, data);
+        this.emit(volume/* API_VOLUME_VALUE_EVENT */.PS, data);
         break;
       case volume/* API_VOLUME_VIEW_EXEC */.Kd:
         // Параметры отображения уровня звука
@@ -877,9 +875,12 @@ class Canbus extends eventemitter3/* default */.A {
         this.update.offset = 0;
         this.update.error = EDeviceUpdateError/* EDeviceUpdateError */.D.UPD_OK;
         this.update.encrypt = this.update.setIV(!rollback ? this.update.firmware.iv : this.update.rollback.iv);
+        this.update.is_rollback = rollback;
         setTimeout(() => this.updateUpload(), 1000);
       }
-    }).catch(() => this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT_ERROR */.S, (0,lang.t)("update.notify.errorDownload")));
+    }).catch(() => {
+      this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT_ERROR */.S, (0,lang.t)("update.notify.errorDownload"));
+    });
   }
   /** Пишем данные файла прошивки в устройство PJCAN */
   async updateUpload() {
@@ -894,9 +895,17 @@ class Canbus extends eventemitter3/* default */.A {
       this.queueDisabled = false;
     }
     if (this.update.end) {
-      this.debounce(() => this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT_ERROR */.S, (0,lang.t)("update.notify.errorWaitUpdate")), 60000);
+      const action = new pjcan_device/* DeviceAction */.nX();
+      action.reboot = true;
+      action.format = this.update.is_rollback;
+      this.query(action);
+      this.debounce(() => {
+        this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT_ERROR */.S, (0,lang.t)("update.notify.errorWaitUpdate"));
+      }, 60000);
     } else {
-      this.debounce(() => this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT_ERROR */.S, (0,lang.t)("update.notify.errorUpload")), 5000);
+      this.debounce(() => {
+        this.emit(pjcan_device/* API_DEVICE_UPDATE_EVENT_ERROR */.S, (0,lang.t)("update.notify.errorUpload"));
+      }, 5000);
     }
   }
   /** Проверить версию прошивки */
@@ -941,8 +950,9 @@ class Canbus extends eventemitter3/* default */.A {
    * @param {boolean} save Сохранить настройки перед загрузкой
    * @param {boolean} resetConfig Сбросить конфигурацию устройства
    * @param {boolean} resetView Сбросить параметры отображения
+   * @param {boolean} resetButtons Сбросить конфигурацию кнопок
    */
-  rebootDevice(save = false, resetConfig = false, resetView = false) {
+  rebootDevice(save = false, resetConfig = false, resetView = false, resetButtons = false) {
     this.version.clear();
     this.queue = [];
     const action = new pjcan_device/* DeviceAction */.nX();
@@ -950,6 +960,7 @@ class Canbus extends eventemitter3/* default */.A {
     action.save = save;
     action.resetConfig = resetConfig;
     action.resetView = resetView;
+    action.resetButtons = resetButtons;
     this.query(action);
   }
   /**
@@ -989,22 +1000,20 @@ class Canbus extends eventemitter3/* default */.A {
   loop(list) {
     const result = list.length > 0 && this.status;
     if (result) {
-      if (!this.loopChoice) this.loopChoice = new choice/* ChoiceValue */.L();
-      this.loopChoice.listID = [...list];
-      if (!this.loopInterval) {
-        this.loopInterval = setInterval(() => {
-          if (this.loopChoice) this.query(this.loopChoice, true);else this.loopFree();
-        }, 250);
-        if (this.loopChoice) this.query(this.loopChoice, true);
-      }
+      const choice = new pjcan_choice/* ChoiceValue */.L();
+      choice.repeat = 2;
+      choice.listID = [...list];
+      this.query(choice, true);
     }
     return result;
   }
   /** Очистить цикл */
   loopFree() {
-    clearInterval(this.loopInterval);
-    this.loopInterval = undefined;
-    this.loopChoice = undefined;
+    if (this.status) {
+      const choice = new pjcan_choice/* ChoiceValue */.L();
+      choice.repeat = 0;
+      this.query(choice, true);
+    }
   }
 }
 const canbus = new Canbus();
@@ -1034,7 +1043,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 74276:
+/***/ 68741:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1046,7 +1055,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=6809fcef&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=2b752110&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
@@ -1054,37 +1063,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 }
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
 var es_array_push = __webpack_require__(44114);
-// EXTERNAL MODULE: ./node_modules/vue3-toastify/dist/index.mjs
-var dist = __webpack_require__(14084);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
 var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./node_modules/moment/moment.js
 var moment = __webpack_require__(49148);
 var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
-var store = __webpack_require__(81052);
+var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/layout/BaseLayout.vue + 6 modules
-var BaseLayout = __webpack_require__(23703);
+var BaseLayout = __webpack_require__(19566);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
 var device = __webpack_require__(94027);
-// EXTERNAL MODULE: ./src/models/pjcan/mazda/index.ts + 4 modules
-var mazda = __webpack_require__(19164);
-// EXTERNAL MODULE: ./src/models/pjcan/teyes/index.ts + 3 modules
-var teyes = __webpack_require__(87380);
+// EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
+var onboard = __webpack_require__(32280);
+// EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
+var head_unit = __webpack_require__(19661);
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
-var buttons = __webpack_require__(8871);
+var buttons = __webpack_require__(84596);
 // EXTERNAL MODULE: ./src/models/pjcan/bose/index.ts + 2 modules
 var bose = __webpack_require__(89100);
 // EXTERNAL MODULE: ./src/models/pjcan/engine/index.ts + 3 modules
 var engine = __webpack_require__(76300);
 // EXTERNAL MODULE: ./src/models/pjcan/fuel/index.ts + 3 modules
 var fuel = __webpack_require__(59461);
-// EXTERNAL MODULE: ./src/models/pjcan/volume/index.ts + 1 modules
-var volume = __webpack_require__(12619);
 // EXTERNAL MODULE: ./src/models/pjcan/base/BaseModel.ts
 var BaseModel = __webpack_require__(22575);
 // EXTERNAL MODULE: ./src/models/pjcan/climate/index.ts + 1 modules
@@ -1124,8 +1129,6 @@ var datetime = __webpack_require__(9917);
 
 
 
-
-
 /* harmony default export */ var Appvue_type_script_lang_ts = ({
   name: "App",
   components: {
@@ -1133,7 +1136,6 @@ var datetime = __webpack_require__(9917);
   },
   setup() {
     const {
-      t,
       locale
     } = (0,vue_i18n/* useI18n */.s9)();
     // загружаем и применяем язык интерфейса
@@ -1143,28 +1145,23 @@ var datetime = __webpack_require__(9917);
     // записываем входящую конфигурацию в store
     canbus/* default */.A.addListener(version/* API_VERSION_EVENT */.dD, data => store/* default */.A.commit("config/setVersion", data));
     canbus/* default */.A.addListener(device/* API_DEVICE_INFO_EVENT */.Os, data => store/* default */.A.commit("config/setInfo", data));
-    canbus/* default */.A.addListener(mazda/* API_MAZDA_CONFIG_EVENT */.fz, data => {
-      store/* default */.A.commit("config/setMazda", data);
-      if (store/* default */.A.getters["config/carModel"] === mazda/* TCarModel */.oB.CAR_MODEL_UNKNOWN) {
-        dist/* toast */.oR.warning(t("help.onboard.noModelSelected"), {
-          autoClose: false
-        });
-      }
+    canbus/* default */.A.addListener(onboard/* API_ONBOARD_CONFIG_EVENT */.Vw, data => {
+      store/* default */.A.commit("config/setOnboard", data);
     });
-    canbus/* default */.A.addListener(teyes/* API_TEYES_CONFIG_EVENT */.sK, data => store/* default */.A.commit("config/setTeyes", data));
-    canbus/* default */.A.addListener(buttons/* API_BUTTONS_SW1_CONFIG_EVENT */.dE, data => store/* default */.A.commit("config/setSW1", data));
+    canbus/* default */.A.addListener(head_unit/* API_HEAD_UNIT_CONFIG_EVENT */.xD, data => store/* default */.A.commit("config/setHead", data));
+    canbus/* default */.A.addListener(buttons/* API_SW1_CONFIG_EVENT */.$o, data => store/* default */.A.commit("config/setSW1", data));
     canbus/* default */.A.addListener(bose/* API_BOSE_CONFIG_EVENT */.zV, data => store/* default */.A.commit("config/setBose", data));
     canbus/* default */.A.addListener(doors/* API_DOORS_CONFIG_EVENT */.lP, data => store/* default */.A.commit("config/setDoors", data));
     canbus/* default */.A.addListener(engine/* API_ENGINE_CONFIG_EVENT */.s_, data => store/* default */.A.commit("config/setEngine", data));
     canbus/* default */.A.addListener(fuel/* API_FUEL_CONFIG_EVENT */.KC, data => store/* default */.A.commit("config/setFuel", data));
-    canbus/* default */.A.addListener(volume/* API_VOLUME_CONFIG_EVENT */.u7, data => store/* default */.A.commit("config/setVolume", data));
+    // canbus.addListener(API_VOLUME_VALUE_EVENT, (data: DataView): void => store.commit("config/setVolume", data));
     canbus/* default */.A.addListener(datetime/* API_DATETIME_CONFIG_EVENT */.JR, data => {
       store/* default */.A.commit("config/setDatetime", data);
       // синхронизация времени
       if (store/* default */.A.getters["config/datetime"].unixtime === 0) store/* default */.A.commit("config/synchDatetime");
     });
     // записываем входящие значения в store
-    canbus/* default */.A.addListener(buttons/* API_BUTTON_SW1_VALUE_EVENT */.Du, data => store/* default */.A.commit("value/setSW1", data));
+    canbus/* default */.A.addListener(buttons/* API_SW1_VALUE_EVENT */._u, data => store/* default */.A.commit("value/setSW1", data));
     canbus/* default */.A.addListener(climate/* API_CLIMATE_VALUE_EVENT */.Yu, data => store/* default */.A.commit("value/setClimate", data));
     canbus/* default */.A.addListener(device/* API_DEVICE_VALUE_EVENT */.dX, data => store/* default */.A.commit("value/setDevice", data));
     canbus/* default */.A.addListener(doors/* API_DOORS_VALUE_EVENT */.kN, data => store/* default */.A.commit("value/setDoors", data));
@@ -1177,8 +1174,8 @@ var datetime = __webpack_require__(9917);
     // записываем входящие значения отображения в store
     canbus/* default */.A.addListener(device/* API_DEVICE_VIEW_WORKTIME_EVENT */.K, data => store/* default */.A.commit("view/setWorktime", data));
     canbus/* default */.A.addListener(device/* API_DEVICE_VIEW_VOLTMETER_EVENT */.CN, data => store/* default */.A.commit("view/setVoltmeter", data));
-    canbus/* default */.A.addListener(mazda/* API_MAZDA_VIEW_EVENT */.UI, data => store/* default */.A.commit("view/setMazda", data));
-    canbus/* default */.A.addListener(teyes/* API_TEYES_TEXT_VIEW_EVENT */.lb, data => store/* default */.A.commit("view/setTeyesText", data));
+    canbus/* default */.A.addListener(onboard/* API_ONBOARD_VIEW_EVENT */.Ew, data => store/* default */.A.commit("view/setOnboard", data));
+    canbus/* default */.A.addListener(head_unit/* API_HEAD_UNIT_VIEW_EVENT */.Ut, data => store/* default */.A.commit("view/setHeadText", data));
     canbus/* default */.A.addListener(bose/* API_BOSE_VIEW_EVENT */.qJ, data => store/* default */.A.commit("view/setBose", data));
     canbus/* default */.A.addListener(climate/* API_CLIMATE_VIEW_EVENT */.yt, data => store/* default */.A.commit("view/setClimate", data));
     canbus/* default */.A.addListener(doors/* API_DOORS_VIEW_EVENT */.Ww, data => store/* default */.A.commit("view/setDoors", data));
@@ -1187,17 +1184,17 @@ var datetime = __webpack_require__(9917);
     canbus/* default */.A.addListener(movement/* API_MOVEMENT_VIEW_EVENT */.CE, data => store/* default */.A.commit("view/setMovement", data));
     canbus/* default */.A.addListener(sensors/* API_SENSORS_VIEW_EVENT */.en, data => store/* default */.A.commit("view/setSensors", data));
     canbus/* default */.A.addListener(temperature/* API_TEMPERATURE_VIEW_EVENT */.P5, data => store/* default */.A.commit("view/setTemperature", data));
-    canbus/* default */.A.addListener(volume/* API_VOLUME_VIEW_EVENT */.fB, data => store/* default */.A.commit("view/setVolume", data));
+    // canbus.addListener(API_VOLUME_VIEW_EVENT, (data: DataView): void => store.commit("view/setVolume", data));
     canbus/* default */.A.addListener(datetime/* API_DATETIME_VIEW_EVENT */.kP, data => store/* default */.A.commit("view/setDatetime", data));
     const onBegin = status => {
       if (status) {
         const choice = new pjcan_choice/* ChoiceValue */.L();
-        choice.listID.push(mazda/* API_MAZDA_CONFIG_EXEC */.Es);
-        choice.listID.push(teyes/* API_TEYES_CONFIG_EXEC */.Nr);
+        choice.listID.push(onboard/* API_ONBOARD_CONFIG_EXEC */.SX);
+        choice.listID.push(head_unit/* API_HEAD_UNIT_CONFIG_EXEC */.kZ);
         choice.listID.push(doors/* API_DOORS_CONFIG_EXEC */.CY);
         choice.listID.push(engine/* API_ENGINE_CONFIG_EXEC */.D6);
         choice.listID.push(fuel/* API_FUEL_CONFIG_EXEC */.n7);
-        choice.listID.push(volume/* API_VOLUME_CONFIG_EXEC */.fo);
+        // choice.listID.push(API_VOLUME_VALUE_EXEC);
         choice.listID.push(bose/* API_BOSE_CONFIG_EXEC */.YG);
         choice.listID.push(datetime/* API_DATETIME_CONFIG_EXEC */.GI);
         canbus/* default */.A.query(choice, true);
@@ -1205,8 +1202,8 @@ var datetime = __webpack_require__(9917);
         choice.listID = [];
         choice.listID.push(device/* API_DEVICE_VIEW_WORKTIME_EXEC */.J2);
         choice.listID.push(device/* API_DEVICE_VIEW_VOLTMETER_EXEC */.ru);
-        choice.listID.push(mazda/* API_MAZDA_VIEW_EXEC */.N5);
-        choice.listID.push(teyes/* API_TEYES_TEXT_VIEW_EXEC */.cH);
+        choice.listID.push(onboard/* API_ONBOARD_VIEW_EXEC */.F5);
+        choice.listID.push(head_unit/* API_HEAD_UNIT_VIEW_EXEC */.NA);
         choice.listID.push(bose/* API_BOSE_VIEW_EXEC */.xT);
         choice.listID.push(climate/* API_CLIMATE_VIEW_EXEC */.zE);
         choice.listID.push(doors/* API_DOORS_VIEW_EXEC */.zD);
@@ -1215,7 +1212,6 @@ var datetime = __webpack_require__(9917);
         choice.listID.push(movement/* API_MOVEMENT_VIEW_EXEC */.N6);
         choice.listID.push(sensors/* API_SENSORS_VIEW_EXEC */.fW);
         choice.listID.push(temperature/* API_TEMPERATURE_VIEW_EXEC */.EO);
-        choice.listID.push(volume/* API_VOLUME_VIEW_EXEC */.Kd);
         choice.listID.push(datetime/* API_DATETIME_VIEW_EXEC */.Bm);
         canbus/* default */.A.query(choice, true);
       }
@@ -1245,7 +1241,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_scr
 /***/ (function(module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"^1.7.7","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.6","vue-i18n":"^10.0.1","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.1","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"^1.7.7","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.1","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
 
 /***/ })
 

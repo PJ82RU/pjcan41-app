@@ -146,7 +146,8 @@ var vue_i18n = __webpack_require__(85851);
   deviceReset: {
     title: "Сброс конфигурации устройства",
     config: "Сбросить значения конфигурации по умолчанию",
-    view: "Сбросить значения конфигурации отображения по умолчанию"
+    view: "Сбросить значения конфигурации отображения по умолчанию",
+    buttons: "Сбросить значения конфигурации кнопок по умолчанию"
   },
   btn: {
     apply: "Применить",
@@ -452,8 +453,8 @@ var vue_i18n = __webpack_require__(85851);
   },
   buttons: {
     title: "Настройки кнопок",
-    extendedMode: "Режим Fn",
-    hintMode: " (режим Fn)",
+    extendedMode: "Расширенный режим",
+    hintMode: " (расширенный режим)",
     mode: "Кнопка MODE",
     setUp: "Кнопка SET UP",
     setDown: "Кнопка SET DOWN",
@@ -501,52 +502,72 @@ var vue_i18n = __webpack_require__(85851);
       }
     },
     functions: {
-      0: "Нет действия",
-      1: "Перейти в режим Fn",
-      2: "Выход из режима Fn",
-      3: "Нажатие кнопки MODE",
-      4: "Нажатие кнопки SET UP",
-      5: "Нажатие кнопки SET DOWN",
-      6: "Нажатие кнопки уровень звука +",
-      7: "Нажатие кнопки уровень звука -",
-      8: "Нажатие кнопки отк. звука",
-      9: "Удержание кнопки CLOCK 2 сек.",
-      10: "Нажатие кнопки CLOCK",
-      11: "Нажатие кнопки CLOCK H",
-      12: "Нажатие кнопки CLOCK M",
-      13: "Нажатие кнопки CLOCK 24/12",
-      14: "Удержание кнопки INFO 2 сек.",
-      15: "Нажатие кнопки INFO",
-      16: "Показать значения ДВС",
-      17: "Показать значения расхода",
-      18: "Показать значения движения",
-      19: "Показать значения температуры",
-      20: "Голосовое управление",
-      21: "Радио",
-      22: "Камера",
-      23: "Радио: поиск",
-      24: "Эквалайзер",
-      25: "Вкл/выкл дисплея",
-      26: "Телефон"
+      0: "Функция отсутствует",
+      1: "PJCAN: сменить режим управления",
+      2: "PJCAN: показать значения ДВС",
+      3: "PJCAN: показать значения расхода",
+      4: "PJCAN: показать значения движения",
+      5: "PJCAN: показать значения температуры",
+      6: "PJCAN: показать дату и время",
+      7: "ГУ: кнопка MUTE на руле",
+      8: "ГУ: кнопка MODE на руле",
+      9: "ГУ: кнопка SET DOWN на руле",
+      10: "ГУ: кнопка SET UP на руле",
+      11: "ГУ: кнопка Vol+ на руле",
+      12: "ГУ: кнопка Vol- на руле",
+      13: "ГУ: открыть голосовое управление",
+      14: "ГУ: открыть эквалайзер",
+      15: "ГУ: открыть радио",
+      16: "ГУ: поиск волны радио",
+      17: "ГУ: открыть камеру",
+      18: "ГУ: открыть телефон",
+      19: "БК: кнопка INFO (информация БК)",
+      20: "БК: кнопка CLOCK (время на БК)",
+      21: "БК: кнопка CLOCK H (часы)",
+      22: "БК: кнопка CLOCK M (минуты)",
+      23: "БК: кнопка CLOCK 24/12 (смена формата времени)",
+      24: "БК: кнопка сброса минут в 0",
+      25: "БК: сменить режим INFO на CLOCK и обратно",
+      26: "БК: нажатие и удержание кнопки INFO (сброс расхода)",
+      27: "БК: нажатие и удержание кнопки CLOCK (настройка часов)",
+      28: "BOSE: вкл/выкл усилителя",
+      29: "BOSE: вкл/выкл Audio PLT",
+      30: "BOSE: MUTE",
+      31: "BOSE: VOL +",
+      32: "BOSE: VOL -",
+      33: "BOSE: BALANCE +",
+      34: "BOSE: BALANCE -",
+      35: "BOSE: BASS +",
+      36: "BOSE: BASS -",
+      37: "BOSE: FADE +",
+      38: "BOSE: FADE -",
+      39: "BOSE: TREBLE +",
+      40: "BOSE: TREBLE -",
+      41: "BOSE: переключение режимов Center Point (циклично)"
     },
-    definition: {
-      title: "Обнаружено нажатие кнопки",
-      type: {
-        title: "Тип кнопки",
-        description: "Выберите тип кнопки для дальнейшего ее использования"
+    edit: {
+      title: "Редактирование кнопки \"{name}\"",
+      beginValue: {
+        title: "Начальное значение",
+        description: "Начальное значение диапазона сопротивления кнопки в у.е."
+      },
+      endValue: {
+        title: "Конечное значение",
+        description: "Конечное значение диапазона сопротивления кнопки в у.е."
       }
     },
-    adding: "Создание кнопки",
-    edit: "Редактирование кнопки",
-    name: "Наименование кнопки"
+    notify: {
+      detected: "Нажата кнопка \"{id}\"",
+      notDefined: "Нажата кнопка не определена!"
+    }
   },
   onboardButtons: {
     title: "Кнопки БК",
     buttons: {
-      modeClock: "Mode CLOCK",
-      modeInfo: "Mode INFO",
+      holdClock: "удержание CLOCK",
+      holdInfo: "удержание SET/INFO",
       clock: "CLOCK",
-      info: "INFO",
+      info: "SET/INFO",
       clockH: "H",
       clockM: "M",
       clockRM: "RM",
@@ -565,30 +586,30 @@ var vue_i18n = __webpack_require__(85851);
   options: {
     title: "Параметры",
     lcd: {
-      title: "LCD",
+      title: "Экран БК",
       enabled: {
-        title: "LCD",
-        description: "Включить/выключить вывод информации на информационный экран"
+        title: "Экран БК",
+        description: "Включить/выключить вывод информации на информационный экран БК"
       },
       logo: {
         title: "Логотип",
-        description: "Тест отображаемый в момент отсутствия данных для вывода на LCD. Максимум 12 символов"
+        description: "Тест отображаемый в момент отсутствия данных для вывода на экране БК. Максимум 12 символов"
       },
       hello: {
         title: "Текст приветствия",
         description: "Тест отображаемый при включении ACC. Максимум 32 символов",
-        menu: "LCD: Текст приветствия"
+        menu: "БК: Текст приветствия"
       }
     },
-    teyes: {
-      title: "ГУ",
+    head: {
+      title: "Головное устройство",
       protocol: {
         title: "Протокол UART",
         description: "Протокол UART для связи PJCAN с ГУ",
         list: {
           1: "Raise HM_ND00 2017.12.11 (19200)",
           2: "Raise HM_ND01 2019.06.21 (38400)",
-          3: "SimpleSoft MZ_SS_07A (19200)",
+          3: "Raise HM_ND03 2022.11.11 (19200)",
           4: "SimpleSoft RP5_MZ_002 (38400)"
         }
       },
@@ -596,9 +617,9 @@ var vue_i18n = __webpack_require__(85851);
         title: "Поменять контакты UART",
         description: "Поменять контакты UART местами, если нет связи PJCAN с ГУ"
       },
-      lcdShow: {
+      onboardShow: {
         title: "Показывать информацию ГУ",
-        description: "Показывать текст ГУ на информационном экране (БК) вместо логотипа",
+        description: "Показывать текст ГУ на экране БК вместо логотипа",
         menu: "LCD: Показывать текст ГУ"
       },
       sendButton: {
@@ -613,21 +634,13 @@ var vue_i18n = __webpack_require__(85851);
         title: "Показать статус дверей на ГУ",
         description: "Показать статус дверей автомобиля на ГУ (если протокол поддерживает данный функционал)"
       },
-      parseVolume: {
-        title: "Управлять уровнем звука на ГУ",
-        description: "Рекомендуется выключить этот параметр, для прямого управления звуком усилителя Bose"
+      sendOnboard: {
+        title: "Показать данные БК на ГУ",
+        description: "Показать статус дверей и значения бортового компьютера автомобиля на ГУ (если протокол поддерживает данный функционал)"
       },
-      receiveText: {
-        title: "Принимать информацию ГУ",
-        description: "Принимать входящие значения ГУ: название радиостанций и др."
-      },
-      receiveClock: {
-        title: "Время ГУ",
-        description: "Принимать входящее значение времени от ГУ (если протокол поддерживает данный функционал)"
-      },
-      receiveButtons: {
-        title: "Кнопки ГУ",
-        description: "Поддержка кнопок ГУ: CLOCK, HOUR, MIN (если протокол поддерживает данный функционал)"
+      holdToFlip: {
+        title: "Регулятор уровня громкости",
+        description: "Плавная изменение уровня звука при удержании кнопки Vol+/Vol- (рекомендуется, если ГУ не поддерживает этот функционал)"
       }
     },
     datetime: {
@@ -719,7 +732,7 @@ var vue_i18n = __webpack_require__(85851);
       1: "Mazda 3 BK",
       2: "Mazda 3 BL (тестируется)",
       3: "Mazda 6 GG",
-      4: "Mazda 6 GH (не поддерживается)",
+      4: "Mazda 6 GH (тестируется)",
       5: "Mazda CX-7",
       6: "Mazda CX-7 rest",
       7: "Mazda CX-9",
@@ -728,12 +741,8 @@ var vue_i18n = __webpack_require__(85851);
     }
   },
   help: {
-    buttons: {
-      notify: "Внимание! В этом разделе меню кнопки руля работают в режиме программирования"
-    },
     onboard: {
-      notify: "Свайп влево/вправо позволяет листать блоки с информацией",
-      noModelSelected: "Внимание! Не выбрана модель автомобиля. Перейдите в меню - О программе - Поддержка автомобиля"
+      notify: "Свайп влево/вправо позволяет листать блоки с информацией"
     }
   },
   language: {
@@ -858,7 +867,8 @@ var vue_i18n = __webpack_require__(85851);
   deviceReset: {
     title: "Reset device configuration",
     config: "Reset configuration defaults",
-    view: "Reset default display configuration values"
+    view: "Reset default display configuration values",
+    buttons: "Reset the default button configuration values"
   },
   btn: {
     apply: "Apply",
@@ -1163,8 +1173,8 @@ var vue_i18n = __webpack_require__(85851);
   },
   buttons: {
     title: "Button settings",
-    extendedMode: "Advanced Fn",
-    hintMode: " (advanced Fn)",
+    extendedMode: "Extended mode",
+    hintMode: " (extended mode)",
     mode: "MODE button",
     seekUp: "SET UP button",
     seekDown: "SET DOWN button",
@@ -1212,50 +1222,58 @@ var vue_i18n = __webpack_require__(85851);
       }
     },
     functions: {
-      0: "No action",
-      1: "Switch to the Fn",
-      2: "Exiting the Fn",
-      3: "Pressing the MODE button",
-      4: "Pressing the SET UP button",
-      5: "Pressing the SET DOWN button",
-      6: "Pressing the sound level + button",
-      7: "Pressing the sound level - button",
-      8: "Pressing the mute sound button",
-      9: "Hold the CLOCK button for 2 sec.",
-      10: "Pressing the CLOCK button",
-      11: "Pressing the CLOCK H button",
-      12: "Pressing the CLOCK M button",
-      13: "Pressing the CLOCK 24/12 button",
-      14: "Hold the INFO button for 2 sec.",
-      15: "Pressing the INFO button",
-      16: "Show the values of the engine",
-      17: "Show flow values",
-      18: "Show movement values",
-      19: "Show temperature values",
-      20: "Voice control",
-      21: "Radio",
-      22: "Camera",
-      23: "Radio: search",
-      24: "Equalizer",
-      25: "Turning off the display",
-      26: "Phone"
+      0: "Function is missing",
+      1: "PJCAN: change the control mode",
+      2: "PJCAN: show engine values",
+      3: "PJCAN: show fuel consumption values",
+      4: "PJCAN: show vehicle movement values",
+      5: "PJCAN: show temperature values",
+      6: "PJCAN: show date and time",
+      7: "Head Unit: MUTE button on the steering wheel",
+      8: "Head Unit: MODE button on the steering wheel",
+      9: "Head Unit: SET DOWN button on the steering wheel",
+      10: "Head Unit: SET UP button on the steering wheel",
+      11: "Head Unit: Vol+ button on the steering wheel",
+      12: "Head Unit: Vol- button on the steering wheel",
+      13: "Head Unit: open voice control",
+      14: "Head Unit: open the equalizer",
+      15: "Head Unit: open the radio",
+      16: "Head Unit: search for a radio wave",
+      17: "Head Unit: open the camera",
+      18: "Head Unit: open the phone",
+      19: "On-board: INFO button (on-board information)",
+      20: "On-board: CLOCK button (time on the on-board)",
+      21: "On-board: CLOCK H button (hour)",
+      22: "On-board: CLOCK M button (minutes)",
+      23: "On-board: CLOCK 24/12 button (time format change)",
+      24: "On-board: Reset button for minutes to 0",
+      25: "On-board: change the INFO mode to CLOCK and back",
+      26: "On-board: pressing and holding the INFO button (flow reset)",
+      27: "On-board: pressing and holding the CLOCK button (setting the clock)",
+      28: "BOSE: on/off the amplifier",
+      29: "BOSE: on/off Audio PLT",
+      30: "BOSE: MUTE",
+      31: "BOSE: VOL +",
+      32: "BOSE: VOL -",
+      33: "BOSE: BALANCE +",
+      34: "BOSE: BALANCE -",
+      35: "BOSE: BASS +",
+      36: "BOSE: BASS -",
+      37: "BOSE: FADE +",
+      38: "BOSE: FADE -",
+      39: "BOSE: TREBLE +",
+      40: "BOSE: TREBLE -",
+      41: "BOSE: switching Center Point modes (cyclically)"
     },
-    definition: {
-      title: "Button press detected",
-      type: {
-        title: "Button type",
-        description: "Select the button type for further use"
-      }
-    },
-    adding: "Adding a button",
-    edit: "Editing a button",
-    name: "Name of the button"
+    edit: {
+      title: "Editing the \"{name}\" button"
+    }
   },
   onboardButtons: {
     title: "On-board buttons",
     buttons: {
-      modeClock: "Mode CLOCK",
-      modeInfo: "Mode INFO",
+      holdClock: "hold CLOCK",
+      holdInfo: "hold INFO",
       clock: "CLOCK",
       info: "INFO",
       clockH: "H",
@@ -1276,30 +1294,30 @@ var vue_i18n = __webpack_require__(85851);
   options: {
     title: "Options",
     lcd: {
-      title: "LCD",
+      title: "On-board screen",
       enabled: {
-        title: "LCD",
+        title: "On-board screen",
         description: "Turn on/off the output of the information on the information screen"
       },
       logo: {
         title: "Logo",
-        description: "The test displayed at the time of the absence of data for output to LCD. Maximum 12 characters"
+        description: "The test displayed at the time of the absence of data for output to On-board screen. Maximum 12 characters"
       },
       hello: {
         title: "Hello",
         description: "Displayed test when switched by ACC. Maximum 32 characters",
-        menu: "LCD: Hello"
+        menu: "On-board: Hello"
       }
     },
-    teyes: {
-      title: "Teyes",
+    head: {
+      title: "Head Unit",
       protocol: {
         title: "UART Protocol",
-        description: "UART protocol for PJCAN communication with Teyes",
+        description: "UART protocol for PJCAN communication with Head Unit",
         list: {
           1: "Raise HM_ND00 2017.12.11 (19200)",
           2: "Raise HM_ND01 2019.06.21 (38400)",
-          3: "SimpleSoft MZ_SS_07A (19200)",
+          3: "Raise HM_ND03 2022.11.11 (19200)",
           4: "SimpleSoft RP5_MZ_002 (38400)"
         }
       },
@@ -1307,38 +1325,30 @@ var vue_i18n = __webpack_require__(85851);
         title: "Change UART contacts",
         description: "Enable if there is no PJCAN connection with multimedia"
       },
-      lcdShow: {
-        title: "Show the text Teyes",
-        description: "Show the text of the Teyes on the information screen instead of the logo",
-        menu: "LCD: Show the text Teyes"
+      onboardShow: {
+        title: "Show the text Head Unit",
+        description: "Show the text of the Head Unit on the On-board screen of the logo",
+        menu: "LCD: Show the text Head Unit"
       },
       sendButton: {
         title: "Steering wheel buttons",
-        description: "Control of Teyes by buttons on the steering wheel"
+        description: "Control of Head Unit by buttons on the steering wheel"
       },
       sendClimate: {
-        title: "Show climate on Teyes",
-        description: "Show climate control values on Teyes (if the protocol supports this functionality)"
+        title: "Show climate on Head Unit",
+        description: "Show climate control values on Head Unit (if the protocol supports this functionality)"
       },
       sendDoors: {
-        title: "Show the status of doors on Teyes",
-        description: "Show the status of the car doors on Teyes (if the protocol supports this functionality)"
+        title: "Show the status of doors on Head Unit",
+        description: "Show the status of the car doors on Head Unit (if the protocol supports this functionality)"
       },
-      parseVolume: {
-        title: "Control the sound level on Teyes",
-        description: "It is recommended to turn off this parameter to directly control the sound of the Bose amplifier"
+      sendOnboard: {
+        title: "Show on-board data on the Head Unit",
+        description: "Show the status of the doors and the values of the vehicle's on-board computer on the Head Unit (if the protocol supports this functionality)"
       },
-      receiveText: {
-        title: "Accept Teyes information",
-        description: "Accept incoming Teyes values: name of radio stations, etc."
-      },
-      receiveClock: {
-        title: "Teyes time",
-        description: "Accept incoming time value from Teyes (if the protocol supports this functionality)"
-      },
-      receiveButtons: {
-        title: "Teyes Buttons",
-        description: "Support for Teyes buttons: CLOCK, HOUR, MIN (if the protocol supports this functionality)"
+      holdToFlip: {
+        title: "Volume control",
+        description: "Smooth change of sound level when holding the Vol+/Vol- button (recommended if the Head Unit does not support this functionality)"
       }
     },
     datetime: {
@@ -1430,7 +1440,7 @@ var vue_i18n = __webpack_require__(85851);
       1: "Mazda 3 BK",
       2: "Mazda 3 BL (tested)",
       3: "Mazda 6 GG",
-      4: "Mazda 6 GH (not supported)",
+      4: "Mazda 6 GH (tested)",
       5: "Mazda CX-7",
       6: "Mazda CX-7 rest",
       7: "Mazda CX-9",

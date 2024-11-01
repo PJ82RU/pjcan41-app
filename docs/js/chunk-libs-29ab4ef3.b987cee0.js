@@ -202,7 +202,7 @@
 
 
 /**
-* @vue/runtime-dom v3.5.6
+* @vue/runtime-dom v3.5.12
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
 **/
@@ -478,7 +478,7 @@ function whenTransitionEnds(el, expectedType, explicitTimeout, resolve) {
       resolve();
     }
   };
-  if (explicitTimeout) {
+  if (explicitTimeout != null) {
     return setTimeout(resolveIfNotStale, explicitTimeout);
   }
   const {
@@ -815,7 +815,7 @@ function patchAttr(el, key, value, isSVG, instance, isBoolean = (0,_vue_shared__
     }
   }
 }
-function patchDOMProp(el, key, value, parentComponent) {
+function patchDOMProp(el, key, value, parentComponent, attrName) {
   if (key === "innerHTML" || key === "textContent") {
     if (value != null) {
       el[key] = key === "innerHTML" ? unsafeToTrustedHTML(value) : value;
@@ -858,7 +858,7 @@ function patchDOMProp(el, key, value, parentComponent) {
   } catch (e) {
     if (false) {}
   }
-  needRemove && el.removeAttribute(key);
+  needRemove && el.removeAttribute(attrName || key);
 }
 function addEventListener(el, event, handler, options) {
   el.addEventListener(event, handler, options);
@@ -951,6 +951,10 @@ const patchProp = (el, key, prevValue, nextValue, namespace, parentComponent) =>
     if (!el.tagName.includes("-") && (key === "value" || key === "checked" || key === "selected")) {
       patchAttr(el, key, nextValue, isSVG, parentComponent, key !== "value");
     }
+  } else if (
+  // #11081 force set props for possible async custom element
+  el._isVueCE && (/[A-Z]/.test(key) || !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .isString */ .Kg)(nextValue))) {
+    patchDOMProp(el, (0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .camelize */ .PT)(key), nextValue, parentComponent, key);
   } else {
     if (key === "true-value") {
       el._trueValue = nextValue;
@@ -991,13 +995,7 @@ function shouldSetAsProp(el, key, value, isSVG) {
   if (isNativeOn(key) && (0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .isString */ .Kg)(value)) {
     return false;
   }
-  if (key in el) {
-    return true;
-  }
-  if (el._isVueCE && (/[A-Z]/.test(key) || !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .isString */ .Kg)(value))) {
-    return true;
-  }
-  return false;
+  return key in el;
 }
 const REMOVAL = {};
 /*! #__NO_SIDE_EFFECTS__ */
@@ -1632,6 +1630,7 @@ function setChecked(el, {
   } else if ((0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .isSet */ .vM)(value)) {
     checked = value.has(vnode.props.value);
   } else {
+    if (value === oldValue) return;
     checked = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .looseEqual */ .BX)(value, getCheckboxValue(el, true));
   }
   if (el.checked !== checked) {
@@ -1681,10 +1680,7 @@ const vModelSelect = {
   // set value in mounted & updated because <select> relies on its children
   // <option>s.
   mounted(el, {
-    value,
-    modifiers: {
-      number
-    }
+    value
   }) {
     setSelected(el, value);
   },
@@ -1692,17 +1688,14 @@ const vModelSelect = {
     el[assignKey] = getModelAssigner(vnode);
   },
   updated(el, {
-    value,
-    modifiers: {
-      number
-    }
+    value
   }) {
     if (!el._assigning) {
       setSelected(el, value);
     }
   }
 };
-function setSelected(el, value, number) {
+function setSelected(el, value) {
   const isMultiple = el.multiple;
   const isArrayValue = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .isArray */ .cy)(value);
   if (isMultiple && !isArrayValue && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_9__/* .isSet */ .vM)(value)) {

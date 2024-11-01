@@ -54,12 +54,12 @@
 /* harmony export */   yQ: function() { return /* binding */ def; },
 /* harmony export */   z3: function() { return /* binding */ isKnownSvgAttr; }
 /* harmony export */ });
-/* unused harmony exports PatchFlagNames, PatchFlags, ShapeFlags, SlotFlags, cssVarNameEscapeSymbolsRE, escapeHtml, escapeHtmlComment, genPropsAccessExp, generateCodeFrame, isBuiltInDirective, isDate, isGloballyWhitelisted, isHTMLTag, isKnownMathMLAttr, isMathMLTag, isSSRSafeAttrName, isSVGTag, isVoidTag, objectToString, parseStringStyle, propsToAttrMap, slotFlagsText, toTypeString */
+/* unused harmony exports PatchFlagNames, PatchFlags, ShapeFlags, SlotFlags, cssVarNameEscapeSymbolsRE, escapeHtml, escapeHtmlComment, genCacheKey, genPropsAccessExp, generateCodeFrame, isBuiltInDirective, isDate, isGloballyWhitelisted, isHTMLTag, isKnownMathMLAttr, isMathMLTag, isSSRSafeAttrName, isSVGTag, isVoidTag, objectToString, parseStringStyle, propsToAttrMap, slotFlagsText, toTypeString */
 /* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44114);
 /* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_0__);
 
 /**
-* @vue/shared v3.5.6
+* @vue/shared v3.5.12
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
 **/
@@ -159,6 +159,9 @@ const getGlobalThis = () => {
 const identRE = /^[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*$/;
 function genPropsAccessExp(name) {
   return identRE.test(name) ? `__props.${name}` : `__props[${JSON.stringify(name)}]`;
+}
+function genCacheKey(source, options) {
+  return source + JSON.stringify(options, (_, val) => typeof val === "function" ? val.toString() : val);
 }
 const PatchFlags = {
   "TEXT": 1,

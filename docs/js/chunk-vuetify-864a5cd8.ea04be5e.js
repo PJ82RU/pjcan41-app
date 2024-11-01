@@ -38,10 +38,10 @@ var density = __webpack_require__(62191);
 var dimensions = __webpack_require__(62542);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/elevation.mjs
 var elevation = __webpack_require__(17018);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/location.mjs
 var composables_location = __webpack_require__(79788);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/position.mjs
@@ -557,8 +557,8 @@ var runtime_core_esm_bundler = __webpack_require__(56768);
 var component = __webpack_require__(19262);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/layout.mjs
 var layout = __webpack_require__(34603);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/theme.mjs
 var composables_theme = __webpack_require__(47664);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/propsFactory.mjs
@@ -678,8 +678,8 @@ var composables_form = __webpack_require__(93651);
 var forwardRefs = __webpack_require__(61950);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/list-items.mjs
 var list_items = __webpack_require__(55574);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/proxiedModel.mjs
 var proxiedModel = __webpack_require__(82067);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/transition.mjs
@@ -1223,8 +1223,8 @@ var border = __webpack_require__(89923);
 var component = __webpack_require__(19262);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/density.mjs
 var density = __webpack_require__(62191);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/rounded.mjs
 var rounded = __webpack_require__(73240);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/size.mjs
@@ -1374,10 +1374,10 @@ var VIcon = __webpack_require__(79669);
 var color = __webpack_require__(32886);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/component.mjs
 var component = __webpack_require__(19262);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/location.mjs
 var composables_location = __webpack_require__(79788);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/rounded.mjs
@@ -1596,8 +1596,8 @@ var dimensions = __webpack_require__(62542);
 var display = __webpack_require__(68353);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/elevation.mjs
 var elevation = __webpack_require__(17018);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/location.mjs
 var composables_location = __webpack_require__(79788);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/position.mjs
@@ -2135,8 +2135,8 @@ var VIcon = __webpack_require__(79669);
 var defaults = __webpack_require__(74979);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/density.mjs
 var density = __webpack_require__(62191);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/rounded.mjs
 var rounded = __webpack_require__(73240);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
@@ -2536,8 +2536,8 @@ var dimensions = __webpack_require__(62542);
 var elevation = __webpack_require__(17018);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/group.mjs
 var composables_group = __webpack_require__(34690);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/loader.mjs
 var loader = __webpack_require__(19296);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/location.mjs
@@ -2857,8 +2857,8 @@ var density = __webpack_require__(62191);
 var dimensions = __webpack_require__(62542);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/elevation.mjs
 var elevation = __webpack_require__(17018);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/loader.mjs
 var loader = __webpack_require__(19296);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/location.mjs
@@ -3121,7 +3121,7 @@ const VCardActions = (0,_util_index_mjs__WEBPACK_IMPORTED_MODULE_0__/* .genericC
 /* harmony import */ var _VIcon_index_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(79669);
 /* harmony import */ var _composables_component_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(19262);
 /* harmony import */ var _composables_density_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62191);
-/* harmony import */ var _composables_icons_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24581);
+/* harmony import */ var _composables_icons_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15965);
 /* harmony import */ var _util_index_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14587);
 /* harmony import */ var _util_index_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(51247);
 /* harmony import */ var _util_index_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74600);
@@ -3375,10 +3375,10 @@ var VDefaultsProvider = __webpack_require__(37852);
 var VProgressLinear = __webpack_require__(19336);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VWindow/VWindow.mjs + 1 modules
 var VWindow = __webpack_require__(36048);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/proxiedModel.mjs
 var proxiedModel = __webpack_require__(82067);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
@@ -3687,7 +3687,7 @@ const VCheckbox = (0,defineComponent/* genericComponent */.RW)()({
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(56768);
 /* harmony import */ var _VSelectionControl_VSelectionControl_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32563);
-/* harmony import */ var _composables_icons_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24581);
+/* harmony import */ var _composables_icons_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15965);
 /* harmony import */ var _composables_proxiedModel_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(82067);
 /* harmony import */ var _util_index_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14587);
 /* harmony import */ var _util_index_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(51247);
@@ -3943,10 +3943,10 @@ var density = __webpack_require__(62191);
 var elevation = __webpack_require__(17018);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/group.mjs
 var composables_group = __webpack_require__(34690);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs + 1 modules
-var icons = __webpack_require__(24581);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/icons.mjs
+var icons = __webpack_require__(15965);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/proxiedModel.mjs
 var proxiedModel = __webpack_require__(82067);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/rounded.mjs
@@ -4956,8 +4956,8 @@ const VColorPickerSwatches = (0,defineComponent/* defineComponent */.pM)({
 var VSheet = __webpack_require__(51146);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/defaults.mjs
 var defaults = __webpack_require__(74979);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/proxiedModel.mjs
 var proxiedModel = __webpack_require__(82067);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/console.mjs
@@ -5182,8 +5182,8 @@ var composables_form = __webpack_require__(93651);
 var forwardRefs = __webpack_require__(61950);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/list-items.mjs
 var list_items = __webpack_require__(55574);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/proxiedModel.mjs
 var proxiedModel = __webpack_require__(82067);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/transition.mjs
@@ -5760,8 +5760,8 @@ var web_structured_clone = __webpack_require__(71678);
 var runtime_core_esm_bundler = __webpack_require__(56768);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.mjs + 1 modules
 var VBtn = __webpack_require__(91696);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/proxiedModel.mjs
 var proxiedModel = __webpack_require__(82067);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js

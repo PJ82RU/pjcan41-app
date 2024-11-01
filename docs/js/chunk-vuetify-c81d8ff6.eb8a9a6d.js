@@ -36,8 +36,8 @@ const VStepperSymbol = Symbol.for('vuetify:v-stepper');
 var VBtn = __webpack_require__(91696);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VDefaultsProvider/VDefaultsProvider.mjs
 var VDefaultsProvider = __webpack_require__(37852);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs + 2 modules
-var locale = __webpack_require__(95296);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/composables/locale.mjs
+var locale = __webpack_require__(15555);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/propsFactory.mjs
 var propsFactory = __webpack_require__(14587);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/defineComponent.mjs

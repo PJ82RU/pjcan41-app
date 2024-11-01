@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[990],{
 
-/***/ 23703:
+/***/ 19566:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -26,7 +26,7 @@ var VSpacer = __webpack_require__(41720);
 var VMain = __webpack_require__(98477);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VToolbar/VToolbarTitle.mjs
 var VToolbarTitle = __webpack_require__(88050);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=45287ab9&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=4a3f909a&scoped=true&ts=true
 
 const _hoisted_1 = {
   class: "text-h4"
@@ -42,6 +42,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_about_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("about-dialog");
   const _component_onboard_buttons_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("onboard-buttons-dialog");
   const _component_locale_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("locale-dialog");
+  const _component_choosing_car_model_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("choosing-car-model-dialog");
                                                               
   const _component_router_view = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("router-view");
   const _component_message_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("message-dialog");
@@ -59,7 +60,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VToolbarTitle/* VToolbarTitle */.s, null, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("span", _hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)($setup.title), 1)]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VSpacer/* VSpacer */.h), _ctx.$vuetify.display.mdAndUp && $setup.visibleOnBoard ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VBtn/* VBtn */.D, {
+      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VSpacer/* VSpacer */.h), $setup.visibleOnBoard ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 0
+      }, [_ctx.$vuetify.display.mdAndUp ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VBtn/* VBtn */.D, {
         key: 0,
         class: "base-layout__onboard-buttons",
         rounded: "",
@@ -71,7 +74,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             primary: 'white',
             secondary: 'white'
           }
-        }), _cache[6] || (_cache[6] = (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("span", {
+        }), _cache[7] || (_cache[7] = (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("span", {
           class: "pl-2"
         }, "ONBOARD", -1))]),
         _: 1
@@ -84,7 +87,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           color: $setup.colorConfigSave
         }, null, 8, ["color"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true)], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
         icon: "mdi-fit-to-screen-outline",
         onClick: $setup.toggleFullscreen
       }, null, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_bluetooth_btn), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_update_firmware_dialog, {
@@ -104,10 +107,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_locale_dialog, {
         modelValue: $setup.visibleLocale,
         "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleLocale = $event)
-      }, null, 8, ["modelValue"])]),
+      }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_choosing_car_model_dialog, {
+        modelValue: $setup.visibleCarModel,
+        "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.visibleCarModel = $event),
+        "car-model": $setup.carModel,
+        "no-closed": "",
+        "onClick:apply": $setup.onCarModelApplyClick
+      }, null, 8, ["modelValue", "car-model", "onClick:apply"])]),
       _: 1
     }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VMain/* VMain */.Y, null, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_cache[7] || (_cache[7] = (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", {
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_cache[8] || (_cache[8] = (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", {
         class: "base-layout__bg"
       }, null, -1)), (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", {
         class: "base-layout__main",
@@ -117,8 +126,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         })
       }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_router_view)], 4), $setup.message ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_message_dialog, {
         key: 0,
-        modelValue: $setup.visibleMessage,
-        "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.visibleMessage = $event),
+        modelValue: $setup.messageVisible,
+        "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.messageVisible = $event),
         title: $setup.message.title,
         icon: $setup.message?.icon,
         text: $setup.message.text,
@@ -140,16 +149,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=45287ab9&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=4a3f909a&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
 var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
-// EXTERNAL MODULE: ./src/router/index.ts + 104 modules
-var router = __webpack_require__(88362);
+// EXTERNAL MODULE: ./src/router/index.ts + 98 modules
+var router = __webpack_require__(96768);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
-var store = __webpack_require__(81052);
+var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
 var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./node_modules/vue3-toastify/dist/index.mjs
@@ -164,23 +173,26 @@ var BluetoothBtn = __webpack_require__(92365);
 var UpdateFirmwareDialog = __webpack_require__(66422);
 // EXTERNAL MODULE: ./src/components/MenuDots.vue + 3 modules
 var MenuDots = __webpack_require__(69815);
-// EXTERNAL MODULE: ./src/components/dialogs/AboutDialog.vue + 28 modules
-var AboutDialog = __webpack_require__(36542);
+// EXTERNAL MODULE: ./src/components/dialogs/AboutDialog.vue + 24 modules
+var AboutDialog = __webpack_require__(83230);
 // EXTERNAL MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue + 5 modules
-var OnboardButtonsDialog = __webpack_require__(89775);
+var OnboardButtonsDialog = __webpack_require__(57128);
 // EXTERNAL MODULE: ./src/components/dialogs/MessageDialog.vue + 3 modules
 var MessageDialog = __webpack_require__(22885);
 // EXTERNAL MODULE: ./src/components/common/icon-custom/IconCustom.vue + 5 modules
 var IconCustom = __webpack_require__(19011);
 // EXTERNAL MODULE: ./src/components/dialogs/LocaleDialog.vue + 3 modules
 var LocaleDialog = __webpack_require__(1635);
+// EXTERNAL MODULE: ./src/components/dialogs/ChoosingCarModelDialog.vue + 3 modules
+var ChoosingCarModelDialog = __webpack_require__(33926);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
 var device = __webpack_require__(94027);
-// EXTERNAL MODULE: ./src/models/pjcan/mazda/index.ts + 4 modules
-var mazda = __webpack_require__(19164);
+// EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
+var onboard = __webpack_require__(32280);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=script&lang=ts
+
 
 
 
@@ -210,7 +222,8 @@ var mazda = __webpack_require__(19164);
     OnboardButtonsDialog: OnboardButtonsDialog/* default */.A,
     MessageDialog: MessageDialog/* default */.A,
     IconCustom: IconCustom/* default */.A,
-    LocaleDialog: LocaleDialog/* default */.A
+    LocaleDialog: LocaleDialog/* default */.A,
+    ChoosingCarModelDialog: ChoosingCarModelDialog/* default */.A
   },
   setup() {
     const {
@@ -221,15 +234,16 @@ var mazda = __webpack_require__(19164);
     const visibleOnboardButtons = (0,reactivity_esm_bundler/* ref */.KR)(false);
     const visibleUpdate = (0,reactivity_esm_bundler/* ref */.KR)(false);
     const visibleLocale = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const visibleCarModel = (0,reactivity_esm_bundler/* ref */.KR)(false);
     const pageWidth = (0,reactivity_esm_bundler/* ref */.KR)(0);
     const pageHeight = (0,reactivity_esm_bundler/* ref */.KR)(0);
     const carModel = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/carModel"]);
-    const visibleOnBoard = (0,runtime_core_esm_bundler/* computed */.EW)(() => carModel.value !== mazda/* TCarModel */.oB.CAR_MODEL_UNKNOWN && carModel.value !== mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH);
+    const visibleOnBoard = (0,runtime_core_esm_bundler/* computed */.EW)(() => carModel.value !== onboard/* TCarModel */.oB.CAR_MODEL_UNKNOWN);
     const title = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const result = router/* default */.A.currentRoute.value.meta?.title;
       return "PJCAN: " + (result?.length > 0 ? t(result) : "");
     });
-    const colorConfigSave = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].config_save ? "success" : "error");
+    const colorConfigSave = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].configSave ? "success" : "error");
     const newVersionFirmware = (0,reactivity_esm_bundler/* ref */.KR)("");
     const rollbackFirmware = (0,reactivity_esm_bundler/* ref */.KR)("");
     const rollback = (0,reactivity_esm_bundler/* ref */.KR)(false);
@@ -338,9 +352,9 @@ var mazda = __webpack_require__(19164);
       if (screenfull/* default */.A.isEnabled) screenfull/* default */.A.toggle();
     };
     // Вывод сообщений
-    const visibleMessage = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["app/visibleMessage"],
-      set: val => store/* default */.A.commit("app/setVisibleMessage", val)
+    const messageVisible = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => store/* default */.A.getters["app/messageVisible"],
+      set: val => store/* default */.A.commit("app/setMessageVisible", val)
     });
     const message = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["app/message"]);
     let timer;
@@ -348,12 +362,27 @@ var mazda = __webpack_require__(19164);
       if (timer) clearTimeout(timer);
       if (msg?.timeout) {
         timer = setTimeout(() => {
-          store/* default */.A.commit("app/freeMessage");
+          store/* default */.A.commit("app/messageFree");
           timer = undefined;
         }, msg.timeout);
       }
     });
     // ---
+    /** Проверяем модель автомобиля */
+    const onChoosingCarModel = () => {
+      visibleCarModel.value = store/* default */.A.getters["config/carModel"] === onboard/* TCarModel */.oB.CAR_MODEL_UNKNOWN;
+      // toast.warning(t("help.onboard.noModelSelected"), { autoClose: false });
+    };
+    /**
+     * Применить выбранную модель автомобиля
+     * @param {number} id ID модели
+     */
+    const onCarModelApplyClick = id => {
+      visibleCarModel.value = false;
+      if (store/* default */.A.getters["config/carModel"] !== id) {
+        store/* default */.A.commit("config/setOnboardCarModel", id);
+      }
+    };
     /** Доступна новая версия прошивки */
     const onNewVersion = newVersion => {
       newVersionFirmware.value = newVersion.toString;
@@ -382,12 +411,14 @@ var mazda = __webpack_require__(19164);
       });
     });
     (0,runtime_core_esm_bundler/* onMounted */.sV)(() => {
+      canbus/* default */.A.addListener(onboard/* API_ONBOARD_CONFIG_EVENT */.Vw, onChoosingCarModel);
       canbus/* default */.A.addListener(version/* API_NEW_VERSION_EVENT */.QM, onNewVersion);
       canbus/* default */.A.addListener(device/* API_DEVICE_ROLLBACK_EVENT */.GE, onRollback);
       window.addEventListener("resize", windowSize);
       windowSize();
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.hi)(() => {
+      canbus/* default */.A.removeListener(onboard/* API_ONBOARD_CONFIG_EVENT */.Vw, onChoosingCarModel);
       canbus/* default */.A.removeListener(version/* API_NEW_VERSION_EVENT */.QM, onNewVersion);
       canbus/* default */.A.removeListener(device/* API_DEVICE_ROLLBACK_EVENT */.GE, onRollback);
       window.removeEventListener("resize", windowSize);
@@ -403,23 +434,25 @@ var mazda = __webpack_require__(19164);
       visibleOnboardButtons,
       visibleUpdate,
       visibleLocale,
+      visibleCarModel,
       pageWidth,
       pageHeight,
-      visibleMessage,
+      messageVisible,
       message,
       colorConfigSave,
       rollback,
       onMenuClick,
-      toggleFullscreen
+      toggleFullscreen,
+      onCarModelApplyClick
     };
   }
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=45287ab9&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=4a3f909a&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=45287ab9&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=4a3f909a&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -431,7 +464,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(BaseLayoutvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-45287ab9"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(BaseLayoutvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-4a3f909a"]])
 
 /* harmony default export */ var BaseLayout = (__exports__);
 

@@ -8,19 +8,19 @@
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
-var App = __webpack_require__(74276);
-// EXTERNAL MODULE: ./src/router/index.ts + 104 modules
-var router = __webpack_require__(88362);
+var App = __webpack_require__(68741);
+// EXTERNAL MODULE: ./src/router/index.ts + 98 modules
+var router = __webpack_require__(96768);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
-var store = __webpack_require__(81052);
+var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
 var main = __webpack_require__(35524);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/framework.mjs
 var framework = __webpack_require__(37768);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/index.mjs + 15 modules
 var components = __webpack_require__(70506);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/index.mjs + 5 modules
-var directives = __webpack_require__(35741);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/index.mjs + 4 modules
+var directives = __webpack_require__(10406);
 ;// CONCATENATED MODULE: ./src/plugins/vuetify.ts
 // Styles
 
@@ -262,6 +262,10 @@ class BoseConfig extends base/* BaseModel */.t {
     (0,defineProperty/* default */.A)(this, "radioFM", false);
     (0,defineProperty/* default */.A)(this, "wow", false);
     (0,defineProperty/* default */.A)(this, "press", false);
+    (0,defineProperty/* default */.A)(this, "mute", false);
+    (0,defineProperty/* default */.A)(this, "start", false);
+    (0,defineProperty/* default */.A)(this, "volume", 0);
+    (0,defineProperty/* default */.A)(this, "start_volume", 0);
     (0,defineProperty/* default */.A)(this, "balance", 0);
     (0,defineProperty/* default */.A)(this, "bass", 0);
     (0,defineProperty/* default */.A)(this, "fade", 0);
@@ -290,13 +294,17 @@ class BoseConfig extends base/* BaseModel */.t {
   radioFM: bluetooth/* BluetoothStruct */.iy.bit(),
   wow: bluetooth/* BluetoothStruct */.iy.bit(),
   press: bluetooth/* BluetoothStruct */.iy.bit(),
+  mute: bluetooth/* BluetoothStruct */.iy.bit(),
+  start: bluetooth/* BluetoothStruct */.iy.bit(),
+  volume: bluetooth/* BluetoothStruct */.iy.uint8(),
+  start_volume: bluetooth/* BluetoothStruct */.iy.uint8(),
   balance: bluetooth/* BluetoothStruct */.iy.int8(),
   bass: bluetooth/* BluetoothStruct */.iy.int8(),
   fade: bluetooth/* BluetoothStruct */.iy.int8(),
   treble: bluetooth/* BluetoothStruct */.iy.int8(),
   centerPoint: bluetooth/* BluetoothStruct */.iy.uint8()
 });
-(0,defineProperty/* default */.A)(BoseConfig, "size", 6);
+(0,defineProperty/* default */.A)(BoseConfig, "size", 8);
 ;// CONCATENATED MODULE: ./src/models/pjcan/bose/index.ts
 
 
@@ -304,27 +312,29 @@ class BoseConfig extends base/* BaseModel */.t {
 
 /***/ }),
 
-/***/ 8871:
+/***/ 84596:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  dE: function() { return /* reexport */ API_BUTTONS_SW1_CONFIG_EVENT; },
-  ed: function() { return /* reexport */ API_BUTTONS_SW1_CONFIG_EXEC; },
-  Dg: function() { return /* reexport */ API_BUTTONS_SW3_CONFIG_EVENT; },
-  SI: function() { return /* reexport */ API_BUTTONS_SW3_CONFIG_EXEC; },
-  Du: function() { return /* reexport */ API_BUTTON_SW1_VALUE_EVENT; },
-  IF: function() { return /* reexport */ API_BUTTON_SW1_VALUE_EXEC; },
-  fB: function() { return /* reexport */ API_BUTTON_SW3_VALUE_EVENT; },
-  UK: function() { return /* reexport */ API_BUTTON_SW3_VALUE_EXEC; },
-  GV: function() { return /* reexport */ ButtonValue; },
-  Ab: function() { return /* reexport */ ButtonsConfig; },
+  $o: function() { return /* reexport */ API_SW1_CONFIG_EVENT; },
+  E7: function() { return /* reexport */ API_SW1_CONFIG_EXEC; },
+  _u: function() { return /* reexport */ API_SW1_VALUE_EVENT; },
+  py: function() { return /* reexport */ API_SW1_VALUE_EXEC; },
+  F: function() { return /* reexport */ API_SW3_CONFIG_EVENT; },
+  kU: function() { return /* reexport */ API_SW3_CONFIG_EXEC; },
+  iL: function() { return /* reexport */ API_SW3_VALUE_EVENT; },
+  Tk: function() { return /* reexport */ API_SW3_VALUE_EXEC; },
+  uK: function() { return /* reexport */ SW1Config; },
+  mH: function() { return /* reexport */ SW1_CONFIG_RESISTANCE_MAX; },
+  ET: function() { return /* reexport */ SW1_CONFIG_RESISTANCE_MIN; },
+  sV: function() { return /* reexport */ SWValue; },
   su: function() { return /* reexport */ TButtonExec; },
-  hB: function() { return /* reexport */ TButtonType; }
+  WX: function() { return /* reexport */ TButtonPress; }
 });
 
-// UNUSED EXPORTS: API_BUTTONS_SW1_ACTION_EVENT, API_BUTTONS_SW1_ACTION_EXEC, API_BUTTONS_SW3_ACTION_EVENT, API_BUTTONS_SW3_ACTION_EXEC, ButtonsAction, TButtonItem, TButtonPress
+// UNUSED EXPORTS: API_SW1_ACTION_EVENT, API_SW1_ACTION_EXEC, API_SW3_ACTION_EVENT, API_SW3_ACTION_EXEC, SW1Action, SW3Action, SW3Config
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
 var defineProperty = __webpack_require__(91114);
@@ -334,32 +344,31 @@ var es_array_push = __webpack_require__(44114);
 var bluetooth = __webpack_require__(52126);
 // EXTERNAL MODULE: ./src/models/pjcan/base/index.ts
 var base = __webpack_require__(30449);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonsConfig.ts
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SW1Config.ts
 
 
 
 
-const API_BUTTONS_SW1_CONFIG_EXEC = 0x30;
-const API_BUTTONS_SW1_CONFIG_EVENT = "ButtonsSW1Config";
-const API_BUTTONS_SW3_CONFIG_EXEC = 0x3a;
-const API_BUTTONS_SW3_CONFIG_EVENT = "ButtonsSW3Config";
+const API_SW1_CONFIG_EXEC = 0x30;
+const API_SW1_CONFIG_EVENT = "SW1Config";
+const SW1_CONFIG_RESISTANCE_MIN = 0;
+const SW1_CONFIG_RESISTANCE_MAX = 3799;
 /** Модель конфигурации кнопок */
-class ButtonsConfig extends base/* BaseModel */.t {
-  constructor(exec = API_BUTTONS_SW1_CONFIG_EXEC, data) {
+class SW1Config extends base/* BaseModel */.t {
+  constructor(exec = API_SW1_CONFIG_EXEC, data) {
     super(exec);
-    (0,defineProperty/* default */.A)(this, "enabled", false);
-    (0,defineProperty/* default */.A)(this, "programming", false);
-    (0,defineProperty/* default */.A)(this, "items", []);
-    for (let i = 0; i < 7; i++) {
+    (0,defineProperty/* default */.A)(this, "hold", 0);
+    (0,defineProperty/* default */.A)(this, "buttons", []);
+    for (let i = 0; i < 6; i++) {
       const item = {
         extended: false,
-        hold: 0,
-        resistanceMin: 0,
-        resistanceMax: 0,
-        exec: new Array(5),
-        execMode: new Array(5)
+        swtch: false,
+        id: 0,
+        resistanceTo: 0,
+        exec: new Array(4),
+        execMode: new Array(4)
       };
-      this.items.push(item);
+      this.buttons.push(item);
     }
     if (data) this.set(data);
   }
@@ -368,110 +377,180 @@ class ButtonsConfig extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return this._set(this, this.exec, ButtonsConfig.size, new bluetooth/* BluetoothStruct */.iy(ButtonsConfig.struct), buf);
+    return this._set(this, this.exec, SW1Config.size, new bluetooth/* BluetoothStruct */.iy(SW1Config.struct), buf);
   }
   /**
    * Чтение данных
    * @param {boolean} request Только запрос
    */
   get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, ButtonsConfig.size, new bluetooth/* BluetoothStruct */.iy(ButtonsConfig.struct));
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, SW1Config.size, new bluetooth/* BluetoothStruct */.iy(SW1Config.struct));
   }
   /**
    * Запись параметров кнопки
    * @param {IButtonConfigItem} value Новое значение
    */
-  setItem(value) {
-    const index = this.items.findIndex(x => x.id === value.id);
+  setButton(value) {
+    const index = this.buttons.findIndex(x => x.id === value.id);
     if (index < 0) return false;
-    const item = this.items[index];
-    item.extended = value.extended;
-    item.id = value.id;
-    item.hold = value.hold;
-    item.resistanceMin = value.resistanceMin;
-    item.resistanceMax = value.resistanceMax;
-    item.exec = [...value.exec];
-    item.execMode = [...value.execMode];
+    const button = this.buttons[index];
+    button.extended = value.extended;
+    button.swtch = value.swtch;
+    button.id = value.id;
+    button.resistanceTo = value.resistanceTo;
+    button.exec = [...value.exec];
+    button.execMode = [...value.execMode];
     return true;
   }
 }
-(0,defineProperty/* default */.A)(ButtonsConfig, "struct", {
-  enabled: bluetooth/* BluetoothStruct */.iy.bit(),
-  programming: bluetooth/* BluetoothStruct */.iy.bit(),
-  items: bluetooth/* BluetoothStruct */.iy.struct({
+(0,defineProperty/* default */.A)(SW1Config, "struct", {
+  hold: bluetooth/* BluetoothStruct */.iy.uint8(),
+  buttons: bluetooth/* BluetoothStruct */.iy.struct({
     extended: bluetooth/* BluetoothStruct */.iy.bit(),
+    swtch: bluetooth/* BluetoothStruct */.iy.bit(),
     id: bluetooth/* BluetoothStruct */.iy.uint8(),
-    hold: bluetooth/* BluetoothStruct */.iy.uint8(),
-    resistanceMin: bluetooth/* BluetoothStruct */.iy.uint16(),
-    resistanceMax: bluetooth/* BluetoothStruct */.iy.uint16(),
-    exec: bluetooth/* BluetoothStruct */.iy.uint8(5),
-    execMode: bluetooth/* BluetoothStruct */.iy.uint8(5)
-  }, 7)
+    resistanceTo: bluetooth/* BluetoothStruct */.iy.uint16(),
+    exec: bluetooth/* BluetoothStruct */.iy.uint8(4),
+    execMode: bluetooth/* BluetoothStruct */.iy.uint8(4)
+  }, 6)
 });
-(0,defineProperty/* default */.A)(ButtonsConfig, "size", 120);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonType.ts
-/* eslint-disable */
-var TButtonType;
-(function (TButtonType) {
-  TButtonType[TButtonType["PRESS_RELEASE"] = 0] = "PRESS_RELEASE";
-  TButtonType[TButtonType["PRESS_SINGLE"] = 1] = "PRESS_SINGLE";
-  TButtonType[TButtonType["PRESS_DUAL"] = 2] = "PRESS_DUAL";
-  TButtonType[TButtonType["PRESS_TRIPLE"] = 3] = "PRESS_TRIPLE";
-  TButtonType[TButtonType["PRESS_HOLD"] = 4] = "PRESS_HOLD";
-})(TButtonType || (TButtonType = {}));
+(0,defineProperty/* default */.A)(SW1Config, "size", 73);
 ;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonExec.ts
 /* eslint-disable */
 /** Список ID функций кнопки */
 var TButtonExec;
 (function (TButtonExec) {
   TButtonExec[TButtonExec["BUTTON_EXEC_NONE"] = 0] = "BUTTON_EXEC_NONE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_ENTERING_MODE"] = 1] = "BUTTON_EXEC_ENTERING_MODE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_EXITING_MODE"] = 2] = "BUTTON_EXEC_EXITING_MODE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_MODE"] = 3] = "BUTTON_EXEC_PRESS_MODE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_SET_UP"] = 4] = "BUTTON_EXEC_PRESS_SET_UP";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_SET_DOWN"] = 5] = "BUTTON_EXEC_PRESS_SET_DOWN";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_VOLUME_UP"] = 6] = "BUTTON_EXEC_PRESS_VOLUME_UP";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_VOLUME_DOWN"] = 7] = "BUTTON_EXEC_PRESS_VOLUME_DOWN";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_MUTE"] = 8] = "BUTTON_EXEC_PRESS_MUTE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_HOLD_CLOCK"] = 9] = "BUTTON_EXEC_HOLD_CLOCK";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK"] = 10] = "BUTTON_EXEC_PRESS_CLOCK";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_H"] = 11] = "BUTTON_EXEC_PRESS_CLOCK_H";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_M"] = 12] = "BUTTON_EXEC_PRESS_CLOCK_M";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_24"] = 13] = "BUTTON_EXEC_PRESS_CLOCK_24";
-  TButtonExec[TButtonExec["BUTTON_EXEC_HOLD_INFO"] = 14] = "BUTTON_EXEC_HOLD_INFO";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_INFO"] = 15] = "BUTTON_EXEC_PRESS_INFO";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_ENGINE"] = 16] = "BUTTON_EXEC_VIEW_ENGINE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_FUEL"] = 17] = "BUTTON_EXEC_VIEW_FUEL";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_MOVEMENT"] = 18] = "BUTTON_EXEC_VIEW_MOVEMENT";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_TEMPERATURE"] = 19] = "BUTTON_EXEC_VIEW_TEMPERATURE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_VOICE"] = 20] = "BUTTON_EXEC_TEYES_VOICE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_RADIO"] = 21] = "BUTTON_EXEC_TEYES_RADIO";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_CAMERA"] = 22] = "BUTTON_EXEC_TEYES_CAMERA";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_RADIO_SEARCH"] = 23] = "BUTTON_EXEC_TEYES_RADIO_SEARCH";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_EQUALIZER"] = 24] = "BUTTON_EXEC_TEYES_EQUALIZER";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_DISPLAY_ON_OFF"] = 25] = "BUTTON_EXEC_TEYES_DISPLAY_ON_OFF";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_PHONE"] = 26] = "BUTTON_EXEC_TEYES_PHONE"; // телефон ГУ
+  TButtonExec[TButtonExec["BUTTON_EXEC_CHANGE_CONTROL_MODE"] = 1] = "BUTTON_EXEC_CHANGE_CONTROL_MODE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_ENGINE"] = 2] = "BUTTON_EXEC_VIEW_ENGINE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_FUEL"] = 3] = "BUTTON_EXEC_VIEW_FUEL";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_MOVEMENT"] = 4] = "BUTTON_EXEC_VIEW_MOVEMENT";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_TEMPERATURE"] = 5] = "BUTTON_EXEC_VIEW_TEMPERATURE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_DATE_TIME"] = 6] = "BUTTON_EXEC_VIEW_DATE_TIME";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_BUTTON_MUTE"] = 7] = "BUTTON_EXEC_HEAD_UNIT_BUTTON_MUTE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_BUTTON_MODE"] = 8] = "BUTTON_EXEC_HEAD_UNIT_BUTTON_MODE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_BUTTON_SET_DOWN"] = 9] = "BUTTON_EXEC_HEAD_UNIT_BUTTON_SET_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_BUTTON_SET_UP"] = 10] = "BUTTON_EXEC_HEAD_UNIT_BUTTON_SET_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_BUTTON_VOL_UP"] = 11] = "BUTTON_EXEC_HEAD_UNIT_BUTTON_VOL_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_BUTTON_VOL_DOWN"] = 12] = "BUTTON_EXEC_HEAD_UNIT_BUTTON_VOL_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_VOICE"] = 13] = "BUTTON_EXEC_HEAD_UNIT_VOICE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_EQUALIZER"] = 14] = "BUTTON_EXEC_HEAD_UNIT_EQUALIZER";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_RADIO"] = 15] = "BUTTON_EXEC_HEAD_UNIT_RADIO";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_RADIO_SEARCH"] = 16] = "BUTTON_EXEC_HEAD_UNIT_RADIO_SEARCH";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_CAMERA"] = 17] = "BUTTON_EXEC_HEAD_UNIT_CAMERA";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_PHONE"] = 18] = "BUTTON_EXEC_HEAD_UNIT_PHONE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_BUTTON_INFO"] = 19] = "BUTTON_EXEC_ON_BOARD_BUTTON_INFO";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK"] = 20] = "BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_H"] = 21] = "BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_H";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_M"] = 22] = "BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_M";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_24"] = 23] = "BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_24";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_RM"] = 24] = "BUTTON_EXEC_ON_BOARD_BUTTON_CLOCK_RM";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_CHANGE_INFO_CLOCK"] = 25] = "BUTTON_EXEC_ON_BOARD_CHANGE_INFO_CLOCK";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_LONG_PRESS_INFO"] = 26] = "BUTTON_EXEC_ON_BOARD_LONG_PRESS_INFO";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ON_BOARD_LONG_PRESS_CLOCK"] = 27] = "BUTTON_EXEC_ON_BOARD_LONG_PRESS_CLOCK";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_ON"] = 28] = "BUTTON_EXEC_BOSE_ON";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_AUDIO_PLT"] = 29] = "BUTTON_EXEC_BOSE_AUDIO_PLT";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_MUTE"] = 30] = "BUTTON_EXEC_BOSE_MUTE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_VOL_UP"] = 31] = "BUTTON_EXEC_BOSE_VOL_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_VOL_DOWN"] = 32] = "BUTTON_EXEC_BOSE_VOL_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_BALANCE_UP"] = 33] = "BUTTON_EXEC_BOSE_BALANCE_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_BALANCE_DOWN"] = 34] = "BUTTON_EXEC_BOSE_BALANCE_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_BASS_UP"] = 35] = "BUTTON_EXEC_BOSE_BASS_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_BASS_DOWN"] = 36] = "BUTTON_EXEC_BOSE_BASS_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_FADE_UP"] = 37] = "BUTTON_EXEC_BOSE_FADE_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_FADE_DOWN"] = 38] = "BUTTON_EXEC_BOSE_FADE_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_TREBLE_UP"] = 39] = "BUTTON_EXEC_BOSE_TREBLE_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_TREBLE_DOWN"] = 40] = "BUTTON_EXEC_BOSE_TREBLE_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_CENTER_POINT"] = 41] = "BUTTON_EXEC_BOSE_CENTER_POINT"; // BOSE: переключение режимов Center Point (циклично)
 })(TButtonExec || (TButtonExec = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonValue.ts
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SW3Config.ts
 
 
 
 
 
-const API_BUTTON_SW1_VALUE_EXEC = 0x31;
-const API_BUTTON_SW1_VALUE_EVENT = "ButtonSW1Value";
-const API_BUTTON_SW3_VALUE_EXEC = 0x3b;
-const API_BUTTON_SW3_VALUE_EVENT = "ButtonSW3Value";
-/** Модель значений кнопок */
-class ButtonValue extends base/* BaseModel */.t {
-  constructor(exec = API_BUTTON_SW1_VALUE_EXEC, data) {
+const API_SW3_CONFIG_EXEC = 0x3a;
+const API_SW3_CONFIG_EVENT = "SW3Config";
+/** Модель конфигурации кнопок */
+class SW3Config extends base/* BaseModel */.t {
+  constructor(exec = API_SW3_CONFIG_EXEC, data) {
     super(exec);
-    (0,defineProperty/* default */.A)(this, "layered", false);
+    (0,defineProperty/* default */.A)(this, "buttons", []);
+    for (let i = 0; i < 6; i++) {
+      const item = {
+        id: 0,
+        resistanceTo: 0,
+        exec: TButtonExec.BUTTON_EXEC_NONE
+      };
+      this.buttons.push(item);
+    }
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, SW3Config.size, new bluetooth/* BluetoothStruct */.iy(SW3Config.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, SW3Config.size, new bluetooth/* BluetoothStruct */.iy(SW3Config.struct));
+  }
+  /**
+   * Запись параметров кнопки
+   * @param {IButtonConfigItem} value Новое значение
+   */
+  setButton(value) {
+    const index = this.buttons.findIndex(x => x.id === value.id);
+    if (index < 0) return false;
+    const button = this.buttons[index];
+    button.id = value.id;
+    button.resistanceTo = value.resistanceTo;
+    button.exec = value.exec;
+    return true;
+  }
+}
+(0,defineProperty/* default */.A)(SW3Config, "struct", {
+  buttons: bluetooth/* BluetoothStruct */.iy.struct({
+    id: bluetooth/* BluetoothStruct */.iy.uint8(),
+    resistanceTo: bluetooth/* BluetoothStruct */.iy.uint16(),
+    exec: bluetooth/* BluetoothStruct */.iy.uint8()
+  }, 7)
+});
+(0,defineProperty/* default */.A)(SW3Config, "size", 28);
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonPress.ts
+/* eslint-disable */
+var TButtonPress;
+(function (TButtonPress) {
+  TButtonPress[TButtonPress["PRESS_PRESSED"] = 0] = "PRESS_PRESSED";
+  TButtonPress[TButtonPress["PRESS_DUAL"] = 1] = "PRESS_DUAL";
+  TButtonPress[TButtonPress["PRESS_TRIPLE"] = 2] = "PRESS_TRIPLE";
+  TButtonPress[TButtonPress["PRESS_HOLD"] = 3] = "PRESS_HOLD";
+})(TButtonPress || (TButtonPress = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SWValue.ts
+
+
+
+
+
+const API_SW1_VALUE_EXEC = 0x31;
+const API_SW1_VALUE_EVENT = "SW1Value";
+const API_SW3_VALUE_EXEC = 0x3b;
+const API_SW3_VALUE_EVENT = "SW3Value";
+/** Модель значений кнопок */
+class SWValue extends base/* BaseModel */.t {
+  constructor(exec = API_SW1_VALUE_EXEC, data) {
+    super(exec);
+    (0,defineProperty/* default */.A)(this, "pressed", false);
+    (0,defineProperty/* default */.A)(this, "swtch", false);
+    (0,defineProperty/* default */.A)(this, "emulation", false);
     (0,defineProperty/* default */.A)(this, "id", 0);
+    (0,defineProperty/* default */.A)(this, "btnType", TButtonPress.PRESS_PRESSED);
     (0,defineProperty/* default */.A)(this, "btnExec", TButtonExec.BUTTON_EXEC_NONE);
-    (0,defineProperty/* default */.A)(this, "btnExecMode", TButtonExec.BUTTON_EXEC_NONE);
-    (0,defineProperty/* default */.A)(this, "count", 0);
-    (0,defineProperty/* default */.A)(this, "type", TButtonType.PRESS_RELEASE);
     (0,defineProperty/* default */.A)(this, "resistance", 0);
     if (data) this.set(data);
   }
@@ -480,38 +559,35 @@ class ButtonValue extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return this._set(this, this.exec, ButtonValue.size, new bluetooth/* BluetoothStruct */.iy(ButtonValue.struct), buf);
+    return this._set(this, this.exec, SWValue.size, new bluetooth/* BluetoothStruct */.iy(SWValue.struct), buf);
   }
   /** Чтение данных */
   get() {
     return this._get(this, this.exec);
   }
 }
-(0,defineProperty/* default */.A)(ButtonValue, "struct", {
-  layered: bluetooth/* BluetoothStruct */.iy.bit(),
+(0,defineProperty/* default */.A)(SWValue, "struct", {
+  pressed: bluetooth/* BluetoothStruct */.iy.bit(),
+  swtch: bluetooth/* BluetoothStruct */.iy.bit(),
+  emulation: bluetooth/* BluetoothStruct */.iy.bit(),
   id: bluetooth/* BluetoothStruct */.iy.uint8(),
+  btnType: bluetooth/* BluetoothStruct */.iy.uint8(),
   btnExec: bluetooth/* BluetoothStruct */.iy.uint8(),
-  btnExecMode: bluetooth/* BluetoothStruct */.iy.uint8(),
-  count: bluetooth/* BluetoothStruct */.iy.uint8(),
-  type: bluetooth/* BluetoothStruct */.iy.uint8(),
   resistance: bluetooth/* BluetoothStruct */.iy.uint16()
 });
-(0,defineProperty/* default */.A)(ButtonValue, "size", 8);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonsAction.ts
+(0,defineProperty/* default */.A)(SWValue, "size", 6);
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SW1Action.ts
 
 
 
-const API_BUTTONS_SW1_ACTION_EXEC = 0x32;
-const API_BUTTONS_SW1_ACTION_EVENT = "ButtonsSW1Action";
-const API_BUTTONS_SW3_ACTION_EXEC = 0x3c;
-const API_BUTTONS_SW3_ACTION_EVENT = "ButtonsSW3Action";
+const API_SW1_ACTION_EXEC = 0x32;
+const API_SW1_ACTION_EVENT = "SW1Action";
 /** Модель конфигурации кнопок */
-class ButtonsAction extends base/* BaseModel */.t {
-  constructor(exec = API_BUTTONS_SW1_ACTION_EXEC) {
+class SW1Action extends base/* BaseModel */.t {
+  constructor(exec = API_SW1_ACTION_EXEC) {
     super(exec);
-    (0,defineProperty/* default */.A)(this, "empty", false);
-    (0,defineProperty/* default */.A)(this, "defaultMazda3", false);
-    (0,defineProperty/* default */.A)(this, "defaultMazdaCX7", false);
+    (0,defineProperty/* default */.A)(this, "defaultMazda", false);
+    (0,defineProperty/* default */.A)(this, "execMode", false);
   }
   /**
    * Запись данных
@@ -522,38 +598,42 @@ class ButtonsAction extends base/* BaseModel */.t {
   }
   /** Чтение данных */
   get() {
-    return this._get(this, this.exec, ButtonsAction.size, new bluetooth/* BluetoothStruct */.iy(ButtonsAction.struct));
+    return this._get(this, this.exec, SW1Action.size, new bluetooth/* BluetoothStruct */.iy(SW1Action.struct));
   }
 }
-(0,defineProperty/* default */.A)(ButtonsAction, "struct", {
-  empty: bluetooth/* BluetoothStruct */.iy.bit(),
-  defaultMazda3: bluetooth/* BluetoothStruct */.iy.bit(),
-  defaultMazdaCX7: bluetooth/* BluetoothStruct */.iy.bit()
+(0,defineProperty/* default */.A)(SW1Action, "struct", {
+  defaultMazda: bluetooth/* BluetoothStruct */.iy.bit(),
+  execMode: bluetooth/* BluetoothStruct */.iy.bit()
 });
-(0,defineProperty/* default */.A)(ButtonsAction, "size", 1);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonItem.ts
-/* eslint-disable */
-/** Список ID кнопки */
-var TButtonItem;
-(function (TButtonItem) {
-  TButtonItem[TButtonItem["BUTTON_MODE"] = 0] = "BUTTON_MODE";
-  TButtonItem[TButtonItem["BUTTON_SET_UP"] = 1] = "BUTTON_SET_UP";
-  TButtonItem[TButtonItem["BUTTON_SET_DOWN"] = 2] = "BUTTON_SET_DOWN";
-  TButtonItem[TButtonItem["BUTTON_VOL_UP"] = 3] = "BUTTON_VOL_UP";
-  TButtonItem[TButtonItem["BUTTON_VOL_DOWN"] = 4] = "BUTTON_VOL_DOWN";
-  TButtonItem[TButtonItem["BUTTON_VOL_MUTE"] = 5] = "BUTTON_VOL_MUTE"; // кнопка выкл. звука
-})(TButtonItem || (TButtonItem = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonPress.ts
-/* eslint-disable */
-/** Список ID действий кнопки */
-var TButtonPress;
-(function (TButtonPress) {
-  TButtonPress[TButtonPress["RELEASE"] = 0] = "RELEASE";
-  TButtonPress[TButtonPress["PRESS_SINGLE"] = 1] = "PRESS_SINGLE";
-  TButtonPress[TButtonPress["PRESS_DUAL"] = 2] = "PRESS_DUAL";
-  TButtonPress[TButtonPress["PRESS_TRIPLE"] = 3] = "PRESS_TRIPLE";
-  TButtonPress[TButtonPress["PRESS_HOLD"] = 4] = "PRESS_HOLD";
-})(TButtonPress || (TButtonPress = {}));
+(0,defineProperty/* default */.A)(SW1Action, "size", 1);
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SW3Action.ts
+
+
+
+const API_SW3_ACTION_EXEC = 0x3c;
+const API_SW3_ACTION_EVENT = "SW3Action";
+/** Модель конфигурации кнопок */
+class SW3Action extends base/* BaseModel */.t {
+  constructor(exec = API_SW3_ACTION_EXEC) {
+    super(exec);
+    (0,defineProperty/* default */.A)(this, "reset", false);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return false;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, SW3Action.size, new bluetooth/* BluetoothStruct */.iy(SW3Action.struct));
+  }
+}
+(0,defineProperty/* default */.A)(SW3Action, "struct", {
+  reset: bluetooth/* BluetoothStruct */.iy.bit()
+});
+(0,defineProperty/* default */.A)(SW3Action, "size", 1);
 ;// CONCATENATED MODULE: ./src/models/pjcan/buttons/index.ts
 
 
@@ -597,6 +677,7 @@ const API_CHOICE_EXEC = 0x10;
 class ChoiceValue extends base/* BaseModel */.t {
   constructor(data, fn) {
     super(API_CHOICE_EXEC);
+    (0,defineProperty/* default */.A)(this, "repeat", 0);
     (0,defineProperty/* default */.A)(this, "listID", []);
     if (data && fn) this.parse(data, fn);
   }
@@ -623,10 +704,12 @@ class ChoiceValue extends base/* BaseModel */.t {
   }
   /** Чтение данных */
   get() {
-    const buf = new DataView(new ArrayBuffer(this.listID.length + 3));
+    this.id = this.listID.reduce((sum, a) => sum + a, 0);
+    const buf = new DataView(new ArrayBuffer(this.listID.length + 4));
     buf.setUint8(0, this.exec);
-    buf.setUint16(1, this.listID.length, true);
-    this.listID.forEach((id, index) => buf.setUint8(3 + index, id));
+    buf.setUint16(1, this.listID.length + 1, true);
+    buf.setUint8(3, this.repeat);
+    this.listID.forEach((id, index) => buf.setUint8(4 + index, id));
     return buf;
   }
 }
@@ -989,11 +1072,11 @@ class DeviceValue extends base/* BaseModel */.t {
   constructor(data) {
     super(API_DEVICE_VALUE_EXEC);
     (0,defineProperty/* default */.A)(this, "activation", false);
-    (0,defineProperty/* default */.A)(this, "state_led_work", false);
-    (0,defineProperty/* default */.A)(this, "state_reverse", false);
-    (0,defineProperty/* default */.A)(this, "state_r_position", false);
-    (0,defineProperty/* default */.A)(this, "state_amp_illum", false);
-    (0,defineProperty/* default */.A)(this, "config_save", false);
+    (0,defineProperty/* default */.A)(this, "stateLedWork", false);
+    (0,defineProperty/* default */.A)(this, "stateReverse", false);
+    (0,defineProperty/* default */.A)(this, "stateRPosition", false);
+    (0,defineProperty/* default */.A)(this, "stateAmpIllum", false);
+    (0,defineProperty/* default */.A)(this, "configSave", false);
     (0,defineProperty/* default */.A)(this, "hardware", {
       major: 0,
       minor: 0,
@@ -1027,11 +1110,11 @@ _DeviceValue = DeviceValue;
 });
 (0,defineProperty/* default */.A)(DeviceValue, "struct", {
   activation: bluetooth/* BluetoothStruct */.iy.bit(),
-  state_led_work: bluetooth/* BluetoothStruct */.iy.bit(),
-  state_reverse: bluetooth/* BluetoothStruct */.iy.bit(),
-  state_r_position: bluetooth/* BluetoothStruct */.iy.bit(),
-  state_amp_illum: bluetooth/* BluetoothStruct */.iy.bit(),
-  config_save: bluetooth/* BluetoothStruct */.iy.bit(),
+  stateLedWork: bluetooth/* BluetoothStruct */.iy.bit(),
+  stateReverse: bluetooth/* BluetoothStruct */.iy.bit(),
+  stateRPosition: bluetooth/* BluetoothStruct */.iy.bit(),
+  stateAmpIllum: bluetooth/* BluetoothStruct */.iy.bit(),
+  configSave: bluetooth/* BluetoothStruct */.iy.bit(),
   hardware: bluetooth/* BluetoothStruct */.iy.struct(_DeviceValue.structHardware),
   led: bluetooth/* BluetoothStruct */.iy.uint8(),
   voltmeter: bluetooth/* BluetoothStruct */.iy.uint16(),
@@ -1051,8 +1134,10 @@ class DeviceAction extends base/* BaseModel */.t {
     (0,defineProperty/* default */.A)(this, "reboot", false);
     (0,defineProperty/* default */.A)(this, "resetConfig", false);
     (0,defineProperty/* default */.A)(this, "resetView", false);
+    (0,defineProperty/* default */.A)(this, "resetButtons", false);
     (0,defineProperty/* default */.A)(this, "save", false);
     (0,defineProperty/* default */.A)(this, "format", false);
+    (0,defineProperty/* default */.A)(this, "highPriority", true);
     this.skipActivationCheck = true;
   }
   /**
@@ -1071,6 +1156,7 @@ class DeviceAction extends base/* BaseModel */.t {
   reboot: bluetooth/* BluetoothStruct */.iy.bit(),
   resetConfig: bluetooth/* BluetoothStruct */.iy.bit(),
   resetView: bluetooth/* BluetoothStruct */.iy.bit(),
+  resetButtons: bluetooth/* BluetoothStruct */.iy.bit(),
   save: bluetooth/* BluetoothStruct */.iy.bit(),
   format: bluetooth/* BluetoothStruct */.iy.bit()
 });
@@ -1135,6 +1221,7 @@ class DeviceUpdate extends eventemitter3/* default */.A {
     (0,defineProperty/* default */.A)(this, "abort", false);
     (0,defineProperty/* default */.A)(this, "total", 0);
     (0,defineProperty/* default */.A)(this, "size", 0);
+    (0,defineProperty/* default */.A)(this, "is_rollback", false);
     (0,defineProperty/* default */.A)(this, "highPriority", true);
     if (data) this.set(data);
   }
@@ -1762,23 +1849,23 @@ class FuelViews extends base/* BaseModel */.t {
 
 /***/ }),
 
-/***/ 19164:
+/***/ 19661:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  fz: function() { return /* reexport */ API_MAZDA_CONFIG_EVENT; },
-  Es: function() { return /* reexport */ API_MAZDA_CONFIG_EXEC; },
-  UI: function() { return /* reexport */ API_MAZDA_VIEW_EVENT; },
-  N5: function() { return /* reexport */ API_MAZDA_VIEW_EXEC; },
-  M_: function() { return /* reexport */ MazdaAction; },
-  AU: function() { return /* reexport */ MazdaConfig; },
-  oB: function() { return /* reexport */ TCarModel; },
-  c2: function() { return /* reexport */ TMazdaButton; }
+  xD: function() { return /* reexport */ API_HEAD_UNIT_CONFIG_EVENT; },
+  kZ: function() { return /* reexport */ API_HEAD_UNIT_CONFIG_EXEC; },
+  wF: function() { return /* reexport */ API_HEAD_UNIT_VALUE_EVENT; },
+  Xd: function() { return /* reexport */ API_HEAD_UNIT_VALUE_EXEC; },
+  Ut: function() { return /* reexport */ API_HEAD_UNIT_VIEW_EVENT; },
+  NA: function() { return /* reexport */ API_HEAD_UNIT_VIEW_EXEC; },
+  Hq: function() { return /* reexport */ HeadUnitConfig; },
+  Tm: function() { return /* reexport */ TProtocol; }
 });
 
-// UNUSED EXPORTS: API_MAZDA_ACTION_EVENT, API_MAZDA_ACTION_EXEC
+// UNUSED EXPORTS: HeadUnitValue
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
 var defineProperty = __webpack_require__(91114);
@@ -1786,40 +1873,35 @@ var defineProperty = __webpack_require__(91114);
 var bluetooth = __webpack_require__(52126);
 // EXTERNAL MODULE: ./src/models/pjcan/base/index.ts
 var base = __webpack_require__(30449);
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/TCarModel.ts
-/* eslint-disable no-unused-vars */
-var TCarModel;
-(function (TCarModel) {
-  TCarModel[TCarModel["CAR_MODEL_UNKNOWN"] = 0] = "CAR_MODEL_UNKNOWN";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BK"] = 1] = "CAR_MODEL_MAZDA_3_BK";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BL"] = 2] = "CAR_MODEL_MAZDA_3_BL";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GG"] = 3] = "CAR_MODEL_MAZDA_6_GG";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GH"] = 4] = "CAR_MODEL_MAZDA_6_GH";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7"] = 5] = "CAR_MODEL_MAZDA_CX7";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7_REST"] = 6] = "CAR_MODEL_MAZDA_CX7_REST";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9"] = 7] = "CAR_MODEL_MAZDA_CX9";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9_REST"] = 8] = "CAR_MODEL_MAZDA_CX9_REST";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_5"] = 9] = "CAR_MODEL_MAZDA_5";
-})(TCarModel || (TCarModel = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/MazdaConfig.ts
+;// CONCATENATED MODULE: ./src/models/pjcan/head-unit/TProtocol.ts
+/* eslint-disable */
+var TProtocol;
+(function (TProtocol) {
+  TProtocol[TProtocol["PROTOCOL_PJCAN"] = 0] = "PROTOCOL_PJCAN";
+  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND00"] = 1] = "PROTOCOL_RAISE_HM_ND00";
+  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND01"] = 2] = "PROTOCOL_RAISE_HM_ND01";
+  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND03"] = 3] = "PROTOCOL_RAISE_HM_ND03";
+  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_RP5_MZ_002"] = 4] = "PROTOCOL_SIMPLE_SOFT_RP5_MZ_002";
+})(TProtocol || (TProtocol = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/head-unit/HeadUnitConfig.ts
 
 
 
 
-const API_MAZDA_CONFIG_EXEC = 0x40;
-const API_MAZDA_CONFIG_EVENT = "MazdaConfig";
-const API_MAZDA_VIEW_EXEC = 0x43;
-const API_MAZDA_VIEW_EVENT = "MazdaView";
-/** Модель параметров автомобиля */
-class MazdaConfig extends base/* BaseModel */.t {
+const API_HEAD_UNIT_CONFIG_EXEC = 0x50;
+const API_HEAD_UNIT_CONFIG_EVENT = "HeadUnitConfig";
+/** Модель параметров Head Unit */
+class HeadUnitConfig extends base/* BaseModel */.t {
   constructor(data) {
-    super(API_MAZDA_CONFIG_EXEC);
-    (0,defineProperty/* default */.A)(this, "lcd", false);
-    (0,defineProperty/* default */.A)(this, "lcdClock24", false);
-    (0,defineProperty/* default */.A)(this, "carModel", TCarModel.CAR_MODEL_UNKNOWN);
-    (0,defineProperty/* default */.A)(this, "logo", "");
-    (0,defineProperty/* default */.A)(this, "hello", "");
-    this.skipActivationCheck = true;
+    super(API_HEAD_UNIT_CONFIG_EXEC);
+    (0,defineProperty/* default */.A)(this, "showTextOfLogo", false);
+    (0,defineProperty/* default */.A)(this, "sendButton", false);
+    (0,defineProperty/* default */.A)(this, "sendClimate", false);
+    (0,defineProperty/* default */.A)(this, "sendDoors", false);
+    (0,defineProperty/* default */.A)(this, "sendOnboard", false);
+    (0,defineProperty/* default */.A)(this, "reverseUart", false);
+    (0,defineProperty/* default */.A)(this, "holdToFlip", false);
+    (0,defineProperty/* default */.A)(this, "protocol", TProtocol.PROTOCOL_RAISE_HM_ND03);
     if (data) this.set(data);
   }
   /**
@@ -1827,73 +1909,74 @@ class MazdaConfig extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return this._set(this, this.exec, MazdaConfig.size, new bluetooth/* BluetoothStruct */.iy(MazdaConfig.struct), buf);
+    return this._set(this, this.exec, HeadUnitConfig.size, new bluetooth/* BluetoothStruct */.iy(HeadUnitConfig.struct), buf);
   }
   /**
    * Чтение данных
    * @param {boolean} request Только запрос
    */
   get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, MazdaConfig.size, new bluetooth/* BluetoothStruct */.iy(MazdaConfig.struct));
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, HeadUnitConfig.size, new bluetooth/* BluetoothStruct */.iy(HeadUnitConfig.struct));
   }
 }
-(0,defineProperty/* default */.A)(MazdaConfig, "struct", {
-  lcd: bluetooth/* BluetoothStruct */.iy.bit(),
-  lcdClock24: bluetooth/* BluetoothStruct */.iy.bit(),
-  carModel: bluetooth/* BluetoothStruct */.iy.uint8(),
-  logo: bluetooth/* BluetoothStruct */.iy.char(12),
-  hello: bluetooth/* BluetoothStruct */.iy.char(32)
+(0,defineProperty/* default */.A)(HeadUnitConfig, "struct", {
+  showTextOfLogo: bluetooth/* BluetoothStruct */.iy.bit(),
+  sendButton: bluetooth/* BluetoothStruct */.iy.bit(),
+  sendClimate: bluetooth/* BluetoothStruct */.iy.bit(),
+  sendDoors: bluetooth/* BluetoothStruct */.iy.bit(),
+  sendOnboard: bluetooth/* BluetoothStruct */.iy.bit(),
+  reverseUart: bluetooth/* BluetoothStruct */.iy.bit(),
+  holdToFlip: bluetooth/* BluetoothStruct */.iy.bit(),
+  protocol: bluetooth/* BluetoothStruct */.iy.uint8()
 });
-(0,defineProperty/* default */.A)(MazdaConfig, "size", 46);
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/TMazdaButton.ts
-/* eslint-disable no-unused-vars */
-var TMazdaButton;
-(function (TMazdaButton) {
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_NONE"] = 0] = "MAZDA_BUTTON_NONE";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK"] = 1] = "MAZDA_BUTTON_CLOCK";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_INFO"] = 2] = "MAZDA_BUTTON_INFO";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_H"] = 3] = "MAZDA_BUTTON_CLOCK_H";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_M"] = 4] = "MAZDA_BUTTON_CLOCK_M";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_RM"] = 5] = "MAZDA_BUTTON_CLOCK_RM";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_24"] = 6] = "MAZDA_BUTTON_CLOCK_24";
-})(TMazdaButton || (TMazdaButton = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/MazdaAction.ts
+(0,defineProperty/* default */.A)(HeadUnitConfig, "size", 2);
+;// CONCATENATED MODULE: ./src/models/pjcan/head-unit/HeadUnitValue.ts
 
 
 
-
-const API_MAZDA_ACTION_EXEC = 0x42;
-const API_MAZDA_ACTION_EVENT = "MazdaAction";
-/** Модель действий устройства */
-class MazdaAction extends base/* BaseModel */.t {
-  constructor() {
-    super(API_MAZDA_ACTION_EXEC);
-    (0,defineProperty/* default */.A)(this, "btnPress", false);
-    (0,defineProperty/* default */.A)(this, "btnSimulation", false);
-    (0,defineProperty/* default */.A)(this, "btnType", TMazdaButton.MAZDA_BUTTON_NONE);
-    (0,defineProperty/* default */.A)(this, "timePress", 0);
+const API_HEAD_UNIT_VALUE_EXEC = 0x51;
+const API_HEAD_UNIT_VALUE_EVENT = "HeadUnitValue";
+const API_HEAD_UNIT_VIEW_EXEC = 0x53;
+const API_HEAD_UNIT_VIEW_EVENT = "HeadUnitView";
+/** Модель значения текста Head Unit */
+class HeadUnitValue extends base/* BaseModel */.t {
+  constructor(data) {
+    super(API_HEAD_UNIT_VALUE_EXEC);
+    (0,defineProperty/* default */.A)(this, "clock", {
+      hour: 0,
+      minutes: 0,
+      seconds: 0
+    });
+    (0,defineProperty/* default */.A)(this, "button", 0);
+    (0,defineProperty/* default */.A)(this, "text", "");
+    if (data) this.set(data);
   }
   /**
    * Запись данных
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return false;
+    return this._set(this, this.exec, HeadUnitValue.size, new bluetooth/* BluetoothStruct */.iy(HeadUnitValue.struct), buf);
   }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec, MazdaAction.size, new bluetooth/* BluetoothStruct */.iy(MazdaAction.struct));
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, HeadUnitValue.size, new bluetooth/* BluetoothStruct */.iy(HeadUnitValue.struct));
   }
 }
-(0,defineProperty/* default */.A)(MazdaAction, "struct", {
-  btnPress: bluetooth/* BluetoothStruct */.iy.bit(),
-  btnSimulation: bluetooth/* BluetoothStruct */.iy.bit(),
-  btnType: bluetooth/* BluetoothStruct */.iy.uint8(),
-  timePress: bluetooth/* BluetoothStruct */.iy.uint16()
+(0,defineProperty/* default */.A)(HeadUnitValue, "struct", {
+  clock: bluetooth/* BluetoothStruct */.iy.struct({
+    hour: bluetooth/* BluetoothStruct */.iy.uint8(),
+    minutes: bluetooth/* BluetoothStruct */.iy.uint8(),
+    seconds: bluetooth/* BluetoothStruct */.iy.uint8()
+  }),
+  button: bluetooth/* BluetoothStruct */.iy.uint8(),
+  text: bluetooth/* BluetoothStruct */.iy.char(13)
 });
-(0,defineProperty/* default */.A)(MazdaAction, "size", 4);
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/index.ts
-
+(0,defineProperty/* default */.A)(HeadUnitValue, "size", 17);
+;// CONCATENATED MODULE: ./src/models/pjcan/head-unit/index.ts
 
 
 
@@ -1956,10 +2039,10 @@ class MovementValue extends base/* BaseModel */.t {
 }
 (0,defineProperty/* default */.A)(MovementValue, "struct", {
   speed: bluetooth/* BluetoothStruct */.iy.uint32(),
-  speedAVG: bluetooth/* BluetoothStruct */.iy.uint16(),
+  speedAVG: bluetooth/* BluetoothStruct */.iy.uint8(),
   restWay: bluetooth/* BluetoothStruct */.iy.uint32()
 });
-(0,defineProperty/* default */.A)(MovementValue, "size", 10);
+(0,defineProperty/* default */.A)(MovementValue, "size", 9);
 // EXTERNAL MODULE: ./src/models/pjcan/view/index.ts + 2 modules
 var view = __webpack_require__(77813);
 ;// CONCATENATED MODULE: ./src/models/pjcan/movement/MovementViews.ts
@@ -2009,6 +2092,129 @@ class MovementViews extends base/* BaseModel */.t {
 });
 (0,defineProperty/* default */.A)(MovementViews, "size", 12);
 ;// CONCATENATED MODULE: ./src/models/pjcan/movement/index.ts
+
+
+
+
+/***/ }),
+
+/***/ 32280:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Vw: function() { return /* reexport */ API_ONBOARD_CONFIG_EVENT; },
+  SX: function() { return /* reexport */ API_ONBOARD_CONFIG_EXEC; },
+  Ew: function() { return /* reexport */ API_ONBOARD_VIEW_EVENT; },
+  F5: function() { return /* reexport */ API_ONBOARD_VIEW_EXEC; },
+  iz: function() { return /* reexport */ OnboardAction; },
+  ST: function() { return /* reexport */ OnboardConfig; },
+  oB: function() { return /* reexport */ TCarModel; }
+});
+
+// UNUSED EXPORTS: API_ONBOARD_ACTION_EVENT, API_ONBOARD_ACTION_EXEC
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
+var defineProperty = __webpack_require__(91114);
+// EXTERNAL MODULE: ./src/components/bluetooth/index.ts + 4 modules
+var bluetooth = __webpack_require__(52126);
+// EXTERNAL MODULE: ./src/models/pjcan/base/index.ts
+var base = __webpack_require__(30449);
+;// CONCATENATED MODULE: ./src/models/pjcan/onboard/TCarModel.ts
+/* eslint-disable no-unused-vars */
+var TCarModel;
+(function (TCarModel) {
+  TCarModel[TCarModel["CAR_MODEL_UNKNOWN"] = 0] = "CAR_MODEL_UNKNOWN";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BK"] = 1] = "CAR_MODEL_MAZDA_3_BK";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BL"] = 2] = "CAR_MODEL_MAZDA_3_BL";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GG"] = 3] = "CAR_MODEL_MAZDA_6_GG";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GH"] = 4] = "CAR_MODEL_MAZDA_6_GH";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7"] = 5] = "CAR_MODEL_MAZDA_CX7";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7_REST"] = 6] = "CAR_MODEL_MAZDA_CX7_REST";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9"] = 7] = "CAR_MODEL_MAZDA_CX9";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9_REST"] = 8] = "CAR_MODEL_MAZDA_CX9_REST";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_5"] = 9] = "CAR_MODEL_MAZDA_5";
+})(TCarModel || (TCarModel = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/onboard/OnboardConfig.ts
+
+
+
+
+const API_ONBOARD_CONFIG_EXEC = 0x40;
+const API_ONBOARD_CONFIG_EVENT = "OnboardConfig";
+const API_ONBOARD_VIEW_EXEC = 0x43;
+const API_ONBOARD_VIEW_EVENT = "OnboardView";
+/** Модель параметров автомобиля */
+class OnboardConfig extends base/* BaseModel */.t {
+  constructor(data) {
+    super(API_ONBOARD_CONFIG_EXEC);
+    (0,defineProperty/* default */.A)(this, "lcd", false);
+    (0,defineProperty/* default */.A)(this, "lcdClock24", false);
+    (0,defineProperty/* default */.A)(this, "carModel", TCarModel.CAR_MODEL_UNKNOWN);
+    (0,defineProperty/* default */.A)(this, "logo", "");
+    (0,defineProperty/* default */.A)(this, "hello", "");
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, OnboardConfig.size, new bluetooth/* BluetoothStruct */.iy(OnboardConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, OnboardConfig.size, new bluetooth/* BluetoothStruct */.iy(OnboardConfig.struct));
+  }
+}
+(0,defineProperty/* default */.A)(OnboardConfig, "struct", {
+  lcd: bluetooth/* BluetoothStruct */.iy.bit(),
+  lcdClock24: bluetooth/* BluetoothStruct */.iy.bit(),
+  carModel: bluetooth/* BluetoothStruct */.iy.uint8(),
+  logo: bluetooth/* BluetoothStruct */.iy.char(12),
+  hello: bluetooth/* BluetoothStruct */.iy.char(32)
+});
+(0,defineProperty/* default */.A)(OnboardConfig, "size", 46);
+// EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
+var buttons = __webpack_require__(84596);
+;// CONCATENATED MODULE: ./src/models/pjcan/onboard/OnboardAction.ts
+
+
+
+
+const API_ONBOARD_ACTION_EXEC = 0x42;
+const API_ONBOARD_ACTION_EVENT = "OnboardAction";
+/** Модель действий устройства */
+class OnboardAction extends base/* BaseModel */.t {
+  constructor() {
+    super(API_ONBOARD_ACTION_EXEC);
+    (0,defineProperty/* default */.A)(this, "btnEmulation", false);
+    (0,defineProperty/* default */.A)(this, "btnExec", buttons/* TButtonExec */.su.BUTTON_EXEC_NONE);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return false;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, OnboardAction.size, new bluetooth/* BluetoothStruct */.iy(OnboardAction.struct));
+  }
+}
+(0,defineProperty/* default */.A)(OnboardAction, "struct", {
+  btnEmulation: bluetooth/* BluetoothStruct */.iy.bit(),
+  btnExec: bluetooth/* BluetoothStruct */.iy.uint8()
+});
+(0,defineProperty/* default */.A)(OnboardAction, "size", 2);
+;// CONCATENATED MODULE: ./src/models/pjcan/onboard/index.ts
+
 
 
 
@@ -2259,132 +2465,6 @@ class TestValue extends base/* BaseModel */.t {
 
 /***/ }),
 
-/***/ 87380:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  sK: function() { return /* reexport */ API_TEYES_CONFIG_EVENT; },
-  Nr: function() { return /* reexport */ API_TEYES_CONFIG_EXEC; },
-  HS: function() { return /* reexport */ API_TEYES_TEXT_EVENT; },
-  KI: function() { return /* reexport */ API_TEYES_TEXT_EXEC; },
-  lb: function() { return /* reexport */ API_TEYES_TEXT_VIEW_EVENT; },
-  cH: function() { return /* reexport */ API_TEYES_TEXT_VIEW_EXEC; },
-  pn: function() { return /* reexport */ TeyesConfig; }
-});
-
-// UNUSED EXPORTS: TProtocol, TeyesText
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
-var defineProperty = __webpack_require__(91114);
-// EXTERNAL MODULE: ./src/components/bluetooth/index.ts + 4 modules
-var bluetooth = __webpack_require__(52126);
-// EXTERNAL MODULE: ./src/models/pjcan/base/index.ts
-var base = __webpack_require__(30449);
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TProtocol.ts
-/* eslint-disable */
-var TProtocol;
-(function (TProtocol) {
-  TProtocol[TProtocol["PROTOCOL_PJCAN"] = 0] = "PROTOCOL_PJCAN";
-  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND00"] = 1] = "PROTOCOL_RAISE_HM_ND00";
-  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND01"] = 2] = "PROTOCOL_RAISE_HM_ND01";
-  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_MZ_SS_07A"] = 3] = "PROTOCOL_SIMPLE_SOFT_MZ_SS_07A";
-  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_RP5_MZ_002"] = 4] = "PROTOCOL_SIMPLE_SOFT_RP5_MZ_002";
-})(TProtocol || (TProtocol = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TeyesConfig.ts
-
-
-
-
-const API_TEYES_CONFIG_EXEC = 0x50;
-const API_TEYES_CONFIG_EVENT = "TeyesConfig";
-/** Модель параметров Teyes */
-class TeyesConfig extends base/* BaseModel */.t {
-  constructor(data) {
-    super(API_TEYES_CONFIG_EXEC);
-    (0,defineProperty/* default */.A)(this, "receiveClock", false);
-    (0,defineProperty/* default */.A)(this, "receiveButtons", false);
-    (0,defineProperty/* default */.A)(this, "receiveText", false);
-    (0,defineProperty/* default */.A)(this, "sendButton", false);
-    (0,defineProperty/* default */.A)(this, "sendClimate", false);
-    (0,defineProperty/* default */.A)(this, "sendDoors", false);
-    (0,defineProperty/* default */.A)(this, "parseVolume", false);
-    (0,defineProperty/* default */.A)(this, "lcdShow", false);
-    (0,defineProperty/* default */.A)(this, "reverseUart", false);
-    (0,defineProperty/* default */.A)(this, "protocol", TProtocol.PROTOCOL_RAISE_HM_ND01);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, TeyesConfig.size, new bluetooth/* BluetoothStruct */.iy(TeyesConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, TeyesConfig.size, new bluetooth/* BluetoothStruct */.iy(TeyesConfig.struct));
-  }
-}
-(0,defineProperty/* default */.A)(TeyesConfig, "struct", {
-  receiveClock: bluetooth/* BluetoothStruct */.iy.bit(),
-  receiveButtons: bluetooth/* BluetoothStruct */.iy.bit(),
-  receiveText: bluetooth/* BluetoothStruct */.iy.bit(),
-  sendButton: bluetooth/* BluetoothStruct */.iy.bit(),
-  sendClimate: bluetooth/* BluetoothStruct */.iy.bit(),
-  sendDoors: bluetooth/* BluetoothStruct */.iy.bit(),
-  parseVolume: bluetooth/* BluetoothStruct */.iy.bit(),
-  lcdShow: bluetooth/* BluetoothStruct */.iy.bit(),
-  reverseUart: bluetooth/* BluetoothStruct */.iy.bit(),
-  protocol: bluetooth/* BluetoothStruct */.iy.uint8()
-});
-(0,defineProperty/* default */.A)(TeyesConfig, "size", 3);
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TeyesText.ts
-
-
-
-const API_TEYES_TEXT_EXEC = 0x51;
-const API_TEYES_TEXT_EVENT = "TeyesText";
-const API_TEYES_TEXT_VIEW_EXEC = 0x53;
-const API_TEYES_TEXT_VIEW_EVENT = "TeyesTextView";
-/** Модель значения текста Teyes */
-class TeyesText extends base/* BaseModel */.t {
-  constructor(data) {
-    super(API_TEYES_TEXT_EXEC);
-    (0,defineProperty/* default */.A)(this, "text", "");
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, TeyesText.size, new bluetooth/* BluetoothStruct */.iy(TeyesText.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, TeyesText.size, new bluetooth/* BluetoothStruct */.iy(TeyesText.struct));
-  }
-}
-(0,defineProperty/* default */.A)(TeyesText, "struct", {
-  text: bluetooth/* BluetoothStruct */.iy.char(12)
-});
-(0,defineProperty/* default */.A)(TeyesText, "size", 12);
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/index.ts
-
-
-
-
-
-/***/ }),
-
 /***/ 55800:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -2587,17 +2667,17 @@ class ViewConfig extends base/* BaseModel */.t {
 
 /***/ }),
 
-/***/ 12619:
+/***/ 82882:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  u7: function() { return /* reexport */ API_VOLUME_CONFIG_EVENT; },
-  fo: function() { return /* reexport */ API_VOLUME_CONFIG_EXEC; },
+  PS: function() { return /* reexport */ API_VOLUME_VALUE_EVENT; },
+  UN: function() { return /* reexport */ API_VOLUME_VALUE_EXEC; },
   fB: function() { return /* reexport */ API_VOLUME_VIEW_EVENT; },
   Kd: function() { return /* reexport */ API_VOLUME_VIEW_EXEC; },
-  T$: function() { return /* reexport */ VolumeConfig; }
+  Y$: function() { return /* reexport */ VolumeValue; }
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
@@ -2606,26 +2686,20 @@ var defineProperty = __webpack_require__(91114);
 var bluetooth = __webpack_require__(52126);
 // EXTERNAL MODULE: ./src/models/pjcan/base/index.ts
 var base = __webpack_require__(30449);
-;// CONCATENATED MODULE: ./src/models/pjcan/volume/VolumeConfig.ts
+;// CONCATENATED MODULE: ./src/models/pjcan/volume/VolumeValue.ts
 
 
 
-const API_VOLUME_CONFIG_EXEC = 0xe0;
-const API_VOLUME_CONFIG_EVENT = "VolumeConfig";
+const API_VOLUME_VALUE_EXEC = 0xe1;
+const API_VOLUME_VALUE_EVENT = "VolumeConfig";
 const API_VOLUME_VIEW_EXEC = 0xe3;
 const API_VOLUME_VIEW_EVENT = "VolumeView";
 /** Модель конфигурации уровня звука */
-class VolumeConfig extends base/* BaseModel */.t {
+class VolumeValue extends base/* BaseModel */.t {
   constructor(data) {
-    super(API_VOLUME_CONFIG_EXEC, true);
+    super(API_VOLUME_VALUE_EXEC, true);
     (0,defineProperty/* default */.A)(this, "mute", false);
-    (0,defineProperty/* default */.A)(this, "muteBose", false);
-    (0,defineProperty/* default */.A)(this, "start", false);
-    (0,defineProperty/* default */.A)(this, "startBose", false);
     (0,defineProperty/* default */.A)(this, "volume", 0);
-    (0,defineProperty/* default */.A)(this, "volumeBose", 0);
-    (0,defineProperty/* default */.A)(this, "startLevel", 0);
-    (0,defineProperty/* default */.A)(this, "startLevelBose", 0);
     if (data) this.set(data);
   }
   /**
@@ -2633,27 +2707,21 @@ class VolumeConfig extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return this._set(this, this.exec, VolumeConfig.size, new bluetooth/* BluetoothStruct */.iy(VolumeConfig.struct), buf);
+    return this._set(this, this.exec, VolumeValue.size, new bluetooth/* BluetoothStruct */.iy(VolumeValue.struct), buf);
   }
   /**
    * Чтение данных
    * @param {boolean} request Только запрос
    */
   get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, VolumeConfig.size, new bluetooth/* BluetoothStruct */.iy(VolumeConfig.struct));
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, VolumeValue.size, new bluetooth/* BluetoothStruct */.iy(VolumeValue.struct));
   }
 }
-(0,defineProperty/* default */.A)(VolumeConfig, "struct", {
+(0,defineProperty/* default */.A)(VolumeValue, "struct", {
   mute: bluetooth/* BluetoothStruct */.iy.bit(),
-  muteBose: bluetooth/* BluetoothStruct */.iy.bit(),
-  start: bluetooth/* BluetoothStruct */.iy.bit(),
-  startBose: bluetooth/* BluetoothStruct */.iy.bit(),
-  volume: bluetooth/* BluetoothStruct */.iy.uint8(),
-  volumeBose: bluetooth/* BluetoothStruct */.iy.uint8(),
-  startLevel: bluetooth/* BluetoothStruct */.iy.uint8(),
-  startLevelBose: bluetooth/* BluetoothStruct */.iy.uint8()
+  volume: bluetooth/* BluetoothStruct */.iy.uint8()
 });
-(0,defineProperty/* default */.A)(VolumeConfig, "size", 5);
+(0,defineProperty/* default */.A)(VolumeValue, "size", 2);
 ;// CONCATENATED MODULE: ./src/models/pjcan/volume/index.ts
 
 

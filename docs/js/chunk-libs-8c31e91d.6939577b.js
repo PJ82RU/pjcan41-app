@@ -182,7 +182,7 @@
 
 
 /**
-* @vue/runtime-core v3.5.6
+* @vue/runtime-core v3.5.12
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT
 **/
@@ -428,10 +428,8 @@ function logError(err, type, contextVNode, throwInDev = true, throwInProd = fals
     console.error(err);
   }
 }
-let isFlushing = false;
-let isFlushPending = false;
 const queue = [];
-let flushIndex = 0;
+let flushIndex = -1;
 const pendingPostFlushCbs = [];
 let activePostFlushCbs = null;
 let postFlushIndex = 0;
@@ -443,7 +441,7 @@ function nextTick(fn) {
   return fn ? p.then(this ? fn.bind(this) : fn) : p;
 }
 function findInsertionIndex(id) {
-  let start = isFlushing ? flushIndex + 1 : 0;
+  let start = flushIndex + 1;
   let end = queue.length;
   while (start < end) {
     const middle = start + end >>> 1;
@@ -473,8 +471,7 @@ function queueJob(job) {
   }
 }
 function queueFlush() {
-  if (!isFlushing && !isFlushPending) {
-    isFlushPending = true;
+  if (!currentFlushPromise) {
     currentFlushPromise = resolvedPromise.then(flushJobs);
   }
 }
@@ -491,7 +488,7 @@ function queuePostFlushCb(cb) {
   }
   queueFlush();
 }
-function flushPreFlushCbs(instance, seen, i = isFlushing ? flushIndex + 1 : 0) {
+function flushPreFlushCbs(instance, seen, i = flushIndex + 1) {
   if (false) {}
   for (; i < queue.length; i++) {
     const cb = queue[i];
@@ -506,7 +503,9 @@ function flushPreFlushCbs(instance, seen, i = isFlushing ? flushIndex + 1 : 0) {
         cb.flags &= ~1;
       }
       cb();
-      cb.flags &= ~1;
+      if (!(cb.flags & 4)) {
+        cb.flags &= ~1;
+      }
     }
   }
 }
@@ -535,8 +534,6 @@ function flushPostFlushCbs(seen) {
 }
 const getId = job => job.id == null ? job.flags & 2 ? -1 : Infinity : job.id;
 function flushJobs(seen) {
-  isFlushPending = false;
-  isFlushing = true;
   if (false) {}
   const check =  false ? 0 : _vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .NOOP */ .tE;
   try {
@@ -548,7 +545,9 @@ function flushJobs(seen) {
           job.flags &= ~1;
         }
         callWithErrorHandling(job, job.i, job.i ? 15 : 14);
-        job.flags &= ~1;
+        if (!(job.flags & 4)) {
+          job.flags &= ~1;
+        }
       }
     }
   } finally {
@@ -558,10 +557,9 @@ function flushJobs(seen) {
         job.flags &= ~1;
       }
     }
-    flushIndex = 0;
+    flushIndex = -1;
     queue.length = 0;
     flushPostFlushCbs(seen);
-    isFlushing = false;
     currentFlushPromise = null;
     if (queue.length || pendingPostFlushCbs.length) {
       flushJobs(seen);
@@ -938,13 +936,13 @@ const TeleportImpl = {
           }
           if (!disabled) {
             mount(target, targetAnchor);
-            updateCssVars(n2);
+            updateCssVars(n2, false);
           }
         } else if (false) {}
       };
       if (disabled) {
         mount(container, mainAnchor);
-        updateCssVars(n2);
+        updateCssVars(n2, true);
       }
       if (isTeleportDeferred(n2.props)) {
         queuePostRenderEffect(mountToTarget, parentSuspense);
@@ -989,7 +987,7 @@ const TeleportImpl = {
           moveTeleport(n2, target, targetAnchor, internals, 1);
         }
       }
-      updateCssVars(n2);
+      updateCssVars(n2, disabled);
     }
   },
   remove(vnode, parentComponent, parentSuspense, {
@@ -1065,9 +1063,10 @@ function hydrateTeleport(node, vnode, parentComponent, parentSuspense, slotScope
 }, hydrateChildren) {
   const target = vnode.target = resolveTarget(vnode.props, querySelector);
   if (target) {
+    const disabled = isTeleportDisabled(vnode.props);
     const targetNode = target._lpa || target.firstChild;
     if (vnode.shapeFlag & 16) {
-      if (isTeleportDisabled(vnode.props)) {
+      if (disabled) {
         vnode.anchor = hydrateChildren(nextSibling(node), vnode, parentNode(node), parentComponent, parentSuspense, slotScopeIds, optimized);
         vnode.targetStart = targetNode;
         vnode.targetAnchor = targetNode && nextSibling(targetNode);
@@ -1092,16 +1091,23 @@ function hydrateTeleport(node, vnode, parentComponent, parentSuspense, slotScope
         hydrateChildren(targetNode && nextSibling(targetNode), vnode, target, parentComponent, parentSuspense, slotScopeIds, optimized);
       }
     }
-    updateCssVars(vnode);
+    updateCssVars(vnode, disabled);
   }
   return vnode.anchor && nextSibling(vnode.anchor);
 }
 const Teleport = TeleportImpl;
-function updateCssVars(vnode) {
+function updateCssVars(vnode, isDisabled) {
   const ctx = vnode.ctx;
   if (ctx && ctx.ut) {
-    let node = vnode.targetStart;
-    while (node && node !== vnode.targetAnchor) {
+    let node, anchor;
+    if (isDisabled) {
+      node = vnode.el;
+      anchor = vnode.anchor;
+    } else {
+      node = vnode.targetStart;
+      anchor = vnode.targetAnchor;
+    }
+    while (node && node !== anchor) {
       if (node.nodeType === 1) node.setAttribute("data-v-owner", ctx.uid);
       node = node.nextSibling;
     }
@@ -1458,6 +1464,7 @@ function useId() {
   if (i) {
     return (i.appContext.config.idPrefix || "v") + "-" + i.ids[0] + i.ids[1]++;
   } else if (false) {}
+  return "";
 }
 function markAsyncBoundary(instance) {
   instance.ids = [instance.ids[0] + instance.ids[2]++ + "-", 0, 0];
@@ -1740,7 +1747,9 @@ function createHydrationFunctions(rendererInternals) {
       }
       let needCallTransitionHooks = false;
       if (isTemplateNode(el)) {
-        needCallTransitionHooks = needTransition(parentSuspense, transition) && parentComponent && parentComponent.vnode.props && parentComponent.vnode.props.appear;
+        needCallTransitionHooks = needTransition(null,
+        // no need check parentSuspense in hydration
+        transition) && parentComponent && parentComponent.vnode.props && parentComponent.vnode.props.appear;
         const content = el.content.firstChild;
         if (needCallTransitionHooks) {
           transition.beforeEnter(content);
@@ -2076,12 +2085,27 @@ function isMismatchAllowed(el, allowedType) {
     return allowedAttr.split(",").includes(MismatchTypeString[allowedType]);
   }
 }
+const requestIdleCallback = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .getGlobalThis */ .We)().requestIdleCallback || (cb => setTimeout(cb, 1));
+const cancelIdleCallback = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .getGlobalThis */ .We)().cancelIdleCallback || (id => clearTimeout(id));
 const hydrateOnIdle = (timeout = 1e4) => hydrate => {
   const id = requestIdleCallback(hydrate, {
     timeout
   });
   return () => cancelIdleCallback(id);
 };
+function elementIsVisibleInViewport(el) {
+  const {
+    top,
+    left,
+    bottom,
+    right
+  } = el.getBoundingClientRect();
+  const {
+    innerHeight,
+    innerWidth
+  } = window;
+  return (top > 0 && top < innerHeight || bottom > 0 && bottom < innerHeight) && (left > 0 && left < innerWidth || right > 0 && right < innerWidth);
+}
 const hydrateOnVisible = opts => (hydrate, forEach) => {
   const ob = new IntersectionObserver(entries => {
     for (const e of entries) {
@@ -2091,7 +2115,15 @@ const hydrateOnVisible = opts => (hydrate, forEach) => {
       break;
     }
   }, opts);
-  forEach(el => ob.observe(el));
+  forEach(el => {
+    if (!(el instanceof Element)) return;
+    if (elementIsVisibleInViewport(el)) {
+      hydrate();
+      ob.disconnect();
+      return false;
+    }
+    ob.observe(el);
+  });
   return () => ob.disconnect();
 };
 const hydrateOnMediaQuery = query => hydrate => {
@@ -2140,7 +2172,10 @@ function forEachElement(node, cb) {
     let next = node.nextSibling;
     while (next) {
       if (next.nodeType === 1) {
-        cb(next);
+        const result = cb(next);
+        if (result === false) {
+          break;
+        }
       } else if (isComment(next)) {
         if (next.data === "]") {
           if (--depth === 0) break;
@@ -2696,11 +2731,12 @@ function renderSlot(slots, name, props = {}, fallback, noSlotted) {
   }
   openBlock();
   const validSlotContent = slot && ensureValidVNode(slot(props));
+  const slotKey = props.key ||
+  // slot content array of a dynamic conditional slot may have a branch
+  // key attached in the `createSlots` helper, respect that
+  validSlotContent && validSlotContent.key;
   const rendered = createBlock(Fragment, {
-    key: (props.key ||
-    // slot content array of a dynamic conditional slot may have a branch
-    // key attached in the `createSlots` helper, respect that
-    validSlotContent && validSlotContent.key || `_${name}`) + (
+    key: (slotKey && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .isSymbol */ .Bm)(slotKey) ? slotKey : `_${name}`) + (
     // #7256 force differentiate fallback content from actual content
     !validSlotContent && fallback ? "_fb" : "")
   }, validSlotContent || (fallback ? fallback() : []), validSlotContent && slots._ === 1 ? 64 : -2);
@@ -3843,10 +3879,11 @@ function getType(ctor) {
 function validateProps(rawProps, props, instance) {
   const resolvedValues = toRaw(props);
   const options = instance.propsOptions[0];
+  const camelizePropsKey = Object.keys(rawProps).map(key => camelize(key));
   for (const key in options) {
     let opt = options[key];
     if (opt == null) continue;
-    validateProp(key, resolvedValues[key], opt,  false ? 0 : resolvedValues, !hasOwn(rawProps, key) && !hasOwn(rawProps, hyphenate(key)));
+    validateProp(key, resolvedValues[key], opt,  false ? 0 : resolvedValues, !camelizePropsKey.includes(key));
   }
 }
 function validateProp(name, value, prop, props, isAbsent) {
@@ -5210,14 +5247,13 @@ function doWatch(source, cb, options = _vue_shared__WEBPACK_IMPORTED_MODULE_10__
   if (false) {}
   const baseWatchOptions = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .extend */ .X$)({}, options);
   if (false) {}
+  const runsImmediately = cb && immediate || !cb && flush !== "post";
   let ssrCleanup;
   if (isInSSRComponentSetup) {
     if (flush === "sync") {
       const ctx = useSSRContext();
       ssrCleanup = ctx.__watcherHandles || (ctx.__watcherHandles = []);
-    } else if (!cb || immediate) {
-      baseWatchOptions.once = true;
-    } else {
+    } else if (!runsImmediately) {
       const watchStopHandle = () => {};
       watchStopHandle.stop = _vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .NOOP */ .tE;
       watchStopHandle.resume = _vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .NOOP */ .tE;
@@ -5255,7 +5291,13 @@ function doWatch(source, cb, options = _vue_shared__WEBPACK_IMPORTED_MODULE_10__
     }
   };
   const watchHandle = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__/* .watch */ .wB)(source, cb, baseWatchOptions);
-  if (ssrCleanup) ssrCleanup.push(watchHandle);
+  if (isInSSRComponentSetup) {
+    if (ssrCleanup) {
+      ssrCleanup.push(watchHandle);
+    } else if (runsImmediately) {
+      watchHandle();
+    }
+  }
   return watchHandle;
 }
 function instanceWatch(source, value, options) {
@@ -5286,16 +5328,16 @@ function createPathGetter(ctx, path) {
 function useModel(props, name, options = _vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .EMPTY_OBJ */ .MZ) {
   const i = getCurrentInstance();
   if (false) {}
-  if (false) {}
   const camelizedName = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .camelize */ .PT)(name);
+  if (false) {}
   const hyphenatedName = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .hyphenate */ .Tg)(name);
-  const modifiers = getModelModifiers(props, name);
+  const modifiers = getModelModifiers(props, camelizedName);
   const res = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__/* .customRef */ .rY)((track, trigger) => {
     let localValue;
     let prevSetValue = _vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .EMPTY_OBJ */ .MZ;
     let prevEmittedValue;
     watchSyncEffect(() => {
-      const propValue = props[name];
+      const propValue = props[camelizedName];
       if ((0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .hasChanged */ .$H)(localValue, propValue)) {
         localValue = propValue;
         trigger();
@@ -6334,7 +6376,7 @@ function normalizeVNode(child) {
     return createVNode(Fragment, null,
     // #3666, avoid reference pollution when reusing vnode
     child.slice());
-  } else if (typeof child === "object") {
+  } else if (isVNode(child)) {
     return cloneIfMounted(child);
   } else {
     return createVNode(Text, null, String(child));
@@ -6577,14 +6619,17 @@ function setupStatefulComponent(instance, isSSR) {
     setup
   } = Component;
   if (setup) {
+    (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__/* .pauseTracking */ .C4)();
     const setupContext = instance.setupContext = setup.length > 1 ? createSetupContext(instance) : null;
     const reset = setCurrentInstance(instance);
-    (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__/* .pauseTracking */ .C4)();
     const setupResult = callWithErrorHandling(setup, instance, 0, [ false ? 0 : instance.props, setupContext]);
+    const isAsyncSetup = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .isPromise */ .yL)(setupResult);
     (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__/* .resetTracking */ .bl)();
     reset();
-    if ((0,_vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .isPromise */ .yL)(setupResult)) {
-      if (!isAsyncWrapper(instance)) markAsyncBoundary(instance);
+    if ((isAsyncSetup || instance.sp) && !isAsyncWrapper(instance)) {
+      markAsyncBoundary(instance);
+    }
+    if (isAsyncSetup) {
       setupResult.then(unsetCurrentInstance, unsetCurrentInstance);
       if (isSSR) {
         return setupResult.then(resolvedResult => {
@@ -6933,7 +6978,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-const version = "3.5.6";
+const version = "3.5.12";
 const warn =  false ? 0 : _vue_shared__WEBPACK_IMPORTED_MODULE_10__/* .NOOP */ .tE;
 const ErrorTypeStrings = ErrorTypeStrings$1;
 const devtools =  true ? devtools$1 : 0;

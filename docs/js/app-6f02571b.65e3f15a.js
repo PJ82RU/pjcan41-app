@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 88362:
+/***/ 96768:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -18,7 +18,7 @@ var lang = __webpack_require__(96188);
 var runtime_core_esm_bundler = __webpack_require__(56768);
 // EXTERNAL MODULE: ./node_modules/@vue/shared/dist/shared.esm-bundler.js
 var shared_esm_bundler = __webpack_require__(24232);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=f2a414e8&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=3d37c00a&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("flicking");
@@ -50,7 +50,7 @@ var dist = __webpack_require__(14084);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
 var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
-var store = __webpack_require__(81052);
+var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./node_modules/@egjs/vue3-flicking/dist/flicking.esm.js + 1 modules
@@ -59,9 +59,9 @@ var flicking_esm = __webpack_require__(22180);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=9e7e5260&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=9ff1a982&ts=true
 
-function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_9ff1a982_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
@@ -116,8 +116,9 @@ function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.voltmeterViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 1,
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 1
+      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -130,8 +131,7 @@ function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.temperatureViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 2,
+      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -144,8 +144,8 @@ function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isReverse ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 3,
+      })], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isReverse ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 2,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -159,7 +159,7 @@ function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $pro
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 4,
+        key: 3,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -179,7 +179,7 @@ function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $pro
         }, null, 8, ["model-value", "title", "description", "colorsTrue", "colorsFalse", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 5,
+        key: 4,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -214,17 +214,17 @@ function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $pro
 
 
 // EXTERNAL MODULE: ./src/components/cards/Card.vue + 6 modules
-var Card = __webpack_require__(86062);
+var Card = __webpack_require__(20287);
 // EXTERNAL MODULE: ./src/components/cards/InputCardItem.vue + 6 modules
-var InputCardItem = __webpack_require__(72499);
+var InputCardItem = __webpack_require__(40720);
 // EXTERNAL MODULE: ./src/components/cards/SwitchCardItem.vue + 6 modules
 var SwitchCardItem = __webpack_require__(62295);
 // EXTERNAL MODULE: ./src/components/cards/IconCardItem.vue + 6 modules
-var IconCardItem = __webpack_require__(87968);
+var IconCardItem = __webpack_require__(58847);
 // EXTERNAL MODULE: ./src/components/ViewSettingDialog.vue + 5 modules
 var ViewSettingDialog = __webpack_require__(17627);
-// EXTERNAL MODULE: ./src/models/pjcan/mazda/index.ts + 4 modules
-var mazda = __webpack_require__(19164);
+// EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
+var onboard = __webpack_require__(32280);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=script&lang=ts
 
 
@@ -240,7 +240,7 @@ var mazda = __webpack_require__(19164);
   name: "InfoCard",
   computed: {
     TCarModel() {
-      return mazda/* TCarModel */.oB;
+      return onboard/* TCarModel */.oB;
     }
   },
   components: {
@@ -267,12 +267,11 @@ var mazda = __webpack_require__(19164);
     });
     const isReverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const carModel = store/* default */.A.getters["config/carModel"];
-      return carModel === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9 || carModel === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
+      return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
     });
     const acc = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].acc);
     const worktime = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].worktime);
     const voltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].voltmeter / 100);
-    const temperatureIn = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].in / 10);
     const temperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].out / 10);
     const handbrake = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].handbrake);
     const reverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].reverse);
@@ -294,21 +293,12 @@ var mazda = __webpack_require__(19164);
           disabled: !voltmeterViewLoaded.value
         });
       }
-      if (carModel.value === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL) {
-        result.push({
-          title: t("onboard.info.temperatureIn.menu"),
-          view: store/* default */.A.getters["view/temperature"],
-          disabled: !temperatureViewLoaded.value
-        });
-      }
-      if (carModel.value === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK) {
+      if (carModel.value === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel.value === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL) {
         result.push({
           title: t("onboard.info.temperatureOut.menu"),
           view: store/* default */.A.getters["view/temperature"],
           disabled: !temperatureViewLoaded.value
         });
-      }
-      if (carModel.value === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel.value === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL) {
         result.push({
           title: t("onboard.info.handbrake.menu"),
           view: store/* default */.A.getters["view/sensors"].handbrake,
@@ -322,7 +312,7 @@ var mazda = __webpack_require__(19164);
           disabled: !sensorViewLoaded.value
         });
       }
-      if (carModel.value === mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK) {
+      if (carModel.value === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK) {
         result.push({
           title: t("onboard.info.safetyBelt.menu"),
           view: store/* default */.A.getters["view/sensors"].seatbelt,
@@ -366,7 +356,6 @@ var mazda = __webpack_require__(19164);
       acc,
       worktime,
       voltmeter,
-      temperatureIn,
       temperatureOut,
       handbrake,
       reverse,
@@ -393,12 +382,12 @@ var exportHelper = __webpack_require__(71241);
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_9e7e5260_ts_true_render]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_9ff1a982_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (__exports__);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=a45bc802&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=42d8beee&ts=true
 
-function EngineCardvue_type_template_id_a45bc802_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineCardvue_type_template_id_42d8beee_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
@@ -447,9 +436,8 @@ function EngineCardvue_type_template_id_a45bc802_ts_true_render(_ctx, _cache, $p
           value: $setup.countRPM,
           title: _ctx.$t('onboard.engine.countRPM.title'),
           description: _ctx.$t('onboard.engine.countRPM.description'),
-          nodata: !$setup.enabled,
           disabled: !$setup.engineViewLoaded
-        }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
+        }, null, 8, ["value", "title", "description", "disabled"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
@@ -459,9 +447,8 @@ function EngineCardvue_type_template_id_a45bc802_ts_true_render(_ctx, _cache, $p
           value: $setup.worktime,
           title: _ctx.$t('onboard.engine.worktime.title'),
           description: _ctx.$t('onboard.engine.worktime.description'),
-          nodata: !$setup.enabled,
           disabled: !$setup.engineViewLoaded
-        }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
+        }, null, 8, ["value", "title", "description", "disabled"])]),
         _: 1
       }), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
         key: 0,
@@ -756,7 +743,7 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)
   name: "EngineCard",
   computed: {
     TCarModel() {
-      return mazda/* TCarModel */.oB;
+      return onboard/* TCarModel */.oB;
     }
   },
   components: {
@@ -893,12 +880,12 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)
 
 
 ;
-const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_a45bc802_ts_true_render]])
+const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_42d8beee_ts_true_render]])
 
 /* harmony default export */ var EngineCard = (EngineCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=93d84b7e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=1204b676&ts=true
 
-function FuelCardvue_type_template_id_93d84b7e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function FuelCardvue_type_template_id_1204b676_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
                                                       
                                                       
@@ -1133,7 +1120,7 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(F
   name: "FuelCard",
   computed: {
     TCarModel() {
-      return mazda/* TCarModel */.oB;
+      return onboard/* TCarModel */.oB;
     }
   },
   components: {
@@ -1217,12 +1204,12 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(F
 
 
 ;
-const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_93d84b7e_ts_true_render]])
+const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_1204b676_ts_true_render]])
 
 /* harmony default export */ var FuelCard = (FuelCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=699d7dc4&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=5bfe5800&ts=true
 
-function MovementCardvue_type_template_id_699d7dc4_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function MovementCardvue_type_template_id_5bfe5800_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
                                                       
                                                       
@@ -1302,7 +1289,7 @@ function MovementCardvue_type_template_id_699d7dc4_ts_true_render(_ctx, _cache, 
   name: "MovementCard",
   computed: {
     TCarModel() {
-      return mazda/* TCarModel */.oB;
+      return onboard/* TCarModel */.oB;
     }
   },
   components: {
@@ -1379,7 +1366,7 @@ function MovementCardvue_type_template_id_699d7dc4_ts_true_render(_ctx, _cache, 
 
 
 ;
-const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_699d7dc4_ts_true_render]])
+const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_5bfe5800_ts_true_render]])
 
 /* harmony default export */ var MovementCard = (MovementCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=2b511d66&ts=true
@@ -1772,9 +1759,9 @@ const DoorsConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(
 const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_2b511d66_ts_true_render]])
 
 /* harmony default export */ var DoorsCard = (DoorsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=05320176&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=52fa2169&ts=true
 
-function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ClimateCardvue_type_template_id_52fa2169_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
@@ -1914,7 +1901,7 @@ function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $
     const enabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].on);
     const rotation = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const res = store/* default */.A.getters["value/climate"];
-      return res.airRate > 0 && res.airRate < 8 ? 7 - res.airRate : 0;
+      return res.airRate > 0 && res.airRate < 8 ? 1 - res.airRate / 10 : 0;
     });
     const autoMode = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].automode);
     const ac = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].ac);
@@ -1987,12 +1974,12 @@ function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $
 
 
 ;
-const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_05320176_ts_true_render]])
+const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_52fa2169_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=64d5de1c&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=b50974fc&ts=true
 
-function BoseCardvue_type_template_id_64d5de1c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BoseCardvue_type_template_id_b50974fc_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_slider_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("slider-card-item");
@@ -2010,8 +1997,7 @@ function BoseCardvue_type_template_id_64d5de1c_ts_true_render(_ctx, _cache, $pro
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, null, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pb-0"
+        cols: "12"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_icon_card_item, {
           modelValue: $setup.enabled,
@@ -2033,7 +2019,7 @@ function BoseCardvue_type_template_id_64d5de1c_ts_true_render(_ctx, _cache, $pro
           title: _ctx.$t('onboard.volume.level.title'),
           description: _ctx.$t('onboard.volume.level.description'),
           max: 63,
-          nodata: !$setup.volumeConfigLoaded,
+          nodata: !$setup.boseConfigLoaded,
           disabled: !$setup.enabled[0]
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
@@ -2047,7 +2033,7 @@ function BoseCardvue_type_template_id_64d5de1c_ts_true_render(_ctx, _cache, $pro
           title: _ctx.$t('onboard.volume.mute.title'),
           description: _ctx.$t('onboard.volume.mute.description'),
           color: "warning",
-          nodata: !$setup.volumeConfigLoaded,
+          nodata: !$setup.boseConfigLoaded,
           disabled: !$setup.enabled[0]
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
@@ -2170,8 +2156,8 @@ function BoseCardvue_type_template_id_64d5de1c_ts_true_render(_ctx, _cache, $pro
   }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_bose_start_dialog, {
     modelValue: $setup.startConfigVisible,
     "onUpdate:modelValue": _cache[11] || (_cache[11] = $event => $setup.startConfigVisible = $event),
-    enabled: $setup.startConfig.startBose,
-    level: $setup.startConfig.startLevelBose,
+    enabled: $setup.startConfig.start,
+    level: $setup.startConfig.start_volume,
     "onClick:apply": $setup.onStartApply
   }, null, 8, ["modelValue", "enabled", "level", "onClick:apply"])], 64);
 }
@@ -2400,12 +2386,19 @@ var bose = __webpack_require__(89100);
     const {
       t
     } = (0,vue_i18n/* useI18n */.s9)();
-    const volumeConfigLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/volume"].isData);
     const boseConfigLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/bose"].isData);
     const boseViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/bose"].isData);
     const enabled = (0,runtime_core_esm_bundler/* computed */.EW)({
       get: () => [store/* default */.A.getters["config/bose"].on],
       set: val => store/* default */.A.commit("config/setBoseEnabled", val[0])
+    });
+    const mute = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => store/* default */.A.getters["config/bose"].mute,
+      set: val => store/* default */.A.commit("config/setBoseMute", val)
+    });
+    const volume = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => store/* default */.A.getters["config/bose"].volume,
+      set: val => store/* default */.A.commit("config/setBoseVolume", val)
     });
     const audioPLT = (0,runtime_core_esm_bundler/* computed */.EW)({
       get: () => store/* default */.A.getters["config/bose"].audioPlt,
@@ -2458,16 +2451,8 @@ var bose = __webpack_require__(89100);
       title: "MAX",
       value: bose/* TCenterPoint */.k1.CENTERPOINT_MAX
     }]);
-    const mute = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/volume"].muteBose,
-      set: val => store/* default */.A.commit("config/setVolumeMuteBose", val)
-    });
-    const volume = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/volume"].volumeBose,
-      set: val => store/* default */.A.commit("config/setVolumeValueBose", val)
-    });
     const startConfigVisible = (0,reactivity_esm_bundler/* ref */.KR)(false);
-    const startConfig = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/volume"]);
+    const startConfig = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/bose"]);
     const menu = (0,runtime_core_esm_bundler/* computed */.EW)(() => [{
       id: 0,
       title: t("onboard.bose.volumeConfig.title")
@@ -2502,7 +2487,7 @@ var bose = __webpack_require__(89100);
      * @param {number} level Уровень звука
      */
     const onStartApply = (enabled, level) => {
-      store/* default */.A.commit("config/setVolumeStartBose", {
+      store/* default */.A.commit("config/setBoseVolumeStart", {
         enabled,
         level
       });
@@ -2510,7 +2495,6 @@ var bose = __webpack_require__(89100);
     return {
       boseConfigLoaded,
       boseViewLoaded,
-      volumeConfigLoaded,
       enabled,
       audioPLT,
       radioFM,
@@ -2542,7 +2526,7 @@ var bose = __webpack_require__(89100);
 
 
 ;
-const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_64d5de1c_ts_true_render]])
+const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_b50974fc_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
@@ -2561,7 +2545,10 @@ var movement = __webpack_require__(14753);
 var doors = __webpack_require__(84582);
 // EXTERNAL MODULE: ./src/models/pjcan/climate/index.ts + 1 modules
 var climate = __webpack_require__(72418);
+// EXTERNAL MODULE: ./src/models/pjcan/base/BaseModel.ts
+var BaseModel = __webpack_require__(22575);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=script&lang=ts
+
 
 
 
@@ -2606,9 +2593,9 @@ var climate = __webpack_require__(72418);
     } = (0,vue_i18n/* useI18n */.s9)();
     const flicking = (0,reactivity_esm_bundler/* ref */.KR)(null);
     (0,runtime_core_esm_bundler/* provide */.Gt)("flicking", flicking);
-    store/* default */.A.dispatch("app/readOnboardCardList");
+    store/* default */.A.dispatch("app/readOnboardCards");
     const cards = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      return store/* default */.A.getters["app/onboardCardList"]?.filter(x => x.enabled && x.car?.indexOf(store/* default */.A.getters["config/carModel"]) >= 0);
+      return store/* default */.A.getters["app/onboardCards"]?.filter(x => x.enabled && x.car?.indexOf(store/* default */.A.getters["config/carModel"]) >= 0);
     });
     const listExec = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const result = [];
@@ -2638,21 +2625,30 @@ var climate = __webpack_require__(72418);
       });
       return result;
     });
+    let notifyShow = false;
     const notify = () => {
-      if (!store/* default */.A.getters["app/notify"]) {
+      if (!store/* default */.A.getters["app/notify"] && !notifyShow) {
         setTimeout(() => dist/* toast */.oR.info(t("help.onboard.notify")), 5000);
         store/* default */.A.commit("app/setNotify", true);
+        notifyShow = true;
       }
     };
     (0,runtime_core_esm_bundler/* watch */.wB)(listExec, val => {
       canbus/* default */.A.loop(val);
       if (val?.length > 0) notify();
     });
+    const onBegin = status => {
+      if (status) {
+        canbus/* default */.A.loop(listExec.value);
+        if (listExec.value?.length > 0) notify();
+      }
+    };
     (0,runtime_core_esm_bundler/* onMounted */.sV)(() => {
-      canbus/* default */.A.loop(listExec.value);
-      if (listExec.value?.length > 0) notify();
+      canbus/* default */.A.addListener(BaseModel/* API_CANBUS_EVENT */.l, onBegin);
+      onBegin(canbus/* default */.A.status);
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.hi)(() => {
+      canbus/* default */.A.removeListener(BaseModel/* API_CANBUS_EVENT */.l, onBegin);
       canbus/* default */.A.loopFree();
     });
     return {
@@ -2664,10 +2660,10 @@ var climate = __webpack_require__(72418);
 });
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=f2a414e8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=3d37c00a&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=f2a414e8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=3d37c00a&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue
 
@@ -2677,121 +2673,104 @@ var climate = __webpack_require__(72418);
 ;
 
 
-const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-f2a414e8"]])
+const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-3d37c00a"]])
 
-/* harmony default export */ var onboard = (onboard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=111f9db8&scoped=true&ts=true
+/* harmony default export */ var views_onboard = (onboard_exports_);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=7b830805&scoped=true&ts=true
 
-function buttonsvue_type_template_id_111f9db8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function buttonsvue_type_template_id_7b830805_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_settings_card = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("settings-card");
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("flicking");
-  const _component_button_definition_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("button-definition-dialog");
   const _component_button_edit_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("button-edit-dialog");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, [$setup.configLoaded ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_flicking, {
     key: 0,
     ref: "flicking",
-    class: "listSW1",
+    class: "list-sw1",
     options: {
       bound: true,
       align: 'prev'
     }
   }, {
-    default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [((0,runtime_core_esm_bundler/* openBlock */.uX)(true), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, (0,runtime_core_esm_bundler/* renderList */.pI)($setup.listWithoutEmpty, (item, index) => {
+    default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [((0,runtime_core_esm_bundler/* openBlock */.uX)(true), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, (0,runtime_core_esm_bundler/* renderList */.pI)($setup.cardButtons, (cardButton, index) => {
       return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("div", {
         key: `button-item_${index}`,
         class: (0,shared_esm_bundler/* normalizeClass */.C4)(["mr-4", `flicking-${$setup.display}`])
       }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_settings_card, {
         class: (0,shared_esm_bundler/* normalizeClass */.C4)(`settings-card-${index}`),
-        title: item.title,
-        icon: item.icon,
-        config: item.config,
-        mode: $setup.isMode,
-        onUpdate: $setup.onButtonConfigUpdate,
-        onClick: $event => $setup.onButtonEdit(item)
-      }, null, 8, ["class", "title", "icon", "config", "mode", "onUpdate", "onClick"])], 2);
+        title: cardButton.title,
+        icon: cardButton.icon,
+        extended: cardButton.extended,
+        id: cardButton.id,
+        exec: $setup.checkExecList(cardButton.exec, cardButton.extended),
+        "exec-mode": $setup.checkExecList(cardButton.execMode, cardButton.extended),
+        "list-of-functions": cardButton.extended ? $setup.listOfFunctionsExtended : $setup.listOfFunctions,
+        "visible-extended": $setup.extendedVisible,
+        "onUpdate:extended": $event => $setup.onUpdateExtended(cardButton.id, $event),
+        "onUpdate:exec": $event => $setup.onUpdateExec(cardButton.id, $event),
+        "onUpdate:execMode": $event => $setup.onUpdateExecMode(cardButton.id, $event),
+        onClick: $event => $setup.onButtonEdit(cardButton)
+      }, null, 8, ["class", "title", "icon", "extended", "id", "exec", "exec-mode", "list-of-functions", "visible-extended", "onUpdate:extended", "onUpdate:exec", "onUpdate:execMode", "onClick"])], 2);
     }), 128))]),
     _: 1
-  }, 512)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_button_definition_dialog, {
-    modelValue: $setup.definitionDialog,
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.definitionDialog = $event),
-    types: $setup.list,
-    "value-id": $setup.value?.id,
-    "value-resistance": $setup.value?.resistance,
-    "onClick:apply": $setup.onButtonDefinitionApply
-  }, null, 8, ["modelValue", "types", "value-id", "value-resistance", "onClick:apply"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_button_edit_dialog, {
-    modelValue: $setup.addDialog,
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.addDialog = $event),
-    name: $setup.selectedItem?.title,
-    press: $setup.selectedItem?.config?.exec[1],
-    "value-resistance": $setup.value?.resistance,
-    "resistance-min": $setup.selectedItem?.config?.resistanceMin,
-    "resistance-max": $setup.selectedItem?.config?.resistanceMax,
-    "onClick:apply": $setup.onButtonAddApply
-  }, null, 8, ["modelValue", "name", "press", "value-resistance", "resistance-min", "resistance-max", "onClick:apply"])], 64);
+  }, 512)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_button_edit_dialog, {
+    modelValue: $setup.buttonEditVisible,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.buttonEditVisible = $event),
+    name: $setup.selected.title,
+    resistance: $setup.selected.resistanceTo,
+    "list-of-resistance": $setup.listOfResistance,
+    "onClick:apply": $setup.onButtonApply
+  }, null, 8, ["modelValue", "name", "resistance", "list-of-resistance", "onClick:apply"])], 64);
 }
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.mjs + 1 modules
 var VSelect = __webpack_require__(20105);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=fabd0d36&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=61e79bfe&scoped=true&ts=true
 
-const SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_hoisted_1 = {
+const SettingsCardvue_type_template_id_61e79bfe_scoped_true_ts_true_hoisted_1 = {
   class: "settings-card__mode-title"
 };
-function SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
-                                                      
+function SettingsCardvue_type_template_id_61e79bfe_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
+                                                      
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
-  const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-field");
                                                       
   const _component_card = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("card");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_card, {
     class: "settings-card",
     title: $props.title,
     custom: $props.icon,
-    "onClick:custom": _cache[11] || (_cache[11] = $event => _ctx.$emit('click', $event))
+    "onClick:custom": _cache[9] || (_cache[9] = $event => _ctx.$emit('click', $event))
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, null, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12"
       }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_input_card_item, {
-          value: $setup.resistanceMax > 0 ? $setup.resistanceMin + ' - ' + $setup.resistanceMax : '',
-          title: _ctx.$t('buttons.resistance.title'),
-          description: _ctx.$t('buttons.resistance.description'),
-          disabled: !$props.config
-        }, null, 8, ["value", "title", "description", "disabled"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0"
-      }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
           modelValue: $setup.pressSingle,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.pressSingle = $event),
           label: _ctx.$t('buttons.pressSingle.title'),
-          items: $setup.functionsListWithoutMode,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressSingle.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
-          modelValue: $setup.extended,
-          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.extended = $event),
+          modelValue: $setup.modelExtended,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.modelExtended = $event),
           title: _ctx.$t('buttons.extended.title'),
           description: _ctx.$t('buttons.extended.description'),
-          color: "primary",
-          disabled: !$props.config
-        }, null, 8, ["modelValue", "title", "description", "disabled"])]),
+          color: "primary"
+        }, null, 8, ["modelValue", "title", "description"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      }), $props.extended ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 0
+      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
@@ -2799,14 +2778,13 @@ function SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render(_c
           modelValue: $setup.pressDual,
           "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.pressDual = $event),
           label: _ctx.$t('buttons.pressDual.title'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressDual.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config || !$setup.extended
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
@@ -2816,14 +2794,13 @@ function SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render(_c
           modelValue: $setup.pressTriple,
           "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.pressTriple = $event),
           label: _ctx.$t('buttons.pressTriple.title'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressTriple.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config || !$setup.extended
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
@@ -2833,105 +2810,90 @@ function SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render(_c
           modelValue: $setup.pressHold,
           "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.pressHold = $event),
           label: _ctx.$t('buttons.pressHold.title'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressHold.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config || !$setup.extended
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_field, {
-          modelValue: $setup.hold,
-          "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.hold = $event),
-          label: _ctx.$t('buttons.pressHold.time.title'),
-          hint: _ctx.$t('buttons.pressHold.time.description'),
-          min: 1,
-          max: 255,
-          disabled: !$props.config || !$setup.extended,
-          onChange: _cache[6] || (_cache[6] = $event => _ctx.$emit('update', $props.config))
-        }, null, 8, ["modelValue", "label", "hint", "disabled"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      })], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $props.visibleExtended ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 1
+      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-6"
       }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("span", SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("buttons.extendedMode")), 1)]),
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("span", SettingsCardvue_type_template_id_61e79bfe_scoped_true_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("buttons.extendedMode")), 1)]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
-          modelValue: $setup.modePressSingle,
-          "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => $setup.modePressSingle = $event),
+          modelValue: $setup.pressSingleExtended,
+          "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.pressSingleExtended = $event),
           label: _ctx.$t('buttons.pressSingle.title') + _ctx.$t('buttons.hintMode'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressSingle.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
           "persistent-hint": "",
-          disabled: !$props.config || !$props.mode
+          disabled: !$props.visibleExtended
         }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      }), $props.extended ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 0
+      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
-          modelValue: $setup.modePressDual,
-          "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => $setup.modePressDual = $event),
+          modelValue: $setup.pressDualExtended,
+          "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.pressDualExtended = $event),
           label: _ctx.$t('buttons.pressDual.title') + _ctx.$t('buttons.hintMode'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressDual.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config || !$props.mode
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
-          modelValue: $setup.modePressTriple,
-          "onUpdate:modelValue": _cache[9] || (_cache[9] = $event => $setup.modePressTriple = $event),
+          modelValue: $setup.pressTripleExtended,
+          "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => $setup.pressTripleExtended = $event),
           label: _ctx.$t('buttons.pressTriple.title') + _ctx.$t('buttons.hintMode'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressTriple.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config || !$props.mode
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
-          modelValue: $setup.modePressHold,
-          "onUpdate:modelValue": _cache[10] || (_cache[10] = $event => $setup.modePressHold = $event),
+          modelValue: $setup.pressHoldExtended,
+          "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => $setup.pressHoldExtended = $event),
           label: _ctx.$t('buttons.pressHold.title') + _ctx.$t('buttons.hintMode'),
-          items: $setup.functionsList,
+          items: $props.listOfFunctions,
           hint: _ctx.$t('buttons.pressHold.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
-          "persistent-hint": "",
-          disabled: !$props.config || !$props.mode
-        }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
         _: 1
-      })]),
+      })], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true)], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true)]),
       _: 1
     })]),
     _: 1
@@ -2943,15 +2905,13 @@ function SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render(_c
 
 
 
-;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=fabd0d36&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=61e79bfe&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
-var buttons = __webpack_require__(8871);
+var buttons = __webpack_require__(84596);
 // EXTERNAL MODULE: ./src/components/common/icon-custom/IconCustom.vue + 5 modules
 var IconCustom = __webpack_require__(19011);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=script&lang=ts
-
-
 
 
 
@@ -2976,182 +2936,142 @@ var IconCustom = __webpack_require__(19011);
     },
     /** Иконка */
     icon: String,
-    /** Конфигурация кнопки */
-    config: Object,
-    /** Показывать параметры режима Mode */
-    mode: Boolean
+    /** Расширенный функционал кнопок (двойное, тройное нажатие) */
+    extended: {
+      type: Boolean,
+      default: false
+    },
+    /** ID кнопки (0 - кнопка не определена) */
+    id: {
+      type: Number,
+      default: 0
+    },
+    /** Список ID функций кнопки */
+    exec: {
+      type: Array,
+      default: () => [0, 0, 0, 0]
+    },
+    /** Список ID функций кнопки в расширенном режиме */
+    execMode: {
+      type: Array,
+      default: () => [0, 0, 0, 0]
+    },
+    /** Список функций */
+    listOfFunctions: {
+      type: Array,
+      default: () => []
+    },
+    /** Показать расширенные параметры */
+    visibleExtended: {
+      type: Boolean,
+      default: false
+    }
   },
-  emits: ["update", "click"],
+  emits: ["update:extended", "update:exec", "update:execMode", "click"],
   setup(props, {
     emit
   }) {
     const {
-      config
+      extended,
+      exec,
+      execMode
     } = (0,reactivity_esm_bundler/* toRefs */.QW)(props);
-    const {
-      tm
-    } = (0,vue_i18n/* useI18n */.s9)();
-    const __config = (0,reactivity_esm_bundler/* ref */.KR)({});
-    const copyConfig = () => {
-      __config.value = {
-        extended: config.value.extended,
-        id: config.value.id,
-        hold: config.value.hold,
-        resistanceMin: config.value.resistanceMin,
-        resistanceMax: config.value.resistanceMax,
-        exec: [...config.value.exec],
-        execMode: [...config.value.execMode]
-      };
-    };
-    if (config.value) copyConfig();
-    (0,runtime_core_esm_bundler/* watch */.wB)(config, () => copyConfig());
     /** Расширенный функционал кнопок */
-    const extended = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.extended ?? false,
-      set: val => {
-        if (config.value) {
-          __config.value.extended = val;
-          emit("update", __config.value);
-        }
-      }
+    const modelExtended = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => extended.value,
+      set: val => emit("update:extended", val)
     });
-    /** Время удержания кнопки, сек. */
-    const hold = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.hold ?? 0,
-      set: val => {
-        if (config.value) __config.value.hold = val;
-      }
-    });
-    /** Минимальное сопротивление кнопки */
-    const resistanceMin = (0,runtime_core_esm_bundler/* computed */.EW)(() => __config.value?.resistanceMin ?? 0);
-    /** Максимальное сопротивление кнопки */
-    const resistanceMax = (0,runtime_core_esm_bundler/* computed */.EW)(() => __config.value?.resistanceMax ?? 0);
     /** Кнопка нажата один раз */
     const pressSingle = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.exec?.[buttons/* TButtonType */.hB.PRESS_SINGLE] ?? 0,
+      get: () => exec.value[buttons/* TButtonPress */.WX.PRESS_PRESSED],
       set: val => {
-        if (config.value) {
-          __config.value.exec[buttons/* TButtonType */.hB.PRESS_SINGLE] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_PRESSED] = val;
+        emit("update:exec", execNew);
       }
     });
     /** Кнопка нажата два раза */
     const pressDual = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.exec?.[buttons/* TButtonType */.hB.PRESS_DUAL] ?? 0,
+      get: () => exec.value[buttons/* TButtonPress */.WX.PRESS_DUAL],
       set: val => {
-        if (config.value) {
-          __config.value.exec[buttons/* TButtonType */.hB.PRESS_DUAL] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_DUAL] = val;
+        emit("update:exec", execNew);
       }
     });
     /** Кнопка нажата три раза */
     const pressTriple = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.exec?.[buttons/* TButtonType */.hB.PRESS_TRIPLE] ?? 0,
+      get: () => exec.value[buttons/* TButtonPress */.WX.PRESS_TRIPLE],
       set: val => {
-        if (config.value) {
-          __config.value.exec[buttons/* TButtonType */.hB.PRESS_TRIPLE] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_TRIPLE] = val;
+        emit("update:exec", execNew);
       }
     });
-    /** Удержание кнопки */
+    /** Удержание кнопки в расширенном режиме */
     const pressHold = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.exec?.[buttons/* TButtonType */.hB.PRESS_HOLD] ?? 0,
+      get: () => exec.value[buttons/* TButtonPress */.WX.PRESS_HOLD],
       set: val => {
-        if (config.value) {
-          __config.value.exec[buttons/* TButtonType */.hB.PRESS_HOLD] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_HOLD] = val;
+        emit("update:exec", execNew);
       }
     });
-    /** Кнопка нажата один раз в режиме Mode */
-    const modePressSingle = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.execMode?.[buttons/* TButtonType */.hB.PRESS_SINGLE] ?? 0,
+    /** Кнопка нажата один раз в расширенном режиме */
+    const pressSingleExtended = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => execMode.value[buttons/* TButtonPress */.WX.PRESS_PRESSED],
       set: val => {
-        if (config.value) {
-          __config.value.execMode[buttons/* TButtonType */.hB.PRESS_SINGLE] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_PRESSED] = val;
+        emit("update:execMode", execNew);
       }
     });
-    /** Кнопка нажата два раза в режиме Mode */
-    const modePressDual = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.execMode?.[buttons/* TButtonType */.hB.PRESS_DUAL] ?? 0,
+    /** Кнопка нажата два раза в расширенном режиме */
+    const pressDualExtended = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => execMode.value[buttons/* TButtonPress */.WX.PRESS_DUAL],
       set: val => {
-        if (config.value) {
-          __config.value.execMode[buttons/* TButtonType */.hB.PRESS_DUAL] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_DUAL] = val;
+        emit("update:execMode", execNew);
       }
     });
-    /** Кнопка нажата три раза в режиме Mode */
-    const modePressTriple = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.execMode?.[buttons/* TButtonType */.hB.PRESS_TRIPLE] ?? 0,
+    /** Кнопка нажата три раза в расширенном режиме */
+    const pressTripleExtended = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => execMode.value[buttons/* TButtonPress */.WX.PRESS_TRIPLE],
       set: val => {
-        if (config.value) {
-          __config.value.execMode[buttons/* TButtonType */.hB.PRESS_TRIPLE] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_TRIPLE] = val;
+        emit("update:execMode", execNew);
       }
     });
-    /** Удержание кнопки в режиме Mode */
-    const modePressHold = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => __config.value?.execMode?.[buttons/* TButtonType */.hB.PRESS_HOLD] ?? 0,
+    /** Удержание кнопки в расширенном режиме */
+    const pressHoldExtended = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => execMode.value[buttons/* TButtonPress */.WX.PRESS_HOLD],
       set: val => {
-        if (config.value) {
-          __config.value.execMode[buttons/* TButtonType */.hB.PRESS_HOLD] = val;
-          emit("update", __config.value);
-        }
+        const execNew = [...exec.value];
+        execNew[buttons/* TButtonPress */.WX.PRESS_HOLD] = val;
+        emit("update:execMode", execNew);
       }
-    });
-    /** Список функций без режима Mode */
-    const functionsListWithoutMode = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const list = tm("buttons.functions");
-      const result = [];
-      for (const key in list) {
-        if (key !== "1" && key !== "2") result.push({
-          label: list[key],
-          value: Number(key)
-        });
-      }
-      return result;
-    });
-    /** Список функций */
-    const functionsList = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const list = tm("buttons.functions");
-      const result = [];
-      for (const key in list) result.push({
-        label: list[key],
-        value: Number(key)
-      });
-      return result;
     });
     return {
-      functionsListWithoutMode,
-      functionsList,
-      extended,
-      hold,
-      resistanceMin,
-      resistanceMax,
+      modelExtended,
       pressSingle,
       pressDual,
       pressTriple,
       pressHold,
-      modePressSingle,
-      modePressDual,
-      modePressTriple,
-      modePressHold
+      pressSingleExtended,
+      pressDualExtended,
+      pressTripleExtended,
+      pressHoldExtended
     };
   }
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=fabd0d36&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=61e79bfe&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=fabd0d36&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=61e79bfe&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue
 
@@ -3161,276 +3081,90 @@ var IconCustom = __webpack_require__(19011);
 ;
 
 
-const SettingsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(SettingsCardvue_type_script_lang_ts, [['render',SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render],['__scopeId',"data-v-fabd0d36"]])
+const SettingsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(SettingsCardvue_type_script_lang_ts, [['render',SettingsCardvue_type_template_id_61e79bfe_scoped_true_ts_true_render],['__scopeId',"data-v-61e79bfe"]])
 
 /* harmony default export */ var SettingsCard = (SettingsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=template&id=ac5b1bd4&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=02c45e4e&ts=true
 
-function ButtonDefinitionDialogvue_type_template_id_ac5b1bd4_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-field");
+function ButtonEditDialogvue_type_template_id_02c45e4e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_multi_range = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("multi-range");
                                                       
-                                                            
-                                                      
-                                                      
-  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("dialog-template");
-  return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_dialog_template, {
-    modelValue: $setup.visible,
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visible = $event),
-    "content-class": "button-definition-dialog",
-    icon: "mdi-gesture-tap-button",
-    title: _ctx.$t('buttons.definition.title'),
-    width: "550px",
-    text: "",
-    actions: ""
-  }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, null, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_field, {
-          "model-value": $props.valueResistance,
-          label: _ctx.$t('buttons.resistance.cur.title'),
-          hint: _ctx.$t('buttons.resistance.cur.description'),
-          readonly: ""
-        }, null, 8, ["model-value", "label", "hint"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
-          modelValue: $setup.id,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.id = $event),
-          label: _ctx.$t('buttons.definition.type.title'),
-          items: $setup.types,
-          hint: _ctx.$t('buttons.definition.type.description'),
-          variant: "underlined",
-          "item-title": "title",
-          "item-value": "id",
-          "persistent-hint": ""
-        }, null, 8, ["modelValue", "label", "items", "hint"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_field, {
-          modelValue: $setup.resistanceMin,
-          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.resistanceMin = $event),
-          label: _ctx.$t('buttons.resistance.min.title'),
-          hint: _ctx.$t('buttons.resistance.min.description')
-        }, null, 8, ["modelValue", "label", "hint"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_field, {
-          modelValue: $setup.resistanceMax,
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.resistanceMax = $event),
-          label: _ctx.$t('buttons.resistance.max.title'),
-          hint: _ctx.$t('buttons.resistance.max.description')
-        }, null, 8, ["modelValue", "label", "hint"])]),
-        _: 1
-      })]),
-      _: 1
-    })]),
-    btns: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
-      color: "primary",
-      onClick: $setup.onApplyClick,
-      disabled: $setup.disabled
-    }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1)]),
-      _: 1
-    }, 8, ["onClick", "disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
-      color: "primary",
-      onClick: _cache[3] || (_cache[3] = $event => $setup.visible = false)
-    }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.cancel")), 1)]),
-      _: 1
-    })]),
-    _: 1
-  }, 8, ["modelValue", "title"]);
-}
-
-/* Vuetify */
-
-
-
-
-
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=script&lang=ts
-
-
-
-/* harmony default export */ var ButtonDefinitionDialogvue_type_script_lang_ts = ({
-  name: "ButtonDefinitionDialog",
-  components: {
-    DialogTemplate: DialogTemplate/* default */.A,
-    NumberField: NumberField/* default */.A
-  },
-  props: {
-    /** Отображение диалога */
-    modelValue: {
-      type: Boolean,
-      default: false
-    },
-    /** Список типов/наименований кнопок */
-    types: {
-      type: Array,
-      required: true
-    },
-    /** ID нажатой кнопки */
-    valueId: Number,
-    /** Сопротивление нажатой кнопки */
-    valueResistance: Number
-  },
-  emits: ["update:modelValue", "click:apply"],
-  setup(props, {
-    emit
-  }) {
-    const {
-      modelValue,
-      types,
-      valueId,
-      valueResistance
-    } = (0,reactivity_esm_bundler/* toRefs */.QW)(props);
-    const visible = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => modelValue.value,
-      set: val => emit("update:modelValue", val)
-    });
-    const id = (0,reactivity_esm_bundler/* ref */.KR)(undefined);
-    const resistanceMin = (0,reactivity_esm_bundler/* ref */.KR)(0);
-    const resistanceMax = (0,reactivity_esm_bundler/* ref */.KR)(0);
-    const disabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => id.value === undefined);
-    /** Обновление данных */
-    const updateData = () => {
-      id.value = valueId.value;
-      const selectedType = types.value?.find(x => x.id === id.value);
-      resistanceMin.value = selectedType?.config?.resistanceMin ?? 0;
-      resistanceMax.value = selectedType?.config?.resistanceMax ?? 0;
-    };
-    (0,runtime_core_esm_bundler/* watch */.wB)(modelValue, () => updateData());
-    (0,runtime_core_esm_bundler/* watch */.wB)(valueResistance, () => updateData());
-    /** Применить */
-    const onApplyClick = () => {
-      visible.value = false;
-      emit("click:apply", id.value, resistanceMin.value, resistanceMax.value);
-    };
-    return {
-      visible,
-      types,
-      id,
-      resistanceMin,
-      resistanceMax,
-      disabled,
-      onApplyClick
-    };
-  }
-});
-;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=script&lang=ts
- 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=style&index=0&id=ac5b1bd4&lang=scss&scoped=true
-// extracted by mini-css-extract-plugin
-
-;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=style&index=0&id=ac5b1bd4&lang=scss&scoped=true
-
-;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue
-
-
-
-
-;
-
-
-const ButtonDefinitionDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ButtonDefinitionDialogvue_type_script_lang_ts, [['render',ButtonDefinitionDialogvue_type_template_id_ac5b1bd4_scoped_true_ts_true_render],['__scopeId',"data-v-ac5b1bd4"]])
-
-/* harmony default export */ var ButtonDefinitionDialog = (ButtonDefinitionDialog_exports_);
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
-var VTextField = __webpack_require__(43948);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=5d8a23c3&ts=true
-
-function ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-                                                                    
-                                                      
-                                                            
-  const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-field");
+  const _component_number_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-card-item");
                                                       
                                                       
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_dialog_template, {
     modelValue: $setup.visible,
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.visible = $event),
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.visible = $event),
     "content-class": "button-edit-dialog",
     icon: "mdi-plus-box",
-    title: _ctx.$t($props.name?.length ? 'buttons.edit' : 'buttons.adding'),
-    width: "550px",
+    title: $setup.title,
     text: "",
     actions: ""
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, null, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12"
+        cols: "12",
+        style: {
+          "overflow": "hidden"
+        }
       }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VTextField/* VTextField */.W, {
-          modelValue: $setup.modelName,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.modelName = $event),
-          label: _ctx.$t('buttons.name'),
-          variant: "underlined",
-          "persistent-hint": ""
-        }, null, 8, ["modelValue", "label"])]),
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_multi_range, {
+          points: $setup.list,
+          min: $options.SW1_CONFIG_RESISTANCE_MIN(),
+          max: $options.SW1_CONFIG_RESISTANCE_MAX(),
+          "number-of-ticks": 51,
+          "select-point": $setup.resist
+        }, null, 8, ["points", "min", "max", "select-point"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
-          modelValue: $setup.modelPress,
-          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.modelPress = $event),
-          label: _ctx.$t('buttons.pressSingle.title'),
-          items: $setup.functionsList,
-          hint: _ctx.$t('buttons.pressSingle.description'),
-          variant: "underlined",
-          "item-title": "label",
-          "item-value": "value",
-          "persistent-hint": ""
-        }, null, 8, ["modelValue", "label", "items", "hint"])]),
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_card_item, {
+          "model-value": $setup.beginResistance,
+          title: _ctx.$t('buttons.edit.beginValue.title'),
+          description: _ctx.$t('buttons.edit.beginValue.description'),
+          min: $setup.minResistance,
+          max: $setup.maxResistance,
+          step: 20,
+          disabled: ""
+        }, null, 8, ["model-value", "title", "description", "min", "max"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0"
       }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_field, {
-          modelValue: $setup.modelResistanceMin,
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.modelResistanceMin = $event),
-          label: _ctx.$t('buttons.resistance.min.title'),
-          hint: _ctx.$t('buttons.resistance.min.description')
-        }, null, 8, ["modelValue", "label", "hint"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_field, {
-          modelValue: $setup.modelResistanceMax,
-          "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.modelResistanceMax = $event),
-          label: _ctx.$t('buttons.resistance.max.title'),
-          hint: _ctx.$t('buttons.resistance.max.description')
-        }, null, 8, ["modelValue", "label", "hint"])]),
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_card_item, {
+          modelValue: $setup.resist,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.resist = $event),
+          title: _ctx.$t('buttons.edit.endValue.title'),
+          description: _ctx.$t('buttons.edit.endValue.description'),
+          min: $setup.minResistance,
+          max: $setup.maxResistance,
+          step: 20
+        }, null, 8, ["modelValue", "title", "description", "min", "max"])]),
         _: 1
       })]),
       _: 1
     })]),
     btns: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      onClick: $setup.onApplyClick,
-      disabled: $setup.disabled
+      onClick: $setup.reset,
+      disabled: $setup.resist === $props.resistance
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.reset")), 1)]),
+      _: 1
+    }, 8, ["onClick", "disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
+      color: "primary",
+      onClick: $setup.apply,
+      disabled: $setup.resist === $props.resistance
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1)]),
       _: 1
     }, 8, ["onClick", "disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      onClick: _cache[4] || (_cache[4] = $event => $setup.visible = false)
+      onClick: _cache[1] || (_cache[1] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.cancel")), 1)]),
       _: 1
@@ -3444,8 +3178,10 @@ function ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render(_ctx, _cac
 
 
 
-
-
+// EXTERNAL MODULE: ./src/components/MultiRange.vue + 6 modules
+var MultiRange = __webpack_require__(34453);
+// EXTERNAL MODULE: ./src/components/cards/NumberCardItem.vue + 5 modules
+var NumberCardItem = __webpack_require__(19493);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=script&lang=ts
 
 
@@ -3455,9 +3191,18 @@ function ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render(_ctx, _cac
 
 /* harmony default export */ var ButtonEditDialogvue_type_script_lang_ts = ({
   name: "ButtonEditDialog",
+  methods: {
+    SW1_CONFIG_RESISTANCE_MAX() {
+      return buttons/* SW1_CONFIG_RESISTANCE_MAX */.mH;
+    },
+    SW1_CONFIG_RESISTANCE_MIN() {
+      return buttons/* SW1_CONFIG_RESISTANCE_MIN */.ET;
+    }
+  },
   components: {
     DialogTemplate: DialogTemplate/* default */.A,
-    NumberField: NumberField/* default */.A
+    MultiRange: MultiRange/* default */.A,
+    NumberCardItem: NumberCardItem/* default */.A
   },
   props: {
     /** Отображение диалога */
@@ -3468,27 +3213,17 @@ function ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render(_ctx, _cac
     /** Наименование кнопки */
     name: {
       type: String,
-      default: ""
+      default: "Тест"
     },
-    /** Функция нажатой кнопки */
-    press: {
+    /** Сопротивление */
+    resistance: {
       type: Number,
       default: 0
     },
-    /** Сопротивление нажатой кнопки */
-    valueResistance: {
-      type: Number,
-      default: 0
-    },
-    /** Минимальное сопротивление */
-    resistanceMin: {
-      type: Number,
-      default: 0
-    },
-    /** Максимальное сопротивление */
-    resistanceMax: {
-      type: Number,
-      default: 0
+    /** Список сопротивлений */
+    listOfResistance: {
+      type: Array,
+      default: () => []
     }
   },
   emits: ["update:modelValue", "click:apply"],
@@ -3498,60 +3233,51 @@ function ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render(_ctx, _cac
     const {
       modelValue,
       name,
-      press,
-      valueResistance,
-      resistanceMin,
-      resistanceMax
+      resistance,
+      listOfResistance
     } = (0,reactivity_esm_bundler/* toRefs */.QW)(props);
     const {
-      tm
+      t
     } = (0,vue_i18n/* useI18n */.s9)();
     const visible = (0,runtime_core_esm_bundler/* computed */.EW)({
       get: () => modelValue.value,
       set: val => emit("update:modelValue", val)
     });
-    const modelName = (0,reactivity_esm_bundler/* ref */.KR)("");
-    const modelPress = (0,reactivity_esm_bundler/* ref */.KR)(buttons/* TButtonExec */.su.BUTTON_EXEC_NONE);
-    const modelResistanceMin = (0,reactivity_esm_bundler/* ref */.KR)(0);
-    const modelResistanceMax = (0,reactivity_esm_bundler/* ref */.KR)(0);
-    const disabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => !(modelName.value?.length > 0 && modelPress.value > 0 && modelResistanceMin.value < modelResistanceMax.value));
-    (0,runtime_core_esm_bundler/* watch */.wB)(modelValue, val => {
-      if (val) {
-        modelName.value = name.value;
-        modelPress.value = press.value;
-        modelResistanceMin.value = resistanceMin.value;
-        modelResistanceMax.value = resistanceMax.value;
-        if (modelResistanceMin.value === 0 && modelResistanceMax.value === 0) {
-          modelResistanceMin.value = valueResistance.value - 150;
-          if (modelResistanceMin.value < 0) modelResistanceMin.value = 0;
-          modelResistanceMax.value = valueResistance.value + 150;
-        }
+    const title = (0,runtime_core_esm_bundler/* computed */.EW)(() => t("buttons.edit.title", {
+      name: name.value
+    }));
+    const list = (0,reactivity_esm_bundler/* ref */.KR)([...listOfResistance.value]);
+    (0,runtime_core_esm_bundler/* watch */.wB)(listOfResistance, val => list.value = [...val]);
+    const indexList = (0,runtime_core_esm_bundler/* computed */.EW)(() => listOfResistance.value?.findIndex(r => r === resistance.value) ?? 0);
+    const minResistance = (0,runtime_core_esm_bundler/* computed */.EW)(() => indexList.value > 0 ? list.value[indexList.value - 1] + 20 : 20);
+    const maxResistance = (0,runtime_core_esm_bundler/* computed */.EW)(() => indexList.value < listOfResistance.value?.length - 1 ? listOfResistance.value[indexList.value + 1] - 20 : buttons/* SW1_CONFIG_RESISTANCE_MAX */.mH);
+    const resist = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => list.value[indexList.value],
+      set: val => {
+        list.value[indexList.value] = val;
       }
     });
-    /** Применить */
-    const onApplyClick = () => {
-      visible.value = false;
-      emit("click:apply", modelName.value, modelPress.value, modelResistanceMin.value, modelResistanceMax.value);
+    const beginResistance = (0,runtime_core_esm_bundler/* computed */.EW)(() => indexList.value > 0 ? list.value[indexList.value - 1] + 1 : 1);
+    /** Сбросить изменения */
+    const reset = () => {
+      list.value = [...listOfResistance.value];
     };
-    /** Список функций */
-    const functionsList = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const list = tm("buttons.functions");
-      const result = [];
-      for (const key in list) result.push({
-        label: list[key],
-        value: Number(key)
-      });
-      return result;
-    });
+    /** Применить изменения */
+    const apply = () => {
+      visible.value = false;
+      emit("click:apply", list.value);
+    };
     return {
       visible,
-      disabled,
-      modelName,
-      modelPress,
-      modelResistanceMin,
-      modelResistanceMax,
-      functionsList,
-      onApplyClick
+      title,
+      list,
+      resist,
+      indexList,
+      minResistance,
+      maxResistance,
+      beginResistance,
+      reset,
+      apply
     };
   }
 });
@@ -3563,10 +3289,13 @@ function ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render(_ctx, _cac
 
 
 ;
-const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ButtonEditDialogvue_type_script_lang_ts, [['render',ButtonEditDialogvue_type_template_id_5d8a23c3_ts_true_render]])
+const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ButtonEditDialogvue_type_script_lang_ts, [['render',ButtonEditDialogvue_type_template_id_02c45e4e_ts_true_render]])
 
 /* harmony default export */ var ButtonEditDialog = (ButtonEditDialog_exports_);
+// EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
+var head_unit = __webpack_require__(19661);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=script&lang=ts
+
 
 
 
@@ -3584,7 +3313,6 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(B
   components: {
     Flicking: flicking_esm/* default */.Ay,
     SettingsCard: SettingsCard,
-    ButtonDefinitionDialog: ButtonDefinitionDialog,
     ButtonEditDialog: ButtonEditDialog
   },
   setup() {
@@ -3592,179 +3320,163 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(B
       name: display
     } = (0,composables_display/* useDisplay */._F)();
     const {
-      t
+      t,
+      tm
     } = (0,vue_i18n/* useI18n */.s9)();
     const flicking = (0,reactivity_esm_bundler/* ref */.KR)(null);
     (0,runtime_core_esm_bundler/* provide */.Gt)("flicking", flicking);
-    const __type = (0,runtime_core_esm_bundler/* computed */.EW)(() => src_router.currentRoute.value.query?.type);
-    const __getKey = type => {
-      switch (type) {
-        case "sw1":
-          return {
-            app: "app/sw1",
-            set: "app/setSW1",
-            read: "app/readSW1",
-            write: "app/writeSW1",
-            config: "config/sw1",
-            setItem: "config/setSW1Item",
-            setResistance: "config/setSW1Resistance",
-            setProgramming: "config/setSW1Programming",
-            value: "value/sw1"
-          };
+    const buttonEditVisible = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const configLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/sw1"].isData);
+    const cardButtons = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["app/sw1"].map(cardButton => ({
+      ...cardButton,
+      ...(store/* default */.A.getters["config/sw1"].buttons.find(button => button.id === cardButton.id) ?? {})
+    })).filter(cardButton => cardButton.resistanceTo > 0));
+    const listOfResistance = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/sw1"].buttons.map(x => x.resistanceTo));
+    /**
+     * Список функций
+     * @param {number[]} excludeId Список ID функций, который нужно исключить
+     * @param {TProtocol} protocol Протокол UART
+     * @param {TCarModel} carModel Модель автомобиля
+     */
+    const getListOfFunctions = (excludeId, protocol, carModel) => {
+      if (!(protocol === head_unit/* TProtocol */.Tm.PROTOCOL_RAISE_HM_ND00 || protocol === head_unit/* TProtocol */.Tm.PROTOCOL_RAISE_HM_ND03)) {
+        // список не доступных для данного протокола функций
+        excludeId.push(...[buttons/* TButtonExec */.su.BUTTON_EXEC_HEAD_UNIT_VOICE, buttons/* TButtonExec */.su.BUTTON_EXEC_HEAD_UNIT_EQUALIZER, buttons/* TButtonExec */.su.BUTTON_EXEC_HEAD_UNIT_RADIO, buttons/* TButtonExec */.su.BUTTON_EXEC_HEAD_UNIT_RADIO_SEARCH, buttons/* TButtonExec */.su.BUTTON_EXEC_HEAD_UNIT_CAMERA, buttons/* TButtonExec */.su.BUTTON_EXEC_HEAD_UNIT_PHONE]);
       }
+      if (!(carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9)) {
+        // список функций Bose, который доступен только для моделей автомобилей CX
+        excludeId.push(...[buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_ON, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_AUDIO_PLT, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_MUTE, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_VOL_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_VOL_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BALANCE_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BALANCE_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BASS_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BASS_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_FADE_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_FADE_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_TREBLE_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_TREBLE_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_CENTER_POINT]);
+      }
+      const list = tm("buttons.functions");
+      const result = [];
+      for (const key in list) {
+        const index = parseInt(key);
+        if (excludeId.indexOf(index) < 0) {
+          result.push({
+            label: list[key],
+            value: index
+          });
+        }
+      }
+      return result;
     };
-    const keys = (0,runtime_core_esm_bundler/* computed */.EW)(() => __getKey(__type.value));
-    const configLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => keys.value && store/* default */.A.getters[keys.value.config].isData);
-    const value = (0,runtime_core_esm_bundler/* computed */.EW)(() => keys.value ? store/* default */.A.getters[keys.value.value] : undefined);
-    const isMode = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      return keys.value && (store/* default */.A.getters[keys.value.config].items?.filter(x => x.extended)?.findIndex(x => x.exec.findIndex(y => y === buttons/* TButtonExec */.su.BUTTON_EXEC_ENTERING_MODE) >= 0) >= 0 ?? false);
+    const listOfFunctionsExtended = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return getListOfFunctions([], store/* default */.A.getters["config/head"].protocol, store/* default */.A.getters["config/carModel"]);
     });
-    const list = (0,reactivity_esm_bundler/* ref */.KR)([]);
-    const listWithoutEmpty = (0,runtime_core_esm_bundler/* computed */.EW)(() => list.value?.filter(x => x.title?.length) ?? []);
-    const definitionDialog = (0,reactivity_esm_bundler/* ref */.KR)(false);
-    const addDialog = (0,reactivity_esm_bundler/* ref */.KR)(false);
-    const selectedItem = (0,reactivity_esm_bundler/* ref */.KR)(undefined);
-    /** Загрузка списка кнопок */
-    const loadButtons = type => {
-      const key = __getKey(type);
-      if (key) {
-        store/* default */.A.dispatch(key.read);
-        list.value = store/* default */.A.getters[key.config].items.map(config => ({
-          ...(store/* default */.A.getters[key.app]?.find(x => x.id === config.id) ?? {
-            id: config.id,
-            title: "",
-            icon: ""
-          }),
-          config: {
-            ...config
-          }
-        }));
-      }
-      return key;
+    const listOfFunctions = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return getListOfFunctions([buttons/* TButtonExec */.su.BUTTON_EXEC_ON_BOARD_LONG_PRESS_INFO, buttons/* TButtonExec */.su.BUTTON_EXEC_ON_BOARD_LONG_PRESS_CLOCK], store/* default */.A.getters["config/head"].protocol, store/* default */.A.getters["config/carModel"]);
+    });
+    const extendedVisible = (0,runtime_core_esm_bundler/* computed */.EW)(() => cardButtons.value.findIndex(cardButton => cardButton.extended ? cardButton.exec.indexOf(buttons/* TButtonExec */.su.BUTTON_EXEC_CHANGE_CONTROL_MODE) >= 0 : cardButton.exec[0] === buttons/* TButtonExec */.su.BUTTON_EXEC_CHANGE_CONTROL_MODE) >= 0);
+    /**
+     * Проверяем наличие функции в списке
+     * @param {number[]} exec Список ID функций
+     * @param extended Расширенный режим
+     */
+    const checkExecList = (exec, extended) => {
+      const funcs = extended ? listOfFunctionsExtended.value : listOfFunctions.value;
+      return exec.map(x => funcs.findIndex(val => val.value === x) >= 0 ? x : 0);
     };
-    // заполняем массив списка (значения могут быть пустыми, нужно для работы реактивности vue)
-    loadButtons(__type.value);
-    /** Сохранить список кнопок */
-    const saveButtons = () => {
-      if (keys.value) {
-        store/* default */.A.commit(keys.value.set, list.value);
-        store/* default */.A.dispatch(keys.value.write);
-      }
-    };
-    /** Изменение значений конфигурации кнопок */
-    const onButtonConfigUpdate = item => {
-      if (keys.value) store/* default */.A.commit(keys.value.setItem, item);
+    const selected = (0,reactivity_esm_bundler/* ref */.KR)({});
+    /**
+     * Открыть окно редактирования кнопки
+     * @param {ISW1Card} cardButton Значения кнопки
+     */
+    const onButtonEdit = cardButton => {
+      selected.value = cardButton;
+      buttonEditVisible.value = true;
     };
     /**
-     * Применить конфигурацию определенной кнопки
-     * @param {number | undefined} id ID кнопки
-     * @param {number} min Минимальное сопротивление кнопки
-     * @param {number} max Максимальное сопротивление кнопки
+     * Применить значения сопротивлений кнопок
+     * @param {number[]} list Список сопротивлений кнопок (см. listOfResistance)
      */
-    const onButtonDefinitionApply = (id, min, max) => {
-      if (id && keys.value) store/* default */.A.commit(keys.value?.setResistance, {
+    const onButtonApply = list => {
+      store/* default */.A.commit("config/setSW1ListOfResistance", list);
+    };
+    /**
+     * Обновление значения расширенного режима
+     * @param {number} id ID кнопки
+     * @param {boolean} value Значение
+     */
+    const onUpdateExtended = (id, value) => {
+      store/* default */.A.commit("config/setSW1Extended", {
         id,
-        min,
-        max
+        value
       });
     };
     /**
-     * Применить создание кнопки
-     * @param {string} name Наименование/тип кнопки
-     * @param {TButtonExec} press Функция кнопки
-     * @param {number} min Минимальное значение сопротивления
-     * @param {number} max Максимальное значение сопротивления
+     * Обновление функций кнопки
+     * @param {number} id ID кнопки
+     * @param {boolean} value Значение
      */
-    const onButtonAddApply = (name, press, min, max) => {
-      if (selectedItem.value) {
-        selectedItem.value.title = name;
-        if (!selectedItem.value.icon?.length) selectedItem.value.icon = "mdi-card-outline";
-        if (selectedItem.value.config) {
-          const exec = [...selectedItem.value.config.exec];
-          exec[1] = press;
-          selectedItem.value.config = {
-            ...selectedItem.value.config,
-            exec,
-            resistanceMin: min,
-            resistanceMax: max
-          };
-        }
-        saveButtons();
-      }
+    const onUpdateExec = (id, value) => {
+      store/* default */.A.commit("config/setSW1Exec", {
+        id,
+        value
+      });
     };
     /**
-     * Редактирование кнопки
-     * @param {IButtonCard} item Значения кнопки
+     * Обновление функций кнопки в расширенном режиме
+     * @param {number} id ID кнопки
+     * @param {boolean} value Значение
      */
-    const onButtonEdit = item => {
-      selectedItem.value = item;
-      addDialog.value = true;
+    const onUpdateExecMode = (id, value) => {
+      store/* default */.A.commit("config/setSW1ExecMode", {
+        id,
+        value
+      });
     };
+    let lastIdPressed = 0;
     /** Событие нажатия кнопки */
     const onButtonsValueReceive = () => {
-      if (keys.value) {
-        const res = store/* default */.A.getters[keys.value.value];
-        if (res.isData) {
-          selectedItem.value = list.value?.find(x => x.id === res.id);
-          if (selectedItem.value) {
-            if (selectedItem.value.title?.length) definitionDialog.value = true;else addDialog.value = true;
-          }
-        }
+      const res = store/* default */.A.getters["value/sw1"];
+      if (res.isData && res.pressed && lastIdPressed !== res.id) {
+        lastIdPressed = res.id;
+        setTimeout(() => lastIdPressed = 0, 4000);
+        const detected = cardButtons.value.find(button => button.id === res.id) ?? {};
+        if (detected.resistanceTo > 0) dist/* toast */.oR.success(t("buttons.notify.detected", {
+          id: detected.title
+        }));else dist/* toast */.oR.warning(t("buttons.notify.notDefined"));
       }
     };
-    const onBegin = type => {
-      // загружаем список, если он пуст
-      const key = listWithoutEmpty.value.length ? __getKey(type) : loadButtons(type);
-      if (key) {
-        canbus/* default */.A.addListener(buttons/* API_BUTTON_SW1_VALUE_EVENT */.Du, onButtonsValueReceive);
-        store/* default */.A.commit(key.setProgramming, true);
-        setTimeout(() => dist/* toast */.oR.warning(t("help.buttons.notify"), {
-          autoClose: false
-        }), 1000);
-      }
+    const onBegin = () => {
+      canbus/* default */.A.addListener(buttons/* API_SW1_VALUE_EVENT */._u, onButtonsValueReceive);
     };
     const onEnd = () => {
-      canbus/* default */.A.removeListener(buttons/* API_BUTTON_SW1_VALUE_EVENT */.Du, onButtonsValueReceive);
-      store/* default */.A.commit("config/setSW1Programming", false);
+      canbus/* default */.A.removeListener(buttons/* API_SW1_VALUE_EVENT */._u, onButtonsValueReceive);
     };
-    (0,runtime_core_esm_bundler/* watch */.wB)(configLoaded, () => onBegin(__type.value));
-    (0,runtime_core_esm_bundler/* watch */.wB)(__type, val => {
-      if (val.name === "Buttons") {
-        onEnd();
-        onBegin(val);
-      }
-    });
+    (0,runtime_core_esm_bundler/* watch */.wB)(configLoaded, () => onBegin());
     (0,runtime_core_esm_bundler/* onMounted */.sV)(() => {
-      if (configLoaded.value) onBegin(__type.value);
+      if (configLoaded.value) onBegin();
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.hi)(() => {
       onEnd();
-      dist/* toast */.oR.clearAll();
     });
     return {
       flicking,
       display,
       configLoaded,
-      value,
-      isMode,
-      list,
-      listWithoutEmpty,
-      definitionDialog,
-      addDialog,
-      selectedItem,
-      onButtonConfigUpdate,
-      onButtonDefinitionApply,
-      onButtonAddApply,
-      onButtonEdit
+      cardButtons,
+      listOfResistance,
+      listOfFunctionsExtended,
+      listOfFunctions,
+      selected,
+      buttonEditVisible,
+      extendedVisible,
+      checkExecList,
+      onButtonEdit,
+      onButtonApply,
+      onUpdateExtended,
+      onUpdateExec,
+      onUpdateExecMode
     };
   }
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=111f9db8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=7b830805&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=111f9db8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=7b830805&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue
 
@@ -3774,12 +3486,12 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(B
 ;
 
 
-const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_111f9db8_scoped_true_ts_true_render],['__scopeId',"data-v-111f9db8"]])
+const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_7b830805_scoped_true_ts_true_render],['__scopeId',"data-v-7b830805"]])
 
 /* harmony default export */ var views_buttons = (buttons_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=1a90dfba&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=4a9a390a&scoped=true&ts=true
 
-function optionsvue_type_template_id_1a90dfba_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function optionsvue_type_template_id_4a9a390a_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("flicking");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_flicking, {
     ref: "flicking",
@@ -3798,9 +3510,11 @@ function optionsvue_type_template_id_1a90dfba_scoped_true_ts_true_render(_ctx, _
     _: 1
   }, 512);
 }
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/LcdCard.vue?vue&type=template&id=cb991088&ts=true
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
+var VTextField = __webpack_require__(43948);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/LcdCard.vue?vue&type=template&id=1aa20dcc&ts=true
 
-function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function LcdCardvue_type_template_id_1aa20dcc_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
                                                       
                                                                     
@@ -3824,8 +3538,8 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
           title: _ctx.$t('options.lcd.enabled.title'),
           description: _ctx.$t('options.lcd.enabled.description'),
           color: "success",
-          nodata: !$setup.mazdaConfigLoaded,
-          disabled: !$setup.mazdaConfigLoaded
+          nodata: !$setup.onboardConfigLoaded,
+          disabled: !$setup.onboardConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
@@ -3838,10 +3552,10 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
           label: _ctx.$t('options.lcd.logo.title'),
           hint: _ctx.$t('options.lcd.logo.description'),
           variant: "underlined",
-          disabled: !$setup.mazdaConfigLoaded,
+          disabled: !$setup.onboardConfigLoaded,
           "persistent-hint": "",
           dense: "",
-          onBlur: $setup.setMazdaLogo
+          onBlur: $setup.setOnboardLogo
         }, null, 8, ["modelValue", "label", "hint", "disabled", "onBlur"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
@@ -3854,10 +3568,10 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
           label: _ctx.$t('options.lcd.hello.title'),
           hint: _ctx.$t('options.lcd.hello.description'),
           variant: "underlined",
-          disabled: !$setup.mazdaConfigLoaded,
+          disabled: !$setup.onboardConfigLoaded,
           "persistent-hint": "",
           dense: "",
-          onBlur: $setup.setMazdaHello
+          onBlur: $setup.setOnboardHello
         }, null, 8, ["modelValue", "label", "hint", "disabled", "onBlur"])]),
         _: 1
       })]),
@@ -3898,11 +3612,11 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
     const {
       t
     } = (0,vue_i18n/* useI18n */.s9)();
-    const mazdaConfigLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/mazda"].isData);
-    const mazdaViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/mazda"].isData);
+    const onboardConfigLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/onboard"].isData);
+    const onboardViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/onboard"].isData);
     const enabled = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/mazda"].lcd,
-      set: val => store/* default */.A.commit("config/setMazdaLcd", val)
+      get: () => store/* default */.A.getters["config/onboard"].lcd,
+      set: val => store/* default */.A.commit("config/setOnboardLcd", val)
     });
     /**
      * Проверка ввода
@@ -3917,13 +3631,13 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
       if (length > max) input.value = value.substring(0, max);else if (!/^[^а-яА-я]*$/.test(value)) input.value = value.substring(0, length - 1);
     };
     // Логотип
-    const __logo = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/mazda"].logo.trim());
+    const __logo = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/onboard"].logo.trim());
     const logo = (0,reactivity_esm_bundler/* ref */.KR)(__logo.value);
     (0,runtime_core_esm_bundler/* watch */.wB)(__logo, val => logo.value = val);
     (0,runtime_core_esm_bundler/* watch */.wB)(logo, () => {
       (0,runtime_core_esm_bundler/* nextTick */.dY)(() => onInput(logo, 12));
     });
-    const setMazdaLogo = () => {
+    const setOnboardLogo = () => {
       const val = logo.value.trim();
       if (logo.value.length < 12) {
         const countSpace = Math.floor((12 - val.length) / 2);
@@ -3933,20 +3647,20 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
           logo.value = spaces + val;
         }
       }
-      store/* default */.A.commit("config/setMazdaLogo", logo.value);
+      store/* default */.A.commit("config/setOnboardLogo", logo.value);
     };
     // Текст приветствия
-    const __hello = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/mazda"].hello);
+    const __hello = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/onboard"].hello);
     const hello = (0,reactivity_esm_bundler/* ref */.KR)(__hello.value);
     (0,runtime_core_esm_bundler/* watch */.wB)(__hello, val => hello.value = val);
     (0,runtime_core_esm_bundler/* watch */.wB)(hello, () => {
       (0,runtime_core_esm_bundler/* nextTick */.dY)(() => onInput(hello, 32));
     });
-    const setMazdaHello = () => store/* default */.A.commit("config/setMazdaHello", hello.value);
+    const setOnboardHello = () => store/* default */.A.commit("config/setOnboardHello", hello.value);
     const menu = (0,runtime_core_esm_bundler/* computed */.EW)(() => [{
       title: t("options.lcd.hello.menu"),
-      view: store/* default */.A.getters["view/mazda"],
-      disabled: !mazdaViewLoaded.value
+      view: store/* default */.A.getters["view/onboard"],
+      disabled: !onboardViewLoaded.value
     }]);
     const menuVisible = (0,reactivity_esm_bundler/* ref */.KR)(false);
     const menuSelected = (0,reactivity_esm_bundler/* ref */.KR)({});
@@ -3966,13 +3680,13 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
       store/* default */.A.commit("view/setView", value);
     };
     return {
-      mazdaConfigLoaded,
-      mazdaViewLoaded,
+      onboardConfigLoaded,
+      onboardViewLoaded,
       enabled,
       logo,
-      setMazdaLogo,
+      setOnboardLogo,
       hello,
-      setMazdaHello,
+      setOnboardHello,
       menu,
       menuVisible,
       menuSelected,
@@ -3990,12 +3704,12 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
 
 
 ;
-const LcdCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(LcdCardvue_type_script_lang_ts, [['render',LcdCardvue_type_template_id_cb991088_ts_true_render]])
+const LcdCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(LcdCardvue_type_script_lang_ts, [['render',LcdCardvue_type_template_id_1aa20dcc_ts_true_render]])
 
 /* harmony default export */ var LcdCard = (LcdCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/TeyesCard.vue?vue&type=template&id=050acd0a&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/HeadCard.vue?vue&type=template&id=d3c9cfd4&ts=true
 
-function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function HeadCardvue_type_template_id_d3c9cfd4_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
@@ -4003,8 +3717,8 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
   const _component_card = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("card");
   const _component_view_setting_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("view-setting-dialog");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_card, {
-    class: "teyes-card",
-    title: _ctx.$t('options.teyes.title'),
+    class: "head-card",
+    title: _ctx.$t('options.head.title'),
     menu: $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
@@ -4016,14 +3730,14 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VSelect/* VSelect */.d4, {
           modelValue: $setup.protocol,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.protocol = $event),
-          label: _ctx.$t('options.teyes.protocol.title'),
+          label: _ctx.$t('options.head.protocol.title'),
           items: $setup.listProtocol,
-          hint: _ctx.$t('options.teyes.protocol.description'),
+          hint: _ctx.$t('options.head.protocol.description'),
           variant: "underlined",
           "item-title": "label",
           "item-value": "value",
           "persistent-hint": "",
-          disabled: !$setup.teyesConfigLoaded
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
@@ -4033,11 +3747,11 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
           modelValue: $setup.reverseUart,
           "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.reverseUart = $event),
-          title: _ctx.$t('options.teyes.reverseUart.title'),
-          description: _ctx.$t('options.teyes.reverseUart.description'),
+          title: _ctx.$t('options.head.reverseUart.title'),
+          description: _ctx.$t('options.head.reverseUart.description'),
           color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
       }), $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
@@ -4046,13 +3760,13 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
-          modelValue: $setup.lcdShow,
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.lcdShow = $event),
-          title: _ctx.$t('options.teyes.lcdShow.title'),
-          description: _ctx.$t('options.teyes.lcdShow.description'),
+          modelValue: $setup.onboardShow,
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.onboardShow = $event),
+          title: _ctx.$t('options.head.onboardShow.title'),
+          description: _ctx.$t('options.head.onboardShow.description'),
           color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
@@ -4062,11 +3776,25 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
           modelValue: $setup.sendButton,
           "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.sendButton = $event),
-          title: _ctx.$t('options.teyes.sendButton.title'),
-          description: _ctx.$t('options.teyes.sendButton.description'),
+          title: _ctx.$t('options.head.sendButton.title'),
+          description: _ctx.$t('options.head.sendButton.description'),
           color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          modelValue: $setup.holdToFlip,
+          "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.holdToFlip = $event),
+          title: _ctx.$t('options.head.holdToFlip.title'),
+          description: _ctx.$t('options.head.holdToFlip.description'),
+          color: "success",
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
       }), $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9 && $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
@@ -4076,27 +3804,27 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
           modelValue: $setup.sendClimate,
-          "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.sendClimate = $event),
-          title: _ctx.$t('options.teyes.sendClimate.title'),
-          description: _ctx.$t('options.teyes.sendClimate.description'),
+          "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.sendClimate = $event),
+          title: _ctx.$t('options.head.sendClimate.title'),
+          description: _ctx.$t('options.head.sendClimate.description'),
           color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
         key: 2,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
           modelValue: $setup.sendDoors,
-          "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.sendDoors = $event),
-          title: _ctx.$t('options.teyes.sendDoors.title'),
-          description: _ctx.$t('options.teyes.sendDoors.description'),
+          "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.sendDoors = $event),
+          title: _ctx.$t('options.head.sendDoors.title'),
+          description: _ctx.$t('options.head.sendDoors.description'),
           color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
@@ -4104,41 +3832,13 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
-          modelValue: $setup.parseVolume,
-          "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.parseVolume = $event),
-          title: _ctx.$t('options.teyes.parseVolume.title'),
-          description: _ctx.$t('options.teyes.parseVolume.description'),
+          modelValue: $setup.sendOnboard,
+          "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => $setup.sendOnboard = $event),
+          title: _ctx.$t('options.head.sendOnboard.title'),
+          description: _ctx.$t('options.head.sendOnboard.description'),
           color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
-        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0 pb-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
-          modelValue: $setup.receiveText,
-          "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => $setup.receiveText = $event),
-          title: _ctx.$t('options.teyes.receiveText.title'),
-          description: _ctx.$t('options.teyes.receiveText.description'),
-          color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
-        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-        cols: "12",
-        class: "pt-0 pb-0"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
-          modelValue: $setup.receiveButtons,
-          "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => $setup.receiveButtons = $event),
-          title: _ctx.$t('options.teyes.receiveButtons.title'),
-          description: _ctx.$t('options.teyes.receiveButtons.description'),
-          color: "success",
-          nodata: !$setup.teyesConfigLoaded,
-          disabled: !$setup.teyesConfigLoaded
+          nodata: !$setup.headConfigLoaded,
+          disabled: !$setup.headConfigLoaded
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
         _: 1
       })]),
@@ -4147,7 +3847,7 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
     _: 1
   }, 8, ["title", "menu", "onClick:menu"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_view_setting_dialog, {
     modelValue: $setup.menuVisible,
-    "onUpdate:modelValue": _cache[9] || (_cache[9] = $event => $setup.menuVisible = $event),
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => $setup.menuVisible = $event),
     title: $setup.menuSelected.title,
     view: $setup.menuSelected.view,
     disabled: $setup.menuSelected.disabled,
@@ -4160,7 +3860,7 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
 
 
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/TeyesCard.vue?vue&type=script&lang=ts
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/HeadCard.vue?vue&type=script&lang=ts
 
 
 
@@ -4169,11 +3869,11 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
 
 
 
-/* harmony default export */ var TeyesCardvue_type_script_lang_ts = ({
-  name: "TeyesCard",
+/* harmony default export */ var HeadCardvue_type_script_lang_ts = ({
+  name: "HeadCard",
   computed: {
     TCarModel() {
-      return mazda/* TCarModel */.oB;
+      return onboard/* TCarModel */.oB;
     }
   },
   components: {
@@ -4186,51 +3886,43 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
       t,
       tm
     } = (0,vue_i18n/* useI18n */.s9)();
-    const teyesConfigLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/teyes"].isData);
+    const headConfigLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/head"].isData);
     const protocol = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].protocol,
-      set: val => store/* default */.A.commit("config/setTeyesProtocol", val)
+      get: () => store/* default */.A.getters["config/head"].protocol,
+      set: val => store/* default */.A.commit("config/setHeadProtocol", val)
     });
     const reverseUart = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].reverseUart,
-      set: val => store/* default */.A.commit("config/setTeyesReverseUart", val)
+      get: () => store/* default */.A.getters["config/head"].reverseUart,
+      set: val => store/* default */.A.commit("config/setHeadReverseUart", val)
     });
-    const lcdShow = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].lcdShow,
-      set: val => store/* default */.A.commit("config/setTeyesLcdShow", val)
+    const onboardShow = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => store/* default */.A.getters["config/head"].showTextOfLogo,
+      set: val => store/* default */.A.commit("config/setHeadShowTextOfLogo", val)
     });
     const sendButton = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].sendButton,
-      set: val => store/* default */.A.commit("config/setTeyesSendButton", val)
+      get: () => store/* default */.A.getters["config/head"].sendButton,
+      set: val => store/* default */.A.commit("config/setHeadSendButton", val)
     });
     const sendClimate = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].sendClimate,
-      set: val => store/* default */.A.commit("config/setTeyesSendClimate", val)
+      get: () => store/* default */.A.getters["config/head"].sendClimate,
+      set: val => store/* default */.A.commit("config/setHeadSendClimate", val)
     });
     const sendDoors = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].sendDoors,
-      set: val => store/* default */.A.commit("config/setTeyesSendDoors", val)
+      get: () => store/* default */.A.getters["config/head"].sendDoors,
+      set: val => store/* default */.A.commit("config/setHeadSendDoors", val)
     });
-    const parseVolume = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].parseVolume,
-      set: val => store/* default */.A.commit("config/setTeyesParseVolume", val)
+    const sendOnboard = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => store/* default */.A.getters["config/head"].sendOnboard,
+      set: val => store/* default */.A.commit("config/setHeadSendOnboard", val)
     });
-    const receiveClock = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].receiveClock,
-      set: val => store/* default */.A.commit("config/setTeyesReceiveClock", val)
-    });
-    const receiveText = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].receiveText,
-      set: val => store/* default */.A.commit("config/setTeyesReceiveText", val)
-    });
-    const receiveButtons = (0,runtime_core_esm_bundler/* computed */.EW)({
-      get: () => store/* default */.A.getters["config/teyes"].receiveButtons,
-      set: val => store/* default */.A.commit("config/setTeyesReceiveButtons", val)
+    const holdToFlip = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => store/* default */.A.getters["config/head"].holdToFlip,
+      set: val => store/* default */.A.commit("config/setHoldToFlip", val)
     });
     const carModel = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/carModel"]);
     /** Список протоколов */
     const listProtocol = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const list = tm("options.teyes.protocol.list");
+      const list = tm("options.head.protocol.list");
       const result = [];
       for (const key in list) result.push({
         label: list[key],
@@ -4239,9 +3931,9 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
       return result;
     });
     const menu = (0,runtime_core_esm_bundler/* computed */.EW)(() => [{
-      title: t("options.teyes.lcdShow.menu"),
-      view: store/* default */.A.getters["view/teyesText"],
-      disabled: !store/* default */.A.getters["view/teyesText"].isData
+      title: t("options.head.onboardShow.menu"),
+      view: store/* default */.A.getters["view/headText"],
+      disabled: !store/* default */.A.getters["view/headText"].isData
     }]);
     const menuVisible = (0,reactivity_esm_bundler/* ref */.KR)(false);
     const menuSelected = (0,reactivity_esm_bundler/* ref */.KR)({});
@@ -4261,17 +3953,15 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
       store/* default */.A.commit("view/setView", value);
     };
     return {
-      teyesConfigLoaded,
+      headConfigLoaded,
       protocol,
       reverseUart,
-      lcdShow,
+      onboardShow,
       sendButton,
       sendClimate,
       sendDoors,
-      parseVolume,
-      receiveClock,
-      receiveText,
-      receiveButtons,
+      sendOnboard,
+      holdToFlip,
       listProtocol,
       carModel,
       menu,
@@ -4282,20 +3972,20 @@ function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $pr
     };
   }
 });
-;// CONCATENATED MODULE: ./src/views/options/components/TeyesCard.vue?vue&type=script&lang=ts
+;// CONCATENATED MODULE: ./src/views/options/components/HeadCard.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./src/views/options/components/TeyesCard.vue
+;// CONCATENATED MODULE: ./src/views/options/components/HeadCard.vue
 
 
 
 
 ;
-const TeyesCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(TeyesCardvue_type_script_lang_ts, [['render',TeyesCardvue_type_template_id_050acd0a_ts_true_render]])
+const HeadCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(HeadCardvue_type_script_lang_ts, [['render',HeadCardvue_type_template_id_d3c9cfd4_ts_true_render]])
 
-/* harmony default export */ var TeyesCard = (TeyesCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=template&id=7d7fa9df&scoped=true&ts=true
+/* harmony default export */ var HeadCard = (HeadCard_exports_);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=template&id=5ad3d05b&scoped=true&ts=true
 
-function DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DateTimeCardvue_type_template_id_5ad3d05b_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
                                                       
                                                       
@@ -4428,7 +4118,7 @@ function DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render(_c
   name: "DatetimeCard",
   computed: {
     TCarModel() {
-      return mazda/* TCarModel */.oB;
+      return onboard/* TCarModel */.oB;
     }
   },
   components: {
@@ -4509,10 +4199,10 @@ function DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render(_c
 });
 ;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=7d7fa9df&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=5ad3d05b&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=7d7fa9df&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=5ad3d05b&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue
 
@@ -4522,7 +4212,7 @@ function DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render(_c
 ;
 
 
-const DateTimeCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DateTimeCardvue_type_script_lang_ts, [['render',DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render],['__scopeId',"data-v-7d7fa9df"]])
+const DateTimeCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DateTimeCardvue_type_script_lang_ts, [['render',DateTimeCardvue_type_template_id_5ad3d05b_scoped_true_ts_true_render],['__scopeId',"data-v-5ad3d05b"]])
 
 /* harmony default export */ var DateTimeCard = (DateTimeCard_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.mjs + 1 modules
@@ -4531,12 +4221,12 @@ var VCard = __webpack_require__(4189);
 var VCardText = __webpack_require__(30697);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSwitch/VSwitch.mjs + 1 modules
 var VSwitch = __webpack_require__(80594);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/OnboardCard.vue?vue&type=template&id=18aac5dd&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/OnboardCard.vue?vue&type=template&id=df43f44c&scoped=true&ts=true
 
-const OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_hoisted_1 = {
+const OnboardCardvue_type_template_id_df43f44c_scoped_true_ts_true_hoisted_1 = {
   class: "d-flex align-center"
 };
-function OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function OnboardCardvue_type_template_id_df43f44c_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-custom");
                                                             
                                                                   
@@ -4578,7 +4268,7 @@ function OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_render(_ct
             default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCardText/* VCardText */.O, {
               class: "d-flex align-center justify-space-between"
             }, {
-              default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_hoisted_1, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_icon_custom, {
+              default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", OnboardCardvue_type_template_id_df43f44c_scoped_true_ts_true_hoisted_1, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_icon_custom, {
                 class: "mr-2",
                 name: "mdi-menu",
                 size: "24",
@@ -4618,7 +4308,7 @@ function OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_render(_ct
 
 
 
-;// CONCATENATED MODULE: ./src/views/options/components/OnboardCard.vue?vue&type=template&id=18aac5dd&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/views/options/components/OnboardCard.vue?vue&type=template&id=df43f44c&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/vuedraggable/dist/vuedraggable.umd.js
 var vuedraggable_umd = __webpack_require__(61527);
@@ -4643,12 +4333,12 @@ var vuedraggable_umd_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_u
       t
     } = (0,vue_i18n/* useI18n */.s9)();
     const flicking = (0,runtime_core_esm_bundler/* inject */.WQ)("flicking");
-    store/* default */.A.dispatch("app/readOnboardCardList");
+    store/* default */.A.dispatch("app/readOnboardCards");
     const carModel = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/carModel"]);
-    const isLoading = (0,runtime_core_esm_bundler/* computed */.EW)(() => carModel.value !== mazda/* TCarModel */.oB.CAR_MODEL_UNKNOWN);
+    const isLoading = (0,runtime_core_esm_bundler/* computed */.EW)(() => carModel.value !== onboard/* TCarModel */.oB.CAR_MODEL_UNKNOWN);
     const cardList = (0,reactivity_esm_bundler/* ref */.KR)([]);
     const setCardList = model => {
-      cardList.value = [...store/* default */.A.getters["app/onboardCardList"]].map(x => ({
+      cardList.value = [...store/* default */.A.getters["app/onboardCards"]].map(x => ({
         ...x,
         disabled: false,
         visible: x.car.indexOf(model) >= 0
@@ -4666,8 +4356,8 @@ var vuedraggable_umd_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_u
     });
     /** Изменение списка */
     const onCardListChange = () => {
-      store/* default */.A.commit("app/setOnboardCardList", cardList.value);
-      store/* default */.A.dispatch("app/writeOnboardCardList");
+      store/* default */.A.commit("app/setOnboardCards", cardList.value);
+      store/* default */.A.dispatch("app/writeOnboardCards");
     };
     const menu = (0,runtime_core_esm_bundler/* computed */.EW)(() => [{
       id: 0,
@@ -4678,7 +4368,7 @@ var vuedraggable_umd_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_u
      * @param {IMenuItem} item Элемент меню
      */
     const onMenuClick = item => {
-      store/* default */.A.dispatch("app/resetOnboardCardList");
+      store/* default */.A.dispatch("app/resetOnboardCards");
       setCardList(carModel.value);
     };
     return {
@@ -4693,10 +4383,10 @@ var vuedraggable_umd_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_u
 });
 ;// CONCATENATED MODULE: ./src/views/options/components/OnboardCard.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/OnboardCard.vue?vue&type=style&index=0&id=18aac5dd&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/OnboardCard.vue?vue&type=style&index=0&id=df43f44c&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/options/components/OnboardCard.vue?vue&type=style&index=0&id=18aac5dd&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/options/components/OnboardCard.vue?vue&type=style&index=0&id=df43f44c&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/options/components/OnboardCard.vue
 
@@ -4706,7 +4396,7 @@ var vuedraggable_umd_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_u
 ;
 
 
-const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(OnboardCardvue_type_script_lang_ts, [['render',OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_render],['__scopeId',"data-v-18aac5dd"]])
+const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(OnboardCardvue_type_script_lang_ts, [['render',OnboardCardvue_type_template_id_df43f44c_scoped_true_ts_true_render],['__scopeId',"data-v-df43f44c"]])
 
 /* harmony default export */ var OnboardCard = (OnboardCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=script&lang=ts
@@ -4724,7 +4414,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Onboar
   components: {
     Flicking: flicking_esm/* default */.Ay,
     LcdCard: LcdCard,
-    TeyesCard: TeyesCard,
+    HeadCard: HeadCard,
     DatetimeCard: DateTimeCard,
     OnboardCard: OnboardCard
   },
@@ -4734,7 +4424,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Onboar
     } = (0,composables_display/* useDisplay */._F)();
     const flicking = (0,reactivity_esm_bundler/* ref */.KR)(null);
     (0,runtime_core_esm_bundler/* provide */.Gt)("flicking", flicking);
-    const cards = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/carModel"] !== mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST ? ["lcd", "teyes", "datetime", "onboard"] : ["teyes", "datetime", "onboard"]);
+    const cards = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/carModel"] !== onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST ? ["lcd", "head", "datetime", "onboard"] : ["head", "datetime", "onboard"]);
     return {
       flicking,
       cards,
@@ -4744,10 +4434,10 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Onboar
 });
 ;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=style&index=0&id=1a90dfba&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=style&index=0&id=4a9a390a&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=style&index=0&id=1a90dfba&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=style&index=0&id=4a9a390a&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/options/index.vue
 
@@ -4757,7 +4447,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Onboar
 ;
 
 
-const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(optionsvue_type_script_lang_ts, [['render',optionsvue_type_template_id_1a90dfba_scoped_true_ts_true_render],['__scopeId',"data-v-1a90dfba"]])
+const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(optionsvue_type_script_lang_ts, [['render',optionsvue_type_template_id_4a9a390a_scoped_true_ts_true_render],['__scopeId',"data-v-4a9a390a"]])
 
 /* harmony default export */ var options = (options_exports_);
 ;// CONCATENATED MODULE: ./src/router/index.ts
@@ -4769,7 +4459,7 @@ const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(optionsvue
 const routes = [{
   path: "/",
   name: "Onboard",
-  component: onboard,
+  component: views_onboard,
   meta: {
     title: "onboard.title"
   }
@@ -4801,7 +4491,7 @@ router.beforeEach(async (to, from, next) => {
 
 /***/ }),
 
-/***/ 81052:
+/***/ 35679:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -4816,24 +4506,24 @@ __webpack_require__.r(getters_namespaceObject);
 __webpack_require__.d(getters_namespaceObject, {
   language: function() { return language; },
   message: function() { return message; },
+  messageVisible: function() { return messageVisible; },
   notify: function() { return notify; },
-  onboardCardList: function() { return onboardCardList; },
-  sw1: function() { return sw1; },
-  visibleMessage: function() { return visibleMessage; }
+  onboardCards: function() { return onboardCards; },
+  sw1: function() { return sw1; }
 });
 
 // NAMESPACE OBJECT: ./src/store/modules/app/mutations.ts
 var mutations_namespaceObject = {};
 __webpack_require__.r(mutations_namespaceObject);
 __webpack_require__.d(mutations_namespaceObject, {
-  clearMessages: function() { return clearMessages; },
-  freeMessage: function() { return freeMessage; },
+  messageFree: function() { return messageFree; },
+  messagesClear: function() { return messagesClear; },
   setLanguage: function() { return setLanguage; },
   setMessage: function() { return setMessage; },
+  setMessageVisible: function() { return setMessageVisible; },
   setNotify: function() { return setNotify; },
-  setOnboardCardList: function() { return setOnboardCardList; },
-  setSW1: function() { return setSW1; },
-  setVisibleMessage: function() { return setVisibleMessage; }
+  setOnboardCards: function() { return setOnboardCards; },
+  setSW1: function() { return setSW1; }
 });
 
 // NAMESPACE OBJECT: ./src/store/modules/app/actions.ts
@@ -4841,12 +4531,12 @@ var actions_namespaceObject = {};
 __webpack_require__.r(actions_namespaceObject);
 __webpack_require__.d(actions_namespaceObject, {
   readLanguage: function() { return readLanguage; },
-  readOnboardCardList: function() { return readOnboardCardList; },
+  readOnboardCards: function() { return readOnboardCards; },
   readSW1: function() { return readSW1; },
-  resetOnboardCardList: function() { return resetOnboardCardList; },
+  resetOnboardCards: function() { return resetOnboardCards; },
   resetSW1: function() { return resetSW1; },
   writeLanguage: function() { return writeLanguage; },
-  writeOnboardCardList: function() { return writeOnboardCardList; },
+  writeOnboardCards: function() { return writeOnboardCards; },
   writeSW1: function() { return writeSW1; }
 });
 
@@ -4860,10 +4550,10 @@ __webpack_require__.d(config_getters_namespaceObject, {
   doors: function() { return getters_doors; },
   engine: function() { return getters_engine; },
   fuel: function() { return getters_fuel; },
+  head: function() { return head; },
   info: function() { return info; },
-  mazda: function() { return getters_mazda; },
+  onboard: function() { return getters_onboard; },
   sw1: function() { return getters_sw1; },
-  teyes: function() { return getters_teyes; },
   version: function() { return getters_version; },
   volume: function() { return getters_volume; }
 });
@@ -4879,8 +4569,11 @@ __webpack_require__.d(config_mutations_namespaceObject, {
   setBoseCenterPoint: function() { return setBoseCenterPoint; },
   setBoseEnabled: function() { return setBoseEnabled; },
   setBoseFade: function() { return setBoseFade; },
+  setBoseMute: function() { return setBoseMute; },
   setBoseRadioFM: function() { return setBoseRadioFM; },
   setBoseTreble: function() { return setBoseTreble; },
+  setBoseVolume: function() { return setBoseVolume; },
+  setBoseVolumeStart: function() { return setBoseVolumeStart; },
   setBoseWow: function() { return setBoseWow; },
   setDatetime: function() { return setDatetime; },
   setDatetimeShowDate: function() { return setDatetimeShowDate; },
@@ -4895,32 +4588,28 @@ __webpack_require__.d(config_mutations_namespaceObject, {
   setEngineConfig: function() { return setEngineConfig; },
   setFuel: function() { return setFuel; },
   setFuelRatio: function() { return setFuelRatio; },
+  setHead: function() { return setHead; },
+  setHeadProtocol: function() { return setHeadProtocol; },
+  setHeadReverseUart: function() { return setHeadReverseUart; },
+  setHeadSendButton: function() { return setHeadSendButton; },
+  setHeadSendClimate: function() { return setHeadSendClimate; },
+  setHeadSendDoors: function() { return setHeadSendDoors; },
+  setHeadSendOnboard: function() { return setHeadSendOnboard; },
+  setHeadShowTextOfLogo: function() { return setHeadShowTextOfLogo; },
+  setHoldToFlip: function() { return setHoldToFlip; },
   setInfo: function() { return setInfo; },
-  setMazda: function() { return setMazda; },
-  setMazdaCarModel: function() { return setMazdaCarModel; },
-  setMazdaHello: function() { return setMazdaHello; },
-  setMazdaLcd: function() { return setMazdaLcd; },
-  setMazdaLogo: function() { return setMazdaLogo; },
+  setOnboard: function() { return setOnboard; },
+  setOnboardCarModel: function() { return setOnboardCarModel; },
+  setOnboardHello: function() { return setOnboardHello; },
+  setOnboardLcd: function() { return setOnboardLcd; },
+  setOnboardLogo: function() { return setOnboardLogo; },
   setSW1: function() { return mutations_setSW1; },
-  setSW1Item: function() { return setSW1Item; },
-  setSW1Programming: function() { return setSW1Programming; },
-  setSW1Resistance: function() { return setSW1Resistance; },
-  setTeyes: function() { return setTeyes; },
-  setTeyesLcdShow: function() { return setTeyesLcdShow; },
-  setTeyesParseVolume: function() { return setTeyesParseVolume; },
-  setTeyesProtocol: function() { return setTeyesProtocol; },
-  setTeyesReceiveButtons: function() { return setTeyesReceiveButtons; },
-  setTeyesReceiveClock: function() { return setTeyesReceiveClock; },
-  setTeyesReceiveText: function() { return setTeyesReceiveText; },
-  setTeyesReverseUart: function() { return setTeyesReverseUart; },
-  setTeyesSendButton: function() { return setTeyesSendButton; },
-  setTeyesSendClimate: function() { return setTeyesSendClimate; },
-  setTeyesSendDoors: function() { return setTeyesSendDoors; },
+  setSW1Button: function() { return setSW1Button; },
+  setSW1Exec: function() { return setSW1Exec; },
+  setSW1ExecMode: function() { return setSW1ExecMode; },
+  setSW1Extended: function() { return setSW1Extended; },
+  setSW1ListOfResistance: function() { return setSW1ListOfResistance; },
   setVersion: function() { return setVersion; },
-  setVolume: function() { return setVolume; },
-  setVolumeMuteBose: function() { return setVolumeMuteBose; },
-  setVolumeStartBose: function() { return setVolumeStartBose; },
-  setVolumeValueBose: function() { return setVolumeValueBose; },
   synchDatetime: function() { return synchDatetime; }
 });
 
@@ -4980,13 +4669,12 @@ __webpack_require__.d(view_getters_namespaceObject, {
   doors: function() { return view_getters_doors; },
   engine: function() { return view_getters_engine; },
   fuel: function() { return view_getters_fuel; },
-  mazda: function() { return view_getters_mazda; },
+  headText: function() { return headText; },
   movement: function() { return view_getters_movement; },
+  onboard: function() { return view_getters_onboard; },
   sensors: function() { return view_getters_sensors; },
   temperature: function() { return view_getters_temperature; },
-  teyesText: function() { return teyesText; },
   voltmeter: function() { return voltmeter; },
-  volume: function() { return view_getters_volume; },
   worktime: function() { return worktime; }
 });
 
@@ -5000,95 +4688,99 @@ __webpack_require__.d(view_mutations_namespaceObject, {
   setDoors: function() { return view_mutations_setDoors; },
   setEngine: function() { return view_mutations_setEngine; },
   setFuel: function() { return view_mutations_setFuel; },
-  setMazda: function() { return mutations_setMazda; },
+  setHeadText: function() { return setHeadText; },
   setMovement: function() { return mutations_setMovement; },
+  setOnboard: function() { return mutations_setOnboard; },
   setSensors: function() { return mutations_setSensors; },
   setTemperature: function() { return mutations_setTemperature; },
-  setTeyesText: function() { return setTeyesText; },
   setView: function() { return setView; },
   setVoltmeter: function() { return setVoltmeter; },
-  setVolume: function() { return mutations_setVolume; },
   setWorktime: function() { return setWorktime; }
 });
 
 // EXTERNAL MODULE: ./node_modules/vuex/dist/vuex.esm-bundler.js
 var vuex_esm_bundler = __webpack_require__(4249);
-// EXTERNAL MODULE: ./src/models/pjcan/mazda/index.ts + 4 modules
-var mazda = __webpack_require__(19164);
-;// CONCATENATED MODULE: ./src/store/modules/app/onboard-card-list-default.ts
+// EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
+var onboard = __webpack_require__(32280);
+;// CONCATENATED MODULE: ./src/store/modules/app/onboard-cards-default.ts
 
-/* harmony default export */ var onboard_card_list_default = ([{
+/* harmony default export */ var onboard_cards_default = ([{
   name: "info",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GG, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GG, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
 }, {
   name: "bose",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9]
 }, {
   name: "engine",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
 }, {
   name: "fuel",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
 }, {
   name: "movement",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
 }, {
   name: "doors",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL]
 }, {
   name: "climate",
   enabled: true,
-  car: [mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GG, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, mazda/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GH, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_6_GG, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_5]
 }]);
 // EXTERNAL MODULE: ./src/lang/index.ts + 2 modules
 var lang = __webpack_require__(96188);
-;// CONCATENATED MODULE: ./src/store/modules/app/buttons-default.ts
+;// CONCATENATED MODULE: ./src/store/modules/app/sw1-default.ts
 
-/* harmony default export */ var buttons_default = ([{
-  id: 1,
+/* harmony default export */ var sw1_default = ([{
+  id: 2,
   title: (0,lang.t)("buttons.mode"),
   icon: "mdi-menu"
 }, {
-  id: 2,
+  id: 5,
+  title: (0,lang.t)("buttons.volUp"),
+  icon: "mdi-volume-plus"
+}, {
+  id: 6,
+  title: (0,lang.t)("buttons.volDown"),
+  icon: "mdi-volume-minus"
+}, {
+  id: 1,
+  title: (0,lang.t)("buttons.volMute"),
+  icon: "mdi-volume-mute"
+}, {
+  id: 4,
   title: (0,lang.t)("buttons.setUp"),
   icon: "mdi-play"
 }, {
   id: 3,
   title: (0,lang.t)("buttons.setDown"),
   icon: "mdi-play"
-}, {
-  id: 4,
-  title: (0,lang.t)("buttons.volUp"),
-  icon: "mdi-volume-plus"
-}, {
-  id: 5,
-  title: (0,lang.t)("buttons.volDown"),
-  icon: "mdi-volume-minus"
-}, {
-  id: 6,
-  title: (0,lang.t)("buttons.volMute"),
-  icon: "mdi-volume-mute"
 }]);
 ;// CONCATENATED MODULE: ./src/store/modules/app/state.ts
 
 
 const state = {
+  language: "ru",
   messages: [],
-  visibleMessage: false,
-  mazda: null,
-  onboardCardList: onboard_card_list_default,
-  sw1: buttons_default,
+  messageVisible: false,
   notify: false,
-  language: "ru"
+  onboard: null,
+  onboardCards: onboard_cards_default,
+  sw1: sw1_default
 };
 /* harmony default export */ var app_state = (state);
 ;// CONCATENATED MODULE: ./src/store/modules/app/getters.ts
+/**
+ * Язык интерфейса
+ * @param state
+ */
+const language = state => state.language;
 /**
  * Сообщение из очереди сообщений
  * @param {any} state
@@ -5098,27 +4790,22 @@ const message = state => state.messages?.[0];
  * Отображение диалога сообщения
  * @param {any} state
  */
-const visibleMessage = state => state.visibleMessage;
-/**
- * Список карточек бортового компьютера
- * @param {any} state
- */
-const onboardCardList = state => state.onboardCardList;
-/**
- * Список кнопок SW1
- * @param {any} state
- */
-const sw1 = state => state.sw1;
+const messageVisible = state => state.messageVisible;
 /**
  * Уведомления
  * @param {any} state
  */
 const notify = state => state.notify;
 /**
- * Язык интерфейса
- * @param state
+ * Список карточек бортового компьютера
+ * @param {any} state
  */
-const language = state => state.language;
+const onboardCards = state => state.onboardCards;
+/**
+ * Список кнопок SW1
+ * @param {any} state
+ */
+const sw1 = state => state.sw1;
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
 var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./src/utils/debounce.ts
@@ -5129,25 +4816,38 @@ var debounce = __webpack_require__(1560);
 
 const mutations_debounce = (0,debounce/* createDebounce */.S)();
 /**
+ * Записать значение языка интерфейса
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setLanguage = (state, value) => {
+  state.language = value;
+};
+/**
  * Записать новое сообщение
  * @param state
  * @param {IMessage} msg Сообщение
  */
 const setMessage = (state, msg) => {
   state.messages.push(msg);
-  state.visibleMessage = true;
+  state.messageVisible = true;
 };
-const setVisibleMessage = (state, value) => {
-  state.visibleMessage = value;
+/**
+ * Записать статус отображения сообщения
+ * @param state
+ * @param {boolean} value Статус
+ */
+const setMessageVisible = (state, value) => {
+  state.messageVisible = value;
   if (!value) {
-    mutations_debounce(() => src_store.commit("app/freeMessage"), 400);
+    mutations_debounce(() => src_store.commit("app/messageFree"), 400);
   }
 };
 /**
  * Удалить первое сообщение из очереди сообщений
  * @param state
  */
-const freeMessage = state => {
+const messageFree = state => {
   if (state.messages?.[0]) {
     state.messages.splice(0, 1);
   }
@@ -5156,31 +4856,9 @@ const freeMessage = state => {
  * Очистить очередь сообщений
  * @param state
  */
-const clearMessages = state => {
+const messagesClear = state => {
   mutations_debounce(() => {}, 0);
   state.messages = [];
-};
-/**
- * Изменить список карточек бортового компьютера
- * @param {any} state
- * @param {IOnboardCard[]} value Новый список
- */
-const setOnboardCardList = (state, value) => {
-  state.onboardCardList = [...value].map(x => ({
-    ...x
-  }));
-};
-/**
- * Записать список кнопок SW1
- * @param {any} state
- * @param {IButtonCard[]} value Новый список
- */
-const setSW1 = (state, value) => {
-  state.sw1 = [...value].map(x => ({
-    id: x.id,
-    title: x.title,
-    icon: x.icon
-  }));
 };
 /**
  * Записать уведомление
@@ -5191,98 +4869,30 @@ const setNotify = (state, value) => {
   state.notify = value;
 };
 /**
- * Записать значение языка интерфейса
+ * Записать список карточек бортового компьютера
  * @param {any} state
- * @param {boolean} value Значение
+ * @param {IOnboardCard[]} value Новый список
  */
-const setLanguage = (state, value) => {
-  state.language = value;
+const setOnboardCards = (state, value) => {
+  state.onboardCards = [...value].map(x => ({
+    ...x
+  }));
+};
+/**
+ * Записать список кнопок SW1
+ * @param {any} state
+ * @param {ISW1Card[]} value Новый список
+ */
+const setSW1 = (state, value) => {
+  state.sw1 = [...value].map(x => ({
+    id: x.id,
+    title: x.title,
+    icon: x.icon
+  }));
 };
 ;// CONCATENATED MODULE: ./src/store/modules/app/actions.ts
 
 
-/**
- * Чтение списка onboardCardList из local storage
- * @param {any} commit
- */
-const readOnboardCardList = ({
-  commit
-}) => {
-  const res = window.localStorage.getItem("OnboardCardList");
-  if (res?.length) {
-    try {
-      const onboardCardList = JSON.parse(res);
-      if (Array.isArray(onboardCardList)) {
-        commit("setOnboardCardList", onboardCardList);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
-};
-/**
- * Запись списка onboardCardList в local storage
- * @param {any} commit
- */
-const writeOnboardCardList = ({
-  getters
-}) => {
-  const res = JSON.stringify(getters.onboardCardList);
-  window.localStorage.setItem("OnboardCardList", res);
-};
-/**
- * Сбросить значения списка onboardCardList по умолчанию
- * @param {any} commit
- * @param {any} dispatch
- */
-const resetOnboardCardList = ({
-  commit,
-  dispatch
-}) => {
-  commit("setOnboardCardList", onboard_card_list_default);
-  dispatch("writeOnboardCardList");
-};
-/**
- * Чтение списка кнопок SW1 из local storage
- * @param {any} commit
- */
-const readSW1 = ({
-  commit
-}) => {
-  const res = window.localStorage.getItem("ListButtonsSW1");
-  if (res?.length) {
-    try {
-      const list = JSON.parse(res);
-      if (Array.isArray(list)) {
-        commit("setSW1", list);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
-};
-/**
- * Запись списка кнопок SW1 в local storage
- * @param {any} commit
- */
-const writeSW1 = ({
-  getters
-}) => {
-  const res = JSON.stringify(getters.sw1);
-  window.localStorage.setItem("ListButtonsSW1", res);
-};
-/**
- * Сбросить значения списка кнопок SW1 по умолчанию
- * @param {any} commit
- * @param {any} dispatch
- */
-const resetSW1 = ({
-  commit,
-  dispatch
-}) => {
-  commit("setSW1", buttons_default);
-  dispatch("writeSW1");
-};
 /**
  * Чтение языка из local storage
  * @param {any} commit
@@ -5310,6 +4920,88 @@ const writeLanguage = ({
   const res = JSON.stringify(getters.language);
   window.localStorage.setItem("Language", res);
 };
+/**
+ * Чтение списка onboardCards из local storage
+ * @param {any} commit
+ */
+const readOnboardCards = ({
+  commit
+}) => {
+  const res = window.localStorage.getItem("OnboardCards");
+  if (res?.length) {
+    try {
+      const onboardCards = JSON.parse(res);
+      if (Array.isArray(onboardCards)) {
+        commit("setOnboardCards", onboardCards);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+/**
+ * Запись списка onboardCards в local storage
+ * @param {any} commit
+ */
+const writeOnboardCards = ({
+  getters
+}) => {
+  const res = JSON.stringify(getters.onboardCards);
+  window.localStorage.setItem("OnboardCardList", res);
+};
+/**
+ * Сбросить значения списка onboardCards по умолчанию
+ * @param {any} commit
+ * @param {any} dispatch
+ */
+const resetOnboardCards = ({
+  commit,
+  dispatch
+}) => {
+  commit("setOnboardCards", onboard_cards_default);
+  dispatch("writeOnboardCards");
+};
+/**
+ * Чтение списка кнопок SW1 из local storage
+ * @param {any} commit
+ */
+const readSW1 = ({
+  commit
+}) => {
+  const res = window.localStorage.getItem("SW1List");
+  if (res?.length) {
+    try {
+      const list = JSON.parse(res);
+      if (Array.isArray(list)) {
+        commit("setSW1", list);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+/**
+ * Запись списка кнопок SW1 в local storage
+ * @param {any} commit
+ */
+const writeSW1 = ({
+  getters
+}) => {
+  const res = JSON.stringify(getters.sw1);
+  window.localStorage.setItem("SW1List", res);
+};
+/**
+ * Сбросить значения списка кнопок SW1 по умолчанию
+ * @param {any} commit
+ * @param {any} dispatch
+ */
+const resetSW1 = ({
+  commit,
+  dispatch
+}) => {
+  commit("setSW1", sw1_default);
+  dispatch("writeSW1");
+};
 ;// CONCATENATED MODULE: ./src/store/modules/app/index.ts
 
 
@@ -5324,10 +5016,10 @@ const writeLanguage = ({
 });
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
 var device = __webpack_require__(94027);
-// EXTERNAL MODULE: ./src/models/pjcan/teyes/index.ts + 3 modules
-var teyes = __webpack_require__(87380);
+// EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
+var head_unit = __webpack_require__(19661);
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
-var buttons = __webpack_require__(8871);
+var buttons = __webpack_require__(84596);
 // EXTERNAL MODULE: ./src/models/pjcan/bose/index.ts + 2 modules
 var bose = __webpack_require__(89100);
 // EXTERNAL MODULE: ./src/models/pjcan/doors/index.ts + 2 modules
@@ -5337,7 +5029,7 @@ var engine = __webpack_require__(76300);
 // EXTERNAL MODULE: ./src/models/pjcan/fuel/index.ts + 3 modules
 var fuel = __webpack_require__(59461);
 // EXTERNAL MODULE: ./src/models/pjcan/volume/index.ts + 1 modules
-var volume = __webpack_require__(12619);
+var volume = __webpack_require__(82882);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/models/pjcan/datetime/index.ts + 1 modules
@@ -5357,14 +5049,14 @@ var datetime = __webpack_require__(9917);
 const state_state = {
   version: new version/* Version */.Rx(),
   info: new device/* DeviceInfo */.Vj(),
-  mazda: new mazda/* MazdaConfig */.AU(),
-  teyes: new teyes/* TeyesConfig */.pn(),
-  sw1: new buttons/* ButtonsConfig */.Ab(),
+  onboard: new onboard/* OnboardConfig */.ST(),
+  head: new head_unit/* HeadUnitConfig */.Hq(),
+  sw1: new buttons/* SW1Config */.uK(),
   bose: new bose/* BoseConfig */.gh(),
   doors: new doors/* DoorsConfig */.O4(),
   engine: new engine/* EngineConfig */.zZ(),
   fuel: new fuel/* FuelConfig */.ll(),
-  volume: new volume/* VolumeConfig */.T$(),
+  volume: new volume/* VolumeValue */.Y$(),
   datetime: new datetime/* DatetimeConfig */.Cv()
 };
 /* harmony default export */ var config_state = (state_state);
@@ -5384,17 +5076,17 @@ const info = state => state.info;
  * Конфигурация автомобиля
  * @param {any} state
  */
-const getters_mazda = state => state.mazda;
+const getters_onboard = state => state.onboard;
 /**
  * Модель автомобиля
  * @param {any} state
  */
-const carModel = state => state.mazda.isData ? state.mazda.carModel : mazda/* TCarModel */.oB.CAR_MODEL_UNKNOWN;
+const carModel = state => state.onboard.isData ? state.onboard.carModel : onboard/* TCarModel */.oB.CAR_MODEL_UNKNOWN;
 /**
- * Конфигурация Teyes
+ * Конфигурация Head Unit
  * @param {any} state
  */
-const getters_teyes = state => state.teyes;
+const head = state => state.head;
 /**
  * Конфигурация кнопок sw1
  * @param {any} state
@@ -5455,170 +5147,148 @@ const setInfo = (state, data) => {
  * @param {any} state
  * @param {DataView} data Данные
  */
-const setMazda = (state, data) => {
-  state.mazda.set(data);
+const setOnboard = (state, data) => {
+  state.onboard.set(data);
 };
 /**
- * Mazda: CarModel
+ * Onboard: CarModel
  * @param {any} state
  * @param {TCarModel} value Новое значение
  */
-const setMazdaCarModel = (state, value) => {
-  if (state.mazda.isData) {
-    state.mazda.carModel = value;
-    canbus/* default */.A.query(state.mazda);
+const setOnboardCarModel = (state, value) => {
+  if (state.onboard.isData) {
+    state.onboard.carModel = value;
+    canbus/* default */.A.query(state.onboard);
     canbus/* default */.A.query(state.sw1, true);
   }
 };
 /**
- * Mazda: LCD
+ * Onboard: LCD
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setMazdaLcd = (state, value) => {
-  if (state.mazda.isData) {
-    state.mazda.lcd = value;
-    canbus/* default */.A.query(state.mazda);
+const setOnboardLcd = (state, value) => {
+  if (state.onboard.isData) {
+    state.onboard.lcd = value;
+    canbus/* default */.A.query(state.onboard);
   }
 };
 /**
- * Mazda: Logo
+ * Onboard: Logo
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setMazdaLogo = (state, value) => {
-  if (state.mazda.isData) {
-    state.mazda.logo = value;
-    canbus/* default */.A.query(state.mazda);
+const setOnboardLogo = (state, value) => {
+  if (state.onboard.isData) {
+    state.onboard.logo = value;
+    canbus/* default */.A.query(state.onboard);
   }
 };
 /**
- * Mazda: Hello
+ * Onboard: Hello
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setMazdaHello = (state, value) => {
-  if (state.mazda.isData) {
-    state.mazda.hello = value;
-    canbus/* default */.A.query(state.mazda);
+const setOnboardHello = (state, value) => {
+  if (state.onboard.isData) {
+    state.onboard.hello = value;
+    canbus/* default */.A.query(state.onboard);
   }
 };
 /**
- * Изменить конфигурацию Teyes
+ * Изменить конфигурацию Head Unit
  * @param {any} state
  * @param {DataView} data Данные
  */
-const setTeyes = (state, data) => {
-  state.teyes.set(data);
+const setHead = (state, data) => {
+  state.head.set(data);
 };
 /**
- * Teyes: Protocol
+ * Head Unit: Protocol
  * @param {any} state
  * @param {TProtocol} value Новое значение
  */
-const setTeyesProtocol = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.protocol = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadProtocol = (state, value) => {
+  if (state.head.isData) {
+    state.head.protocol = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: ReverseUart
+ * Head Unit: ReverseUart
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesReverseUart = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.reverseUart = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadReverseUart = (state, value) => {
+  if (state.head.isData) {
+    state.head.reverseUart = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: LcdShow
+ * Head Unit: SendButton
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesLcdShow = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.lcdShow = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadSendButton = (state, value) => {
+  if (state.head.isData) {
+    state.head.sendButton = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: SendButton
+ * Head Unit: SendClimate
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesSendButton = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.sendButton = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadSendClimate = (state, value) => {
+  if (state.head.isData) {
+    state.head.sendClimate = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: SendClimate
+ * Head Unit: SendDoors
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesSendClimate = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.sendClimate = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadSendDoors = (state, value) => {
+  if (state.head.isData) {
+    state.head.sendDoors = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: SendDoors
+ * Head Unit: SendOnboard
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesSendDoors = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.sendDoors = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadSendOnboard = (state, value) => {
+  if (state.head.isData) {
+    state.head.sendOnboard = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: ParseVolume
+ * Head Unit: HoldToFlip
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesParseVolume = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.parseVolume = value;
-    canbus/* default */.A.query(state.teyes);
+const setHoldToFlip = (state, value) => {
+  if (state.head.isData) {
+    state.head.holdToFlip = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
- * Teyes: ReceiveClock
+ * Head Unit: ShowTextOfLogo
  * @param {any} state
  * @param {boolean} value Новое значение
  */
-const setTeyesReceiveClock = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.receiveClock = value;
-    canbus/* default */.A.query(state.teyes);
-  }
-};
-/**
- * Teyes: ReceiveText
- * @param {any} state
- * @param {boolean} value Новое значение
- */
-const setTeyesReceiveText = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.receiveText = value;
-    canbus/* default */.A.query(state.teyes);
-  }
-};
-/**
- * Teyes: ReceiveButtons
- * @param {any} state
- * @param {boolean} value Новое значение
- */
-const setTeyesReceiveButtons = (state, value) => {
-  if (state.teyes.isData) {
-    state.teyes.receiveButtons = value;
-    canbus/* default */.A.query(state.teyes);
+const setHeadShowTextOfLogo = (state, value) => {
+  if (state.head.isData) {
+    state.head.showTextOfLogo = value;
+    canbus/* default */.A.query(state.head);
   }
 };
 /**
@@ -5630,39 +5300,71 @@ const mutations_setSW1 = (state, data) => {
   state.sw1.set(data);
 };
 /**
- * SW1: Programming
+ * SW1: SetButton
  * @param {any} state
- * @param {boolean} value Новое значение
+ * @param {ISW1ConfigButton} value Новое значение
  */
-const setSW1Programming = (state, value) => {
-  if (state.sw1.isData) {
-    state.sw1.programming = value;
+const setSW1Button = (state, value) => {
+  if (state.sw1.isData && state.sw1.setButton(value)) canbus/* default */.A.query(state.sw1);
+};
+/**
+ * SW1: Изменить список сопротивлений кнопок
+ * @param {any} state
+ * @param {number[]} list Новое значение
+ */
+const setSW1ListOfResistance = (state, list) => {
+  if (state.sw1.isData && state.sw1.buttons.length === list.length) {
+    for (let i = 0; i < list.length; i++) state.sw1.buttons[i].resistanceTo = list[i];
     canbus/* default */.A.query(state.sw1);
   }
 };
 /**
- * SW1: Programming
- * @param {any} state
- * @param {IButtonConfigItem} value Новое значение
- */
-const setSW1Item = (state, value) => {
-  if (state.sw1.isData && state.sw1.setItem(value)) canbus/* default */.A.query(state.sw1);
-};
-/**
- * SW1: Resistance
+ * SW1: Изменить расширенный режим кнопки
  * @param {any} state
  * @param {any} value Новое значение
  */
-const setSW1Resistance = (state, {
+const setSW1Extended = (state, {
   id,
-  min,
-  max
+  value
 }) => {
   if (state.sw1.isData) {
-    const item = state.sw1.items.find(x => x.id === id);
-    if (item) {
-      item.resistanceMin = min;
-      item.resistanceMax = max;
+    const button = state.sw1.buttons.find(x => x.id === id);
+    if (button) {
+      button.extended = value;
+      canbus/* default */.A.query(state.sw1);
+    }
+  }
+};
+/**
+ * SW1: Изменить функцию кнопки
+ * @param {any} state
+ * @param {any} value Новое значение
+ */
+const setSW1Exec = (state, {
+  id,
+  value
+}) => {
+  if (state.sw1.isData) {
+    const button = state.sw1.buttons.find(x => x.id === id);
+    if (button) {
+      button.exec = value;
+      canbus/* default */.A.query(state.sw1);
+    }
+  }
+};
+/**
+ * SW1: Изменить функцию кнопки расширенного режима
+ * @param {any} state
+ * @param {any} value Новое значение
+ */
+const setSW1ExecMode = (state, {
+  id,
+  value
+}) => {
+  if (state.sw1.isData) {
+    const button = state.sw1.buttons.find(x => x.id === id);
+    if (button) {
+      button.execMode = value;
       canbus/* default */.A.query(state.sw1);
     }
   }
@@ -5683,6 +5385,28 @@ const setBose = (state, data) => {
 const setBoseEnabled = (state, value) => {
   if (state.bose.isData) {
     state.bose.on = value;
+    canbus/* default */.A.query(state.bose);
+  }
+};
+/**
+ * Выкл/вкл звук Bose
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setBoseMute = (state, value) => {
+  if (state.bose.isData) {
+    state.bose.mute = value;
+    canbus/* default */.A.query(state.bose);
+  }
+};
+/**
+ * Уровень звука Bose
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setBoseVolume = (state, value) => {
+  if (state.bose.isData) {
+    state.bose.volume = value;
     canbus/* default */.A.query(state.bose);
   }
 };
@@ -5775,6 +5499,21 @@ const setBoseCenterPoint = (state, value) => {
   }
 };
 /**
+ * Bose: Volume Start
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setBoseVolumeStart = (state, {
+  enabled,
+  level
+}) => {
+  if (state.bose.isData) {
+    state.bose.start = enabled;
+    state.bose.start_volume = level;
+    canbus/* default */.A.query(state.bose);
+  }
+};
+/**
  * Изменить конфигурацию дверей
  * @param {any} state
  * @param {DataView} data Данные
@@ -5841,51 +5580,6 @@ const setFuelRatio = (state, value) => {
   if (state.fuel.isData) {
     state.fuel.ratio = value;
     canbus/* default */.A.query(state.fuel);
-  }
-};
-/**
- * Изменить конфигурацию уровня звука
- * @param {any} state
- * @param {DataView} data Данные
- */
-const setVolume = (state, data) => {
-  state.volume.set(data);
-};
-/**
- * Volume: Mute Bose
- * @param {any} state
- * @param {boolean} value Значение
- */
-const setVolumeMuteBose = (state, value) => {
-  if (state.volume.isData) {
-    state.volume.muteBose = value;
-    canbus/* default */.A.query(state.volume);
-  }
-};
-/**
- * Volume: Volume Bose
- * @param {any} state
- * @param {boolean} value Значение
- */
-const setVolumeValueBose = (state, value) => {
-  if (state.volume.isData) {
-    state.volume.volumeBose = value;
-    canbus/* default */.A.query(state.volume);
-  }
-};
-/**
- * Volume: Start Bose
- * @param {any} state
- * @param {boolean} value Значение
- */
-const setVolumeStartBose = (state, {
-  enabled,
-  level
-}) => {
-  if (state.volume.isData) {
-    state.volume.startBose = enabled;
-    state.volume.startLevelBose = level;
-    canbus/* default */.A.query(state.volume);
   }
 };
 /**
@@ -6023,7 +5717,7 @@ var test = __webpack_require__(62805);
 
 
 const value_state_state = {
-  sw1: new buttons/* ButtonValue */.GV(),
+  sw1: new buttons/* SWValue */.sV(),
   climate: new climate/* ClimateValue */.lA(),
   device: new device/* DeviceValue */.In(),
   doors: new doors/* DoorsValue */.VT(),
@@ -6273,12 +5967,11 @@ var view = __webpack_require__(77813);
 
 
 
-
 const view_state_state = {
   worktime: new view/* ViewConfig */.i(device/* API_DEVICE_VIEW_WORKTIME_EXEC */.J2),
   voltmeter: new view/* ViewConfig */.i(device/* API_DEVICE_VIEW_VOLTMETER_EXEC */.ru),
-  mazda: new view/* ViewConfig */.i(mazda/* API_MAZDA_VIEW_EXEC */.N5),
-  teyesText: new view/* ViewConfig */.i(teyes/* API_TEYES_TEXT_VIEW_EXEC */.cH),
+  onboard: new view/* ViewConfig */.i(onboard/* API_ONBOARD_VIEW_EXEC */.F5),
+  headText: new view/* ViewConfig */.i(head_unit/* API_HEAD_UNIT_VIEW_EXEC */.NA),
   bose: new view/* ViewConfig */.i(bose/* API_BOSE_VIEW_EXEC */.xT),
   climate: new view/* ViewConfig */.i(climate/* API_CLIMATE_VIEW_EXEC */.zE),
   doors: new view/* ViewConfig */.i(doors/* API_DOORS_VIEW_EXEC */.zD),
@@ -6287,7 +5980,6 @@ const view_state_state = {
   movement: new movement/* MovementViews */.UA(),
   sensors: new sensors/* SensorsViews */.IS(),
   temperature: new view/* ViewConfig */.i(temperature/* API_TEMPERATURE_VIEW_EXEC */.EO),
-  volume: new view/* ViewConfig */.i(volume/* API_VOLUME_VIEW_EXEC */.Kd),
   datetime: new view/* ViewConfig */.i(datetime/* API_DATETIME_VIEW_EXEC */.Bm)
 };
 /* harmony default export */ var view_state = (view_state_state);
@@ -6306,12 +5998,12 @@ const voltmeter = state => state.voltmeter;
  * Значения отображения автомобиля
  * @param {any} state
  */
-const view_getters_mazda = state => state.mazda;
+const view_getters_onboard = state => state.onboard;
 /**
  * Значения отображения текста ГУ
  * @param {any} state
  */
-const teyesText = state => state.teyesText;
+const headText = state => state.headText;
 /**
  * Значения отображения Bose
  * @param {any} state
@@ -6352,11 +6044,6 @@ const view_getters_sensors = state => state.sensors;
  * @param {any} state
  */
 const view_getters_temperature = state => state.temperature;
-/**
- * Значения отображения уровня звука
- * @param {any} state
- */
-const view_getters_volume = state => state.volume;
 /**
  * Значения отображения даты и времени
  * @param {any} state
@@ -6405,16 +6092,16 @@ const setVoltmeter = (state, data) => {
  * @param {any} state
  * @param {DataView} data Данные
  */
-const mutations_setMazda = (state, data) => {
-  state.mazda.set(data);
+const mutations_setOnboard = (state, data) => {
+  state.onboard.set(data);
 };
 /**
  * Записать значения отображения текста ГУ
  * @param {any} state
  * @param {DataView} data Данные
  */
-const setTeyesText = (state, data) => {
-  state.teyesText.set(data);
+const setHeadText = (state, data) => {
+  state.headText.set(data);
 };
 /**
  * Записать значения отображения Bose
@@ -6481,14 +6168,6 @@ const mutations_setTemperature = (state, data) => {
   state.temperature.set(data);
 };
 /**
- * Записать значения отображения уровня звука
- * @param {any} state
- * @param {DataView} data Данные
- */
-const mutations_setVolume = (state, data) => {
-  state.volume.set(data);
-};
-/**
  * Записать значения отображения даты и времени
  * @param {any} state
  * @param {DataView} data Данные
@@ -6549,7 +6228,9 @@ const toHex = value => {
  */
 const arrayToHex = value => {
   let sha = "";
-  value?.forEach(x => sha += toHex(x));
+  value?.forEach(x => {
+    sha += toHex(x);
+  });
   return sha;
 };
 /**
@@ -6677,7 +6358,9 @@ class RemainingTime {
   get avg() {
     if (this._values.length === 0) return 0;
     let result = 0;
-    this._values.forEach(x => result += x);
+    this._values.forEach(x => {
+      result += x;
+    });
     return Math.floor(result / this._values.length);
   }
   constructor(total, countValues = 10) {
@@ -6705,7 +6388,7 @@ class RemainingTime {
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, [283,800,281,165,936,216,987,882,947,706,877,580,794,84,641,341,210,656,82,618,962,186,956,904,224,362,458,552,353,434,594,655,241,990,774], function() { return __webpack_exec__(1572); });
+/******/ __webpack_require__.O(0, [283,800,281,987,936,216,922,796,882,947,706,877,580,794,84,641,341,210,656,82,618,962,186,956,904,224,362,458,552,353,434,594,655,241,990,774], function() { return __webpack_exec__(1572); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

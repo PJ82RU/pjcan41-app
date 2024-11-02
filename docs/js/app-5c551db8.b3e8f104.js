@@ -9,8 +9,8 @@
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
 var App = __webpack_require__(68741);
-// EXTERNAL MODULE: ./src/router/index.ts + 98 modules
-var router = __webpack_require__(96768);
+// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
+var router = __webpack_require__(9183);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css

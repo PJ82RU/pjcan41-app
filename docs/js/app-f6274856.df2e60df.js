@@ -145,9 +145,12 @@ var vue_i18n = __webpack_require__(85851);
   },
   deviceReset: {
     title: "Сброс конфигурации устройства",
-    config: "Сбросить значения конфигурации по умолчанию",
-    view: "Сбросить значения конфигурации отображения по умолчанию",
-    buttons: "Сбросить значения конфигурации кнопок по умолчанию"
+    config: "Сбросить общую конфигурацию по умолчанию",
+    configShort: "Общую конфигурацию",
+    view: "Сбросить конфигурацию отображения по умолчанию",
+    viewShort: "Конфигурацию отображения",
+    buttons: "Сбросить конфигурацию кнопок по умолчанию",
+    buttonsShort: "Конфигурацию кнопок"
   },
   btn: {
     apply: "Применить",
@@ -163,6 +166,7 @@ var vue_i18n = __webpack_require__(85851);
     viewSetting: {
       enabled: {
         title: "Отображать информацию",
+        titleShort: "Отображать",
         description: "Статус отображения информации на информационном экране"
       },
       type: {
@@ -347,14 +351,17 @@ var vue_i18n = __webpack_require__(85851);
         title: "Конфигурация дверей",
         frontReverse: {
           title: "Поменять передние двери",
+          titleShort: "Передние двери",
           description: "Поменять местами передние двери"
         },
         backReverse: {
           title: "Поменять задние двери",
+          titleShort: "Задние двери",
           description: "Поменять местами задние двери"
         },
         frontBackReverse: {
           title: "Поменять передние с задними дверьми",
+          titleShort: "Передние с задними",
           description: "Поменять местами левые и правые двери"
         }
       }
@@ -549,10 +556,12 @@ var vue_i18n = __webpack_require__(85851);
       title: "Редактирование кнопки \"{name}\"",
       beginValue: {
         title: "Начальное значение",
+        titleShort: "Начало",
         description: "Начальное значение диапазона сопротивления кнопки в у.е."
       },
       endValue: {
         title: "Конечное значение",
+        titleShort: "Конец",
         description: "Конечное значение диапазона сопротивления кнопки в у.е."
       }
     },
@@ -566,8 +575,11 @@ var vue_i18n = __webpack_require__(85851);
     buttons: {
       holdClock: "удержание CLOCK",
       holdInfo: "удержание SET/INFO",
+      holdClockShort: "уд. CLOCK",
+      holdInfoShort: "уд. INFO",
       clock: "CLOCK",
       info: "SET/INFO",
+      infoShort: "INFO",
       clockH: "H",
       clockM: "M",
       clockRM: "RM",
@@ -603,6 +615,7 @@ var vue_i18n = __webpack_require__(85851);
     },
     head: {
       title: "Головное устройство",
+      titleShort: "ГУ",
       protocol: {
         title: "Протокол UART",
         description: "Протокол UART для связи PJCAN с ГУ",
@@ -619,6 +632,7 @@ var vue_i18n = __webpack_require__(85851);
       },
       onboardShow: {
         title: "Показывать информацию ГУ",
+        titleShort: "Показывать инф. ГУ",
         description: "Показывать текст ГУ на экране БК вместо логотипа",
         menu: "LCD: Показывать текст ГУ"
       },
@@ -632,6 +646,7 @@ var vue_i18n = __webpack_require__(85851);
       },
       sendDoors: {
         title: "Показать статус дверей на ГУ",
+        titleShort: "Показать двери на ГУ",
         description: "Показать статус дверей автомобиля на ГУ (если протокол поддерживает данный функционал)"
       },
       sendOnboard: {
@@ -640,6 +655,7 @@ var vue_i18n = __webpack_require__(85851);
       },
       holdToFlip: {
         title: "Регулятор уровня громкости",
+        titleShort: "Регулятор громкости",
         description: "Плавная изменение уровня звука при удержании кнопки Vol+/Vol- (рекомендуется, если ГУ не поддерживает этот функционал)"
       }
     },
@@ -661,19 +677,23 @@ var vue_i18n = __webpack_require__(85851);
       },
       dateAndDayWeek: {
         title: "Показать дату и день недели",
+        titleShort: "Пок. дату и день недели",
         description: "Отображать на экране БК текущую дату и день недели"
       },
       timeAndDayWeek: {
         title: "Показать время и день недели",
+        titleShort: "Пок. время и день недели",
         description: "Отображать на экране БК текущее время и день недели"
       },
       fullDatetime: {
         title: "Показать полную дату и время",
+        titleShort: "Пок. полную дату и время",
         description: "Отображать на экране БК в полном формате текущую дату и время"
       }
     },
     onboard: {
       title: "Бортовой компьютер",
+      titleShort: "БK",
       description: 'Список карточек отображаемых на экране "Бортовой компьютер". Порядок меняется путем перетаскивания блока вверх/вниз. Так же можно включить/выключить отображения на странице',
       reset: {
         menu: "Упорядочить по умолчанию"
@@ -827,7 +847,7 @@ var vue_i18n = __webpack_require__(85851);
   },
   menu: {
     onboard: "On-board",
-    onboardButtons: "On-board computer buttons",
+    onboardButtons: "On-board buttons",
     test: "Testing",
     language: "Language",
     settings: {
@@ -866,9 +886,12 @@ var vue_i18n = __webpack_require__(85851);
   },
   deviceReset: {
     title: "Reset device configuration",
-    config: "Reset configuration defaults",
-    view: "Reset default display configuration values",
-    buttons: "Reset the default button configuration values"
+    config: "Reset the general default configuration",
+    configShort: "The general configuration",
+    view: "Reset the default display configuration",
+    viewShort: "Display configuration",
+    buttons: "Reset the default button configuration",
+    buttonsShort: "Button configuration"
   },
   btn: {
     apply: "Apply",
@@ -884,6 +907,7 @@ var vue_i18n = __webpack_require__(85851);
     viewSetting: {
       enabled: {
         title: "Display information",
+        titleShort: "Display information",
         description: "Status display information on the information screen"
       },
       type: {
@@ -989,6 +1013,7 @@ var vue_i18n = __webpack_require__(85851);
         menu: "Statistics settings",
         showDays: {
           title: "Show days in statistics",
+          titleShort: "Show days in statistics",
           description: "Display the mothers on the information screen in d.hh:mm:ss"
         },
         worktime: {
@@ -1067,14 +1092,17 @@ var vue_i18n = __webpack_require__(85851);
         title: "Door configuration",
         frontReverse: {
           title: "Change the front doors",
+          titleShort: "Change the front doors",
           description: "Swap the front doors"
         },
         backReverse: {
           title: "Change the rear doors",
+          titleShort: "Change the rear doors",
           description: "Swap the rear doors"
         },
         frontBackReverse: {
           title: "Swap the front with the rear doors",
+          titleShort: "The front with the rear",
           description: "Swap the left and right doors"
         }
       }
@@ -1266,16 +1294,33 @@ var vue_i18n = __webpack_require__(85851);
       41: "BOSE: switching Center Point modes (cyclically)"
     },
     edit: {
-      title: "Editing the \"{name}\" button"
+      title: "Editing a button \"{name}\"",
+      beginValue: {
+        title: "Begin value",
+        titleShort: "Begin value",
+        description: "The initial value of the resistance range of the button in units."
+      },
+      endValue: {
+        title: "Final value",
+        titleShort: "Final value",
+        description: "The final value of the resistance range of the button in units."
+      }
+    },
+    notify: {
+      detected: "Button \"{id}\" is pressed",
+      notDefined: "The button is not defined!"
     }
   },
   onboardButtons: {
     title: "On-board buttons",
     buttons: {
       holdClock: "hold CLOCK",
-      holdInfo: "hold INFO",
+      holdInfo: "hold SET/INFO",
+      holdClockShort: "hold CLOCK",
+      holdInfoShort: "hold INFO",
       clock: "CLOCK",
-      info: "INFO",
+      info: "SET/INFO",
+      infoShort: "INFO",
       clockH: "H",
       clockM: "M",
       clockRM: "RM",
@@ -1311,6 +1356,7 @@ var vue_i18n = __webpack_require__(85851);
     },
     head: {
       title: "Head Unit",
+      titleShort: "Head Unit",
       protocol: {
         title: "UART Protocol",
         description: "UART protocol for PJCAN communication with Head Unit",
@@ -1327,6 +1373,7 @@ var vue_i18n = __webpack_require__(85851);
       },
       onboardShow: {
         title: "Show the text Head Unit",
+        titleShort: "Show the text Head Unit",
         description: "Show the text of the Head Unit on the On-board screen of the logo",
         menu: "LCD: Show the text Head Unit"
       },
@@ -1340,6 +1387,7 @@ var vue_i18n = __webpack_require__(85851);
       },
       sendDoors: {
         title: "Show the status of doors on Head Unit",
+        titleShort: "Show the doors on Head Unit",
         description: "Show the status of the car doors on Head Unit (if the protocol supports this functionality)"
       },
       sendOnboard: {
@@ -1348,6 +1396,7 @@ var vue_i18n = __webpack_require__(85851);
       },
       holdToFlip: {
         title: "Volume control",
+        titleShort: "Volume control",
         description: "Smooth change of sound level when holding the Vol+/Vol- button (recommended if the Head Unit does not support this functionality)"
       }
     },
@@ -1369,19 +1418,23 @@ var vue_i18n = __webpack_require__(85851);
       },
       dateAndDayWeek: {
         title: "Show date and day of week",
+        titleShort: "Show date and day of week",
         description: "Display the current date and day of the week on the LCD screen"
       },
       timeAndDayWeek: {
         title: "Show time and day of week",
+        titleShort: "Show time and day of week",
         description: "Display the current time and day of the week on the LCD screen"
       },
       fullDatetime: {
         title: "Show full date and time",
+        titleShort: "Show full date and time",
         description: "Display the current date and time on the LCD screen in full format"
       }
     },
     onboard: {
       title: "On-board",
+      titleShort: "On-board",
       description: "A list of cards displayed on the On-Board Computer screen. The order is changed by dragging the block up/down. You can also enable/disable the display on the page",
       reset: {
         menu: "Arrange by default"

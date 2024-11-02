@@ -155,8 +155,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
-// EXTERNAL MODULE: ./src/router/index.ts + 98 modules
-var router = __webpack_require__(96768);
+// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
+var router = __webpack_require__(9183);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
@@ -168,23 +168,23 @@ var screenfull = __webpack_require__(49020);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/components/BluetoothBtn.vue + 5 modules
-var BluetoothBtn = __webpack_require__(92365);
+var BluetoothBtn = __webpack_require__(59895);
 // EXTERNAL MODULE: ./src/components/dialogs/UpdateFirmwareDialog.vue + 4 modules
 var UpdateFirmwareDialog = __webpack_require__(66422);
 // EXTERNAL MODULE: ./src/components/MenuDots.vue + 3 modules
 var MenuDots = __webpack_require__(69815);
 // EXTERNAL MODULE: ./src/components/dialogs/AboutDialog.vue + 24 modules
-var AboutDialog = __webpack_require__(83230);
+var AboutDialog = __webpack_require__(1217);
 // EXTERNAL MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue + 5 modules
-var OnboardButtonsDialog = __webpack_require__(57128);
+var OnboardButtonsDialog = __webpack_require__(38862);
 // EXTERNAL MODULE: ./src/components/dialogs/MessageDialog.vue + 3 modules
 var MessageDialog = __webpack_require__(22885);
 // EXTERNAL MODULE: ./src/components/common/icon-custom/IconCustom.vue + 5 modules
 var IconCustom = __webpack_require__(19011);
 // EXTERNAL MODULE: ./src/components/dialogs/LocaleDialog.vue + 3 modules
-var LocaleDialog = __webpack_require__(1635);
+var LocaleDialog = __webpack_require__(51977);
 // EXTERNAL MODULE: ./src/components/dialogs/ChoosingCarModelDialog.vue + 3 modules
-var ChoosingCarModelDialog = __webpack_require__(33926);
+var ChoosingCarModelDialog = __webpack_require__(89813);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules

@@ -343,7 +343,12 @@ var request = __webpack_require__(4322);
 const getFirmwareVersion = () => {
   return (0,request/* default */.A)({
     url: "/firmware/version.json",
-    method: "GET"
+    method: "GET",
+    headers: {
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Expires": "0"
+    }
   });
 };
 const getFirmware = url => {
@@ -352,7 +357,10 @@ const getFirmware = url => {
     method: "GET",
     responseType: "arraybuffer",
     headers: {
-      "Content-Type": "application/gzip"
+      "Content-Type": "application/gzip",
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Expires": "0"
     }
   });
 };
@@ -361,7 +369,12 @@ const getFirmware = url => {
 const getSerial = sha => {
   return (0,request/* default */.A)({
     url: `/hash/${sha}.json`,
-    method: "GET"
+    method: "GET",
+    headers: {
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Expires": "0"
+    }
   });
 };
 // EXTERNAL MODULE: ./src/utils/debounce.ts
@@ -467,6 +480,7 @@ class Canbus extends eventemitter3/* default */.A {
     (0,defineProperty/* default */.A)(this, "__onVersion40", ev => canbus.onVersion(ev, true));
     (0,defineProperty/* default */.A)(this, "__onIsActivation", ev => canbus.onIsActivation(ev));
     (0,defineProperty/* default */.A)(this, "__onActivation", ev => canbus.onActivation(ev));
+    (0,defineProperty/* default */.A)(this, "checkVersionInterval", void 0);
     (0,defineProperty/* default */.A)(this, "scannerInterval", void 0);
     (0,defineProperty/* default */.A)(this, "scannerValue", void 0);
     this.bluetooth.addListener(bluetooth/* BLUETOOTH_EVENT_CONNECTED */.Sl, ev => this.onConnected(ev));
@@ -584,13 +598,37 @@ class Canbus extends eventemitter3/* default */.A {
         this.addListener(pjcan_device/* API_DEVICE_VALUE_EVENT */.dX, this.__onIsActivation);
         this.query(new pjcan_device/* DeviceValue */.In());
       }
-      // Проверка наличия новой версии прошивки
-      this.checkVersion().then(newVersion => {
-        this.emit(version/* API_NEW_VERSION_EVENT */.QM, newVersion);
-      }).catch(() => {});
+      // Проверка наличия новой версии прошивки, каждые 5 минут
+      this.startCheckVersion(300000, true);
     } else {
       this.emit(BaseModel/* API_CANBUS_EVENT */.l, this.status);
       dist/* toast */.oR.error((0,lang.t)("error.version"));
+    }
+  }
+  /**
+   * Запустить проверку версии прошивки
+   * @param {number} interval Интервал не менее 5000 мс
+   * @param {boolean} force Запустить проверку немедленно
+   */
+  startCheckVersion(interval, force = false) {
+    const onCheckVersion = () => {
+      this.checkVersion().then(newVersion => {
+        this.emit(version/* API_NEW_VERSION_EVENT */.QM, newVersion);
+        // Меняем время проверки наличия новой версии прошивки на каждые 15 минут
+        this.startCheckVersion(900000);
+      }).catch(() => {});
+    };
+    if (interval >= 5000) {
+      this.stopCheckVersion();
+      this.checkVersionInterval = setInterval(() => onCheckVersion(), interval);
+    }
+    if (force) onCheckVersion();
+  }
+  /** Остановить проверку версии прошивки */
+  stopCheckVersion() {
+    if (this.checkVersionInterval) {
+      clearInterval(this.checkVersionInterval);
+      this.checkVersionInterval = undefined;
     }
   }
   /**
@@ -870,6 +908,7 @@ class Canbus extends eventemitter3/* default */.A {
   updateStart(rollback = false) {
     getFirmware(!rollback ? this.update.firmware.url : this.update.rollback.url).then(res => {
       if (res?.byteLength > 0) {
+        this.stopCheckVersion();
         this.loopFree();
         this.update.firmwareData = new Uint8Array(res);
         this.update.total = res.byteLength;
@@ -1242,7 +1281,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_scr
 /***/ (function(module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.1","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"^1.7.7","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.1","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.2","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"^1.7.7","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.1","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
 
 /***/ })
 

@@ -8,9 +8,9 @@
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
-var App = __webpack_require__(68741);
-// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(9183);
+var App = __webpack_require__(27159);
+// EXTERNAL MODULE: ./src/router/index.ts
+var router = __webpack_require__(81459);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
@@ -908,13 +908,15 @@ var EDeviceUpdateError;
 
 /***/ }),
 
-/***/ 94027:
+/***/ 29801:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   Gj: function() { return /* reexport */ API40_DEVICE_UPDATE_EXEC; },
+  E7: function() { return /* reexport */ API_DEVICE_ACTIVATION_EVENT; },
+  Nk: function() { return /* reexport */ API_DEVICE_ACTIVATION_EXEC; },
   iX: function() { return /* reexport */ API_DEVICE_CONFIG_EVENT; },
   z8: function() { return /* reexport */ API_DEVICE_CONFIG_EXEC; },
   Os: function() { return /* reexport */ API_DEVICE_INFO_EVENT; },
@@ -932,6 +934,7 @@ __webpack_require__.d(__webpack_exports__, {
   K: function() { return /* reexport */ API_DEVICE_VIEW_WORKTIME_EVENT; },
   J2: function() { return /* reexport */ API_DEVICE_VIEW_WORKTIME_EXEC; },
   nX: function() { return /* reexport */ DeviceAction; },
+  hF: function() { return /* reexport */ DeviceActivation; },
   pM: function() { return /* reexport */ DeviceConfig; },
   Vj: function() { return /* reexport */ DeviceInfo; },
   Z: function() { return /* reexport */ DeviceScannerAction; },
@@ -948,11 +951,44 @@ var defineProperty = __webpack_require__(91114);
 var bluetooth = __webpack_require__(52126);
 // EXTERNAL MODULE: ./src/models/pjcan/base/index.ts
 var base = __webpack_require__(30449);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceActivation.ts
+
+
+
+const API_DEVICE_ACTIVATION_EXEC = 0x02;
+const API_DEVICE_ACTIVATION_EVENT = "DeviceActivation";
+/** Модель активации устройства */
+class DeviceActivation extends base/* BaseModel */.t {
+  constructor(data) {
+    super(API_DEVICE_ACTIVATION_EXEC);
+    (0,defineProperty/* default */.A)(this, "serial", "");
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DeviceActivation.size, new bluetooth/* BluetoothStruct */.iy(DeviceActivation.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, DeviceActivation.size, new bluetooth/* BluetoothStruct */.iy(DeviceActivation.struct));
+  }
+}
+(0,defineProperty/* default */.A)(DeviceActivation, "struct", {
+  serial: bluetooth/* BluetoothStruct */.iy.char(64)
+});
+(0,defineProperty/* default */.A)(DeviceActivation, "size", 64);
 ;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceConfig.ts
 
 
 
-const API_DEVICE_CONFIG_EXEC = 0x02;
+const API_DEVICE_CONFIG_EXEC = 0x08;
 const API_DEVICE_CONFIG_EVENT = "DeviceConfig";
 const API_DEVICE_VIEW_WORKTIME_EXEC = 0x0a;
 const API_DEVICE_VIEW_WORKTIME_EVENT = "DeviceWorktime";
@@ -962,8 +998,12 @@ const API_DEVICE_VIEW_VOLTMETER_EVENT = "DeviceVoltmeter";
 class DeviceConfig extends base/* BaseModel */.t {
   constructor(data) {
     super(API_DEVICE_CONFIG_EXEC);
-    (0,defineProperty/* default */.A)(this, "serial", "");
-    this.skipActivationCheck = true;
+    (0,defineProperty/* default */.A)(this, "disableLedWork", false);
+    (0,defineProperty/* default */.A)(this, "disableReverse", false);
+    (0,defineProperty/* default */.A)(this, "disableRPosition", false);
+    (0,defineProperty/* default */.A)(this, "disableAmpIllum", false);
+    (0,defineProperty/* default */.A)(this, "disableVoltmeter", false);
+    (0,defineProperty/* default */.A)(this, "calibrationOfVoltmeter", 0);
     if (data) this.set(data);
   }
   /**
@@ -982,9 +1022,14 @@ class DeviceConfig extends base/* BaseModel */.t {
   }
 }
 (0,defineProperty/* default */.A)(DeviceConfig, "struct", {
-  serial: bluetooth/* BluetoothStruct */.iy.char(64)
+  disableLedWork: bluetooth/* BluetoothStruct */.iy.bit(),
+  disableReverse: bluetooth/* BluetoothStruct */.iy.bit(),
+  disableRPosition: bluetooth/* BluetoothStruct */.iy.bit(),
+  disableAmpIllum: bluetooth/* BluetoothStruct */.iy.bit(),
+  disableVoltmeter: bluetooth/* BluetoothStruct */.iy.bit(),
+  calibrationOfVoltmeter: bluetooth/* BluetoothStruct */.iy.int8()
 });
-(0,defineProperty/* default */.A)(DeviceConfig, "size", 64);
+(0,defineProperty/* default */.A)(DeviceConfig, "size", 2);
 ;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceInfo.ts
 
 
@@ -1391,6 +1436,7 @@ class DeviceScannerValue extends base/* BaseModel */.t {
 });
 (0,defineProperty/* default */.A)(DeviceScannerValue, "size", 337);
 ;// CONCATENATED MODULE: ./src/models/pjcan/device/index.ts
+
 
 
 

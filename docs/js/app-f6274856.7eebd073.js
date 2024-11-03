@@ -228,6 +228,35 @@ var vue_i18n = __webpack_require__(85851);
         title: "Сигнал поворота",
         description: "Сигнал поворота и аварийной остановки",
         menu: "LCD: Сигнал поворота"
+      },
+      device: {
+        title: "Параметры устройства",
+        menu: "Параметры устройства",
+        disableLedWork: {
+          title: "Контакт LED_WORK",
+          description: "Управление контактом LED_WORK"
+        },
+        disableReverse: {
+          title: "Контакт REVERSE",
+          description: "Управление контактом REVERSE"
+        },
+        disableRPosition: {
+          title: "Контакт R_POSITION",
+          description: "Управление контактом R_POSITION"
+        },
+        disableAmpIllum: {
+          title: "Контакт AMP_ILLUM",
+          description: "Управление контактом AMP_ILLUM"
+        },
+        disableVoltmeter: {
+          title: "Вольтметр",
+          description: "Включить/выключить вольтметр"
+        },
+        calibrationOfVoltmeter: {
+          title: "Калибровка вольтметра",
+          titleShort: "Калибровка",
+          description: "Положительное число уменьшает значение вольтметра, отрицательное - увеличивает"
+        }
       }
     },
     engine: {
@@ -969,6 +998,35 @@ var vue_i18n = __webpack_require__(85851);
         title: "Turn signal",
         description: "Turn signal and emergency stop",
         menu: "LCD: Turn signal"
+      },
+      device: {
+        title: "Device parameters",
+        menu: "Device parameters",
+        disableLedWork: {
+          title: "Pin LED_WORK",
+          description: "Control the LED_WORK pin"
+        },
+        disableReverse: {
+          title: "Pin REVERSE",
+          description: "Control the REVERSE pin"
+        },
+        disableRPosition: {
+          title: "Pin R_POSITION",
+          description: "Control the R_POSITION pin"
+        },
+        disableAmpIllum: {
+          title: "Pin AMP_ILLUM",
+          description: "Control the AMP_ILLUM pin"
+        },
+        disableVoltmeter: {
+          title: "Voltmeter",
+          description: "Turn on/off the voltmeter"
+        },
+        calibrationOfVoltmeter: {
+          title: "Calibration of the voltmeter",
+          titleShort: "Calibration",
+          description: "A positive number decreases the value of the voltmeter, a negative number increases"
+        }
       }
     },
     engine: {

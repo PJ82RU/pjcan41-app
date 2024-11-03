@@ -1857,7 +1857,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InputCardItemvu
 
 /***/ }),
 
-/***/ 92221:
+/***/ 29531:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1868,15 +1868,13 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-// EXTERNAL MODULE: ./node_modules/@vue/shared/dist/shared.esm-bundler.js
-var shared_esm_bundler = __webpack_require__(24232);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.mjs
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(43948);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=template&id=4223da58&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=template&id=05507288&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
@@ -1891,10 +1889,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       class: "pt-0 pr-0"
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VTextField/* VTextField */.W, {
-        class: (0,shared_esm_bundler/* normalizeClass */.C4)({
-          'number-card-item__label': !_ctx.$vuetify.display.xs,
-          'number-card-item__label-xs': _ctx.$vuetify.display.xs
-        }),
+        class: "number-card-item__label",
         "model-value": $props.title,
         hint: $props.description,
         variant: "underlined",
@@ -1903,7 +1898,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         readonly: "",
         dense: "",
         disabled: $props.disabled
-      }, null, 8, ["class", "model-value", "hint", "disabled"])]),
+      }, null, 8, ["model-value", "hint", "disabled"])]),
       _: 1
     }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
       cols: "6",
@@ -2005,10 +2000,10 @@ var reactivity_esm_bundler = __webpack_require__(90144);
 });
 ;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=4223da58&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=05507288&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=4223da58&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=05507288&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -2020,7 +2015,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(NumberCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-4223da58"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(NumberCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-05507288"]])
 
 /* harmony default export */ var NumberCardItem = (__exports__);
 
@@ -3223,8 +3218,8 @@ function Scannervue_type_template_id_42abb18c_ts_true_render(_ctx, _cache, $prop
 var dist = __webpack_require__(14084);
 // EXTERNAL MODULE: ./src/api/google.ts
 var google = __webpack_require__(27799);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var device = __webpack_require__(29801);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=script&lang=ts
 
 
@@ -4575,14 +4570,14 @@ var dist = __webpack_require__(14084);
 var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
-// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(9183);
+// EXTERNAL MODULE: ./src/router/index.ts
+var router = __webpack_require__(81459);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules
 var DialogTemplate = __webpack_require__(92089);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var device = __webpack_require__(29801);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/utils/time.ts

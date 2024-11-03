@@ -383,8 +383,8 @@ var debounce = __webpack_require__(1560);
 var conversion = __webpack_require__(77503);
 // EXTERNAL MODULE: ./src/components/bluetooth/index.ts + 4 modules
 var bluetooth = __webpack_require__(52126);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var pjcan_device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var pjcan_device = __webpack_require__(29801);
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
 var buttons = __webpack_require__(84596);
 // EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
@@ -666,7 +666,7 @@ class Canbus extends eventemitter3/* default */.A {
       if (sha?.length) {
         getSerial(sha).then(res => {
           if (res?.sha?.length) {
-            const device = new pjcan_device/* DeviceConfig */.pM();
+            const device = new pjcan_device/* DeviceActivation */.hF();
             device.serial = res.sha;
             this.query(device, false, success => {
               if (success) {
@@ -695,6 +695,10 @@ class Canbus extends eventemitter3/* default */.A {
       case pjcan_device/* API_DEVICE_INFO_EXEC */.x:
         // Информация об устройстве
         this.emit(pjcan_device/* API_DEVICE_INFO_EVENT */.Os, data);
+        break;
+      case pjcan_device/* API_DEVICE_ACTIVATION_EXEC */.Nk:
+        // Активация устройства
+        this.emit(pjcan_device/* API_DEVICE_ACTIVATION_EVENT */.E7, data);
         break;
       case pjcan_device/* API_DEVICE_CONFIG_EXEC */.z8:
         // Конфигурация устройства
@@ -1083,7 +1087,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 68741:
+/***/ 27159:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1095,7 +1099,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=2b752110&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=411f2284&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
@@ -1116,8 +1120,8 @@ var canbus = __webpack_require__(62774);
 var BaseLayout = __webpack_require__(19566);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var device = __webpack_require__(29801);
 // EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
 var onboard = __webpack_require__(32280);
 // EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
@@ -1185,6 +1189,7 @@ var datetime = __webpack_require__(9917);
     // записываем входящую конфигурацию в store
     canbus/* default */.A.addListener(version/* API_VERSION_EVENT */.dD, data => store/* default */.A.commit("config/setVersion", data));
     canbus/* default */.A.addListener(device/* API_DEVICE_INFO_EVENT */.Os, data => store/* default */.A.commit("config/setInfo", data));
+    canbus/* default */.A.addListener(device/* API_DEVICE_CONFIG_EVENT */.iX, data => store/* default */.A.commit("config/setDevice", data));
     canbus/* default */.A.addListener(onboard/* API_ONBOARD_CONFIG_EVENT */.Vw, data => {
       store/* default */.A.commit("config/setOnboard", data);
     });
@@ -1229,6 +1234,7 @@ var datetime = __webpack_require__(9917);
     const onBegin = status => {
       if (status) {
         const choice = new pjcan_choice/* ChoiceValue */.L();
+        choice.listID.push(device/* API_DEVICE_CONFIG_EXEC */.z8);
         choice.listID.push(onboard/* API_ONBOARD_CONFIG_EXEC */.SX);
         choice.listID.push(head_unit/* API_HEAD_UNIT_CONFIG_EXEC */.kZ);
         choice.listID.push(doors/* API_DOORS_CONFIG_EXEC */.CY);

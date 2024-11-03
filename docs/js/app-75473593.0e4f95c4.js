@@ -155,8 +155,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
-// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(9183);
+// EXTERNAL MODULE: ./src/router/index.ts
+var router = __webpack_require__(81459);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
@@ -187,8 +187,8 @@ var LocaleDialog = __webpack_require__(51977);
 var ChoosingCarModelDialog = __webpack_require__(89813);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var device = __webpack_require__(29801);
 // EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
 var onboard = __webpack_require__(32280);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=script&lang=ts

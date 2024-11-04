@@ -155,8 +155,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
-// EXTERNAL MODULE: ./src/router/index.ts
-var router = __webpack_require__(81459);
+// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
+var router = __webpack_require__(3841);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
@@ -173,8 +173,8 @@ var BluetoothBtn = __webpack_require__(59895);
 var UpdateFirmwareDialog = __webpack_require__(66422);
 // EXTERNAL MODULE: ./src/components/MenuDots.vue + 3 modules
 var MenuDots = __webpack_require__(69815);
-// EXTERNAL MODULE: ./src/components/dialogs/AboutDialog.vue + 24 modules
-var AboutDialog = __webpack_require__(1217);
+// EXTERNAL MODULE: ./src/components/dialogs/AboutDialog.vue + 29 modules
+var AboutDialog = __webpack_require__(91801);
 // EXTERNAL MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue + 5 modules
 var OnboardButtonsDialog = __webpack_require__(38862);
 // EXTERNAL MODULE: ./src/components/dialogs/MessageDialog.vue + 3 modules

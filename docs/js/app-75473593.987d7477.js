@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[990],{
 
-/***/ 19566:
+/***/ 60368:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -26,7 +26,7 @@ var VSpacer = __webpack_require__(41720);
 var VMain = __webpack_require__(98477);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VToolbar/VToolbarTitle.mjs
 var VToolbarTitle = __webpack_require__(88050);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=4a3f909a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=aa3859a8&scoped=true&ts=true
 
 const _hoisted_1 = {
   class: "text-h4"
@@ -149,7 +149,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=4a3f909a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=aa3859a8&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
 var es_array_push = __webpack_require__(44114);
@@ -280,14 +280,10 @@ var onboard = __webpack_require__(32280);
           })
         });
       }
-      if (rollbackFirmware.value.length) {
-        result.push({
-          id: 71,
-          title: t("menu.rollback", {
-            version: rollbackFirmware.value
-          })
-        });
-      }
+      // if (rollbackFirmware.value.length)
+      // {
+      // 	result.push({ id: 71, title: t("menu.rollback", { version: rollbackFirmware.value }) });
+      // }
       if (installPrompt.value) {
         result.push({
           id: 72,
@@ -449,10 +445,10 @@ var onboard = __webpack_require__(32280);
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=4a3f909a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=aa3859a8&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=4a3f909a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=aa3859a8&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -464,7 +460,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(BaseLayoutvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-4a3f909a"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(BaseLayoutvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-aa3859a8"]])
 
 /* harmony default export */ var BaseLayout = (__exports__);
 

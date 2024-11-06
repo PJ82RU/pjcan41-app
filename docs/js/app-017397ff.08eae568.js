@@ -1117,7 +1117,7 @@ var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/layout/BaseLayout.vue + 6 modules
-var BaseLayout = __webpack_require__(19566);
+var BaseLayout = __webpack_require__(60368);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules

@@ -215,10 +215,10 @@ class Bluetooth extends eventemitter3/* default */.A {
       this._counterReSend = 0;
     }).catch(() => {
       return Promise.resolve().then(() => {
-        this.delayPromise(50).then();
-      }).then(() => {
-        this._counterReSend++;
-        return this._counterReSend < this.counterReSendMax ? this.send(data) : Promise.reject("The counter has reached its maximum value");
+        this.delayPromise(50).then(() => {
+          this._counterReSend++;
+          return this._counterReSend < this.counterReSendMax ? this.send(data) : Promise.reject("The counter has reached its maximum value");
+        });
       });
     }) ?? Promise.reject("No characteristic");
   }

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 63614:
+/***/ 26319:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -2682,9 +2682,9 @@ var BaseModel = __webpack_require__(22575);
 const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-3d37c00a"]])
 
 /* harmony default export */ var views_onboard = (onboard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=7b830805&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=4e3aded4&scoped=true&ts=true
 
-function buttonsvue_type_template_id_7b830805_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function buttonsvue_type_template_id_4e3aded4_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_settings_card = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("settings-card");
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("flicking");
   const _component_button_edit_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("button-edit-dialog");
@@ -3090,18 +3090,18 @@ var IconCustom = __webpack_require__(19011);
 const SettingsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(SettingsCardvue_type_script_lang_ts, [['render',SettingsCardvue_type_template_id_61e79bfe_scoped_true_ts_true_render],['__scopeId',"data-v-61e79bfe"]])
 
 /* harmony default export */ var SettingsCard = (SettingsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=4daaa315&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=9229f870&ts=true
 
-const ButtonEditDialogvue_type_template_id_4daaa315_ts_true_hoisted_1 = {
+const ButtonEditDialogvue_type_template_id_9229f870_ts_true_hoisted_1 = {
   key: 1
 };
-const ButtonEditDialogvue_type_template_id_4daaa315_ts_true_hoisted_2 = {
+const ButtonEditDialogvue_type_template_id_9229f870_ts_true_hoisted_2 = {
   key: 1
 };
-const ButtonEditDialogvue_type_template_id_4daaa315_ts_true_hoisted_3 = {
+const ButtonEditDialogvue_type_template_id_9229f870_ts_true_hoisted_3 = {
   key: 1
 };
-function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ButtonEditDialogvue_type_template_id_9229f870_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_multi_range = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("multi-range");
                                                       
   const _component_number_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-card-item");
@@ -3115,6 +3115,7 @@ function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cac
     "content-class": "button-edit-dialog",
     icon: "mdi-plus-box",
     title: $setup.title,
+    width: "90%",
     text: "",
     actions: ""
   }, {
@@ -3130,8 +3131,9 @@ function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cac
           min: $options.SW1_CONFIG_RESISTANCE_MIN(),
           max: $options.SW1_CONFIG_RESISTANCE_MAX(),
           "number-of-ticks": 51,
-          "select-point": $setup.resist
-        }, null, 8, ["points", "min", "max", "select-point"])]),
+          "select-point": $setup.resist,
+          "hint-point": $setup.valueResistance
+        }, null, 8, ["points", "min", "max", "select-point", "hint-point"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
@@ -3174,7 +3176,7 @@ function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cac
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[3] || (_cache[3] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-restart")])),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", ButtonEditDialogvue_type_template_id_4daaa315_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.reset")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", ButtonEditDialogvue_type_template_id_9229f870_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.reset")), 1))]),
       _: 1
     }, 8, ["onClick", "disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
@@ -3186,7 +3188,7 @@ function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cac
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[4] || (_cache[4] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-check")])),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", ButtonEditDialogvue_type_template_id_4daaa315_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", ButtonEditDialogvue_type_template_id_9229f870_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1))]),
       _: 1
     }, 8, ["onClick", "disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
@@ -3197,7 +3199,7 @@ function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cac
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[5] || (_cache[5] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-close")])),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", ButtonEditDialogvue_type_template_id_4daaa315_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.cancel")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", ButtonEditDialogvue_type_template_id_9229f870_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.cancel")), 1))]),
       _: 1
     })]),
     _: 1
@@ -3210,13 +3212,14 @@ function ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render(_ctx, _cac
 
 
 
-;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=4daaa315&ts=true
+;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=9229f870&ts=true
 
 // EXTERNAL MODULE: ./src/components/MultiRange.vue + 6 modules
-var MultiRange = __webpack_require__(34453);
+var MultiRange = __webpack_require__(65591);
 // EXTERNAL MODULE: ./src/components/cards/NumberCardItem.vue + 5 modules
-var NumberCardItem = __webpack_require__(29531);
+var NumberCardItem = __webpack_require__(95021);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=script&lang=ts
+
 
 
 
@@ -3292,6 +3295,7 @@ var NumberCardItem = __webpack_require__(29531);
       }
     });
     const beginResistance = (0,runtime_core_esm_bundler/* computed */.EW)(() => indexList.value > 0 ? list.value[indexList.value - 1] + 1 : 1);
+    const valueResistance = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sw1"].resistance);
     /** Сбросить изменения */
     const reset = () => {
       list.value = [...listOfResistance.value];
@@ -3310,6 +3314,7 @@ var NumberCardItem = __webpack_require__(29531);
       minResistance,
       maxResistance,
       beginResistance,
+      valueResistance,
       reset,
       apply
     };
@@ -3323,14 +3328,12 @@ var NumberCardItem = __webpack_require__(29531);
 
 
 ;
-const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ButtonEditDialogvue_type_script_lang_ts, [['render',ButtonEditDialogvue_type_template_id_4daaa315_ts_true_render]])
+const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ButtonEditDialogvue_type_script_lang_ts, [['render',ButtonEditDialogvue_type_template_id_9229f870_ts_true_render]])
 
 /* harmony default export */ var ButtonEditDialog = (ButtonEditDialog_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
 var head_unit = __webpack_require__(19661);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=script&lang=ts
-
-
 
 
 
@@ -3354,7 +3357,6 @@ var head_unit = __webpack_require__(19661);
       name: display
     } = (0,composables_display/* useDisplay */._F)();
     const {
-      t,
       tm
     } = (0,vue_i18n/* useI18n */.s9)();
     const flicking = (0,reactivity_esm_bundler/* ref */.KR)(null);
@@ -3417,6 +3419,7 @@ var head_unit = __webpack_require__(19661);
      */
     const onButtonEdit = cardButton => {
       selected.value = cardButton;
+      store/* default */.A.commit("value/setSW1Resistance");
       buttonEditVisible.value = true;
     };
     /**
@@ -3459,32 +3462,6 @@ var head_unit = __webpack_require__(19661);
         value
       });
     };
-    let lastIdPressed = 0;
-    /** Событие нажатия кнопки */
-    const onButtonsValueReceive = () => {
-      const res = store/* default */.A.getters["value/sw1"];
-      if (res.isData && res.pressed && lastIdPressed !== res.id) {
-        lastIdPressed = res.id;
-        setTimeout(() => lastIdPressed = 0, 4000);
-        const detected = cardButtons.value.find(button => button.id === res.id) ?? {};
-        if (detected.resistanceTo > 0) dist/* toast */.oR.success(t("buttons.notify.detected", {
-          id: detected.title
-        }));else dist/* toast */.oR.warning(t("buttons.notify.notDefined"));
-      }
-    };
-    const onBegin = () => {
-      canbus/* default */.A.addListener(buttons/* API_SW1_VALUE_EVENT */._u, onButtonsValueReceive);
-    };
-    const onEnd = () => {
-      canbus/* default */.A.removeListener(buttons/* API_SW1_VALUE_EVENT */._u, onButtonsValueReceive);
-    };
-    (0,runtime_core_esm_bundler/* watch */.wB)(configLoaded, () => onBegin());
-    (0,runtime_core_esm_bundler/* onMounted */.sV)(() => {
-      if (configLoaded.value) onBegin();
-    });
-    (0,runtime_core_esm_bundler/* onUnmounted */.hi)(() => {
-      onEnd();
-    });
     return {
       flicking,
       display,
@@ -3507,10 +3484,10 @@ var head_unit = __webpack_require__(19661);
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=7b830805&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=4e3aded4&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=7b830805&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=4e3aded4&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue
 
@@ -3520,7 +3497,7 @@ var head_unit = __webpack_require__(19661);
 ;
 
 
-const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_7b830805_scoped_true_ts_true_render],['__scopeId',"data-v-7b830805"]])
+const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_4e3aded4_scoped_true_ts_true_render],['__scopeId',"data-v-4e3aded4"]])
 
 /* harmony default export */ var views_buttons = (buttons_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=4a9a390a&scoped=true&ts=true
@@ -4688,6 +4665,7 @@ __webpack_require__.d(value_mutations_namespaceObject, {
   setFuel: function() { return mutations_setFuel; },
   setMovement: function() { return setMovement; },
   setSW1: function() { return value_mutations_setSW1; },
+  setSW1Resistance: function() { return setSW1Resistance; },
   setScanner: function() { return setScanner; },
   setScannerBuffer: function() { return setScannerBuffer; },
   setScannerBufferTitle: function() { return setScannerBufferTitle; },
@@ -5894,6 +5872,14 @@ var conversion = __webpack_require__(77503);
  */
 const value_mutations_setSW1 = (state, data) => {
   state.sw1.set(data);
+};
+/**
+ * Записать значение resistance кнопки sw1
+ * @param {any} state
+ * @param {number} value Значение
+ */
+const setSW1Resistance = (state, value = 0) => {
+  state.sw1.resistance = value;
 };
 /**
  * Записать значения климата

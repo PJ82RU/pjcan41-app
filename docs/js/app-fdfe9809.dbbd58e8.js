@@ -961,7 +961,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(MenuDotsvue_typ
 
 /***/ }),
 
-/***/ 34453:
+/***/ 65591:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -974,7 +974,7 @@ __webpack_require__.d(__webpack_exports__, {
 var runtime_core_esm_bundler = __webpack_require__(56768);
 // EXTERNAL MODULE: ./node_modules/@vue/shared/dist/shared.esm-bundler.js
 var shared_esm_bundler = __webpack_require__(24232);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/MultiRange.vue?vue&type=template&id=6dc9f50a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/MultiRange.vue?vue&type=template&id=bdb4c97c&scoped=true&ts=true
 
 const _hoisted_1 = {
   class: "multi-range"
@@ -987,9 +987,12 @@ const _hoisted_4 = {
   class: "multi-range__handle"
 };
 const _hoisted_5 = {
+  class: "multi-range__handle__value"
+};
+const _hoisted_6 = {
   class: "multi-range__ticks"
 };
-const _hoisted_6 = ["data-value"];
+const _hoisted_7 = ["data-value"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("div", _hoisted_1, [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", _hoisted_2, [((0,runtime_core_esm_bundler/* openBlock */.uX)(true), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, (0,runtime_core_esm_bundler/* renderList */.pI)($setup.ranges, item => {
     return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("div", {
@@ -1003,13 +1006,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         'multi-range__selected': item.selected
       }])
     }, (0,shared_esm_bundler/* toDisplayString */.v_)(item.value), 3)])], 12, _hoisted_3);
-  }), 256))]), (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", _hoisted_5, [((0,runtime_core_esm_bundler/* openBlock */.uX)(true), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, (0,runtime_core_esm_bundler/* renderList */.pI)($setup.ticks, tick => {
+  }), 256)), $setup.rangeSelect ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("div", {
+    key: 0,
+    class: "multi-range__range-hint",
+    style: (0,shared_esm_bundler/* normalizeStyle */.Tr)({
+      left: $setup.rangeSelect.left
+    })
+  }, [(0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", _hoisted_5, (0,shared_esm_bundler/* toDisplayString */.v_)($setup.rangeSelect.value), 1)], 4)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true)]), (0,runtime_core_esm_bundler/* createElementVNode */.Lk)("div", _hoisted_6, [((0,runtime_core_esm_bundler/* openBlock */.uX)(true), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, (0,runtime_core_esm_bundler/* renderList */.pI)($setup.ticks, tick => {
     return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("div", {
       "data-value": tick
-    }, null, 8, _hoisted_6);
+    }, null, 8, _hoisted_7);
   }), 256))])]);
 }
-;// CONCATENATED MODULE: ./src/components/MultiRange.vue?vue&type=template&id=6dc9f50a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/components/MultiRange.vue?vue&type=template&id=bdb4c97c&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
@@ -1042,6 +1051,11 @@ var reactivity_esm_bundler = __webpack_require__(90144);
     selectPoint: {
       type: Number,
       default: 0
+    },
+    /** Точка подсказка */
+    hintPoint: {
+      type: Number,
+      default: 0
     }
   },
   setup(props) {
@@ -1050,7 +1064,8 @@ var reactivity_esm_bundler = __webpack_require__(90144);
       min,
       max,
       numberOfTicks,
-      selectPoint
+      selectPoint,
+      hintPoint
     } = (0,reactivity_esm_bundler/* toRefs */.QW)(props);
     const delta = (0,runtime_core_esm_bundler/* computed */.EW)(() => max.value - min.value);
     const ranges = (0,runtime_core_esm_bundler/* computed */.EW)(() => [0, ...points.value].map((point, i) => ({
@@ -1064,18 +1079,23 @@ var reactivity_esm_bundler = __webpack_require__(90144);
       for (let i = 0; i < numberOfTicks.value; i++) result[i] = (tick * i).toFixed();
       return result;
     });
+    const rangeSelect = (0,runtime_core_esm_bundler/* computed */.EW)(() => hintPoint.value > 0 ? {
+      value: hintPoint.value,
+      left: hintPoint.value * 100 / delta.value + "%"
+    } : undefined);
     return {
       ranges,
-      ticks
+      ticks,
+      rangeSelect
     };
   }
 });
 ;// CONCATENATED MODULE: ./src/components/MultiRange.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/MultiRange.vue?vue&type=style&index=0&id=6dc9f50a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/MultiRange.vue?vue&type=style&index=0&id=bdb4c97c&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/MultiRange.vue?vue&type=style&index=0&id=6dc9f50a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/MultiRange.vue?vue&type=style&index=0&id=bdb4c97c&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -1087,7 +1107,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(MultiRangevue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-6dc9f50a"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(MultiRangevue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-bdb4c97c"]])
 
 /* harmony default export */ var MultiRange = (__exports__);
 
@@ -1857,7 +1877,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InputCardItemvu
 
 /***/ }),
 
-/***/ 29531:
+/***/ 95021:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1874,7 +1894,7 @@ var VRow = __webpack_require__(56756);
 var VCol = __webpack_require__(35526);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(43948);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=template&id=05507288&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=template&id=6eed920c&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
@@ -1885,8 +1905,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     class: "number-card-item"
   }, {
     default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-      cols: "6",
-      class: "pt-0 pr-0"
+      class: "pt-0 pr-0",
+      style: {
+        width: '100%'
+      }
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VTextField/* VTextField */.W, {
         class: "number-card-item__label",
@@ -1901,8 +1923,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, ["model-value", "hint", "disabled"])]),
       _: 1
     }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
-      cols: "6",
-      class: "pt-0 pl-0"
+      class: "pt-0 pl-0",
+      style: {
+        width: '50%',
+        maxWidth: '260px',
+        minWidth: '170px'
+      }
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_v_number_input, {
         class: "number-card-item__number",
@@ -2000,10 +2026,10 @@ var reactivity_esm_bundler = __webpack_require__(90144);
 });
 ;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=05507288&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=6eed920c&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=05507288&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=6eed920c&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -2015,7 +2041,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(NumberCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-05507288"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(NumberCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-6eed920c"]])
 
 /* harmony default export */ var NumberCardItem = (__exports__);
 
@@ -3734,7 +3760,7 @@ function DeviceConfigDialogvue_type_template_id_e91fe2d6_ts_true_render(_ctx, _c
 // EXTERNAL MODULE: ./src/components/cards/SwitchCardItem.vue + 6 modules
 var SwitchCardItem = __webpack_require__(62295);
 // EXTERNAL MODULE: ./src/components/cards/NumberCardItem.vue + 5 modules
-var NumberCardItem = __webpack_require__(29531);
+var NumberCardItem = __webpack_require__(95021);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceConfigDialog.vue?vue&type=script&lang=ts
 
 
@@ -4884,7 +4910,7 @@ var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(63614);
+var router = __webpack_require__(26319);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules

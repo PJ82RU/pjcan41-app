@@ -10,7 +10,7 @@ var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
 var App = __webpack_require__(27159);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(26319);
+var router = __webpack_require__(85513);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
@@ -2430,8 +2430,8 @@ const API_TEMPERATURE_VIEW_EVENT = "TemperatureView";
 class TemperatureValue extends base/* BaseModel */.t {
   constructor(data) {
     super(API_TEMPERATURE_VALUE_EXEC);
-    (0,defineProperty/* default */.A)(this, "in", 0);
-    (0,defineProperty/* default */.A)(this, "out", 0);
+    (0,defineProperty/* default */.A)(this, "in", 1000);
+    (0,defineProperty/* default */.A)(this, "out", 1000);
     if (data) this.set(data);
   }
   /**

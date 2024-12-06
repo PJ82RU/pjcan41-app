@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 85513:
+/***/ 30859:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -59,9 +59,9 @@ var flicking_esm = __webpack_require__(22180);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=d2d42b9e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=560943a2&ts=true
 
-function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_560943a2_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
@@ -72,7 +72,7 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_card, {
     class: "info-card",
     title: _ctx.$t('onboard.info.title'),
-    menu: $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
+    menu: $setup.isMenu ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, null, {
@@ -116,7 +116,7 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.voltmeterViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isTemperatureOut ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
         key: 1
       }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
@@ -158,7 +158,7 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSeatbelt ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
         key: 3,
         cols: "12",
         class: "pt-0 pb-0"
@@ -178,7 +178,7 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "colorsTrue", "colorsFalse", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSignal ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
         key: 4,
         cols: "12",
         class: "pt-0 pb-0"
@@ -238,11 +238,6 @@ var onboard = __webpack_require__(32280);
 
 /* harmony default export */ var InfoCardvue_type_script_lang_ts = ({
   name: "InfoCard",
-  computed: {
-    TCarModel() {
-      return onboard/* TCarModel */.oB;
-    }
-  },
   components: {
     Card: Card/* default */.A,
     InputCardItem: InputCardItem/* default */.A,
@@ -266,9 +261,22 @@ var onboard = __webpack_require__(32280);
       return hardware.major === 4 && hardware.minor >= 1 && hardware.build <= 1;
     });
     const disableVoltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/device"].disableVoltmeter);
+    const isTemperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const carModel = store/* default */.A.getters["config/carModel"];
+      return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST;
+    });
     const isReverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const carModel = store/* default */.A.getters["config/carModel"];
       return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
+    });
+    const isSeatbelt = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return store/* default */.A.getters["config/carModel"] === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK;
+    });
+    const isSignal = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return store/* default */.A.getters["config/carModel"] === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK;
+    });
+    const isMenu = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return store/* default */.A.getters["config/carModel"] !== onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
     });
     const acc = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].acc);
     const worktime = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].worktime);
@@ -354,7 +362,11 @@ var onboard = __webpack_require__(32280);
       temperatureViewLoaded,
       isVoltmeter,
       disableVoltmeter,
+      isTemperatureOut,
       isReverse,
+      isSeatbelt,
+      isSignal,
+      isMenu,
       acc,
       worktime,
       voltmeter,
@@ -384,7 +396,7 @@ var exportHelper = __webpack_require__(71241);
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_d2d42b9e_ts_true_render]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_560943a2_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (__exports__);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=508e229c&ts=true
@@ -4742,7 +4754,7 @@ var onboard = __webpack_require__(32280);
 }, {
   name: "doors",
   enabled: true,
-  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST]
 }, {
   name: "climate",
   enabled: true,

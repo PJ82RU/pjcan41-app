@@ -4714,11 +4714,27 @@ __webpack_require__.d(view_mutations_namespaceObject, {
   setDatetime: function() { return mutations_setDatetime; },
   setDoors: function() { return view_mutations_setDoors; },
   setEngine: function() { return view_mutations_setEngine; },
+  setEngineCoolant: function() { return setEngineCoolant; },
+  setEngineEnabled: function() { return setEngineEnabled; },
+  setEngineLoad: function() { return setEngineLoad; },
+  setEngineRPM: function() { return setEngineRPM; },
+  setEngineThrottle: function() { return setEngineThrottle; },
+  setEngineTotalCountRPM: function() { return setEngineTotalCountRPM; },
+  setEngineTotalWorktime: function() { return setEngineTotalWorktime; },
   setFuel: function() { return view_mutations_setFuel; },
+  setFuelAVG: function() { return setFuelAVG; },
+  setFuelCurrent: function() { return setFuelCurrent; },
   setHeadText: function() { return setHeadText; },
   setMovement: function() { return mutations_setMovement; },
+  setMovementRestWay: function() { return setMovementRestWay; },
+  setMovementSpeed: function() { return setMovementSpeed; },
+  setMovementSpeedAVG: function() { return setMovementSpeedAVG; },
   setOnboard: function() { return mutations_setOnboard; },
   setSensors: function() { return mutations_setSensors; },
+  setSensorsHandbrake: function() { return setSensorsHandbrake; },
+  setSensorsReverse: function() { return setSensorsReverse; },
+  setSensorsSeatbelt: function() { return setSensorsSeatbelt; },
+  setSensorsTurnSignal: function() { return setSensorsTurnSignal; },
   setTemperature: function() { return mutations_setTemperature; },
   setView: function() { return setView; },
   setVoltmeter: function() { return setVoltmeter; },
@@ -6212,6 +6228,27 @@ const view_mutations_setDoors = (state, data) => {
 const view_mutations_setEngine = (state, data) => {
   state.engine.set(data);
 };
+const setEngineEnabled = (state, data) => {
+  state.engine.enabled.set(data);
+};
+const setEngineTotalWorktime = (state, data) => {
+  state.engine.totalWorktime.set(data);
+};
+const setEngineTotalCountRPM = (state, data) => {
+  state.engine.totalCountRPM.set(data);
+};
+const setEngineCoolant = (state, data) => {
+  state.engine.coolant.set(data);
+};
+const setEngineRPM = (state, data) => {
+  state.engine.rpm.set(data);
+};
+const setEngineLoad = (state, data) => {
+  state.engine.load.set(data);
+};
+const setEngineThrottle = (state, data) => {
+  state.engine.throttle.set(data);
+};
 /**
  * Записать значения отображения расхода
  * @param {any} state
@@ -6219,6 +6256,12 @@ const view_mutations_setEngine = (state, data) => {
  */
 const view_mutations_setFuel = (state, data) => {
   state.fuel.set(data);
+};
+const setFuelCurrent = (state, data) => {
+  state.fuel.current.set(data);
+};
+const setFuelAVG = (state, data) => {
+  state.fuel.avg.set(data);
 };
 /**
  * Записать значения отображения движения
@@ -6228,6 +6271,15 @@ const view_mutations_setFuel = (state, data) => {
 const mutations_setMovement = (state, data) => {
   state.movement.set(data);
 };
+const setMovementSpeed = (state, data) => {
+  state.movement.speed.set(data);
+};
+const setMovementSpeedAVG = (state, data) => {
+  state.movement.speedAVG.set(data);
+};
+const setMovementRestWay = (state, data) => {
+  state.movement.restWay.set(data);
+};
 /**
  * Записать значения отображения датчиков
  * @param {any} state
@@ -6235,6 +6287,18 @@ const mutations_setMovement = (state, data) => {
  */
 const mutations_setSensors = (state, data) => {
   state.sensors.set(data);
+};
+const setSensorsHandbrake = (state, data) => {
+  state.sensors.handbrake.set(data);
+};
+const setSensorsReverse = (state, data) => {
+  state.sensors.reverse.set(data);
+};
+const setSensorsSeatbelt = (state, data) => {
+  state.sensors.seatbelt.set(data);
+};
+const setSensorsTurnSignal = (state, data) => {
+  state.sensors.turnSignal.set(data);
 };
 /**
  * Записать значения отображения температуры

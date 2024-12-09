@@ -8,7 +8,7 @@
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
-var App = __webpack_require__(27159);
+var App = __webpack_require__(90971);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
 var router = __webpack_require__(30859);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules

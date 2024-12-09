@@ -53,7 +53,7 @@
 
 
 /*!
-  * core-base v10.0.1
+  * core-base v10.0.5
   * (c) 2024 kazuya kawaguchi
   * Released under the MIT License.
   */
@@ -76,66 +76,135 @@ function format(ast) {
   return msg;
 }
 function formatParts(ctx, ast) {
-  const body = ast.b || ast.body;
-  if ((body.t || body.type) === 1 /* NodeTypes.Plural */) {
+  const body = resolveBody(ast);
+  if (body == null) {
+    throw createUnhandleNodeError(0 /* NodeTypes.Resource */);
+  }
+  const type = resolveType(body);
+  if (type === 1 /* NodeTypes.Plural */) {
     const plural = body;
-    const cases = plural.c || plural.cases;
+    const cases = resolveCases(plural);
     return ctx.plural(cases.reduce((messages, c) => [...messages, formatMessageParts(ctx, c)], []));
   } else {
     return formatMessageParts(ctx, body);
   }
 }
+const PROPS_BODY = ['b', 'body'];
+function resolveBody(node) {
+  return resolveProps(node, PROPS_BODY);
+}
+const PROPS_CASES = ['c', 'cases'];
+function resolveCases(node) {
+  return resolveProps(node, PROPS_CASES, []);
+}
 function formatMessageParts(ctx, node) {
-  const _static = node.s || node.static;
-  if (_static) {
-    return ctx.type === 'text' ? _static : ctx.normalize([_static]);
+  const static_ = resolveStatic(node);
+  if (static_ != null) {
+    return ctx.type === 'text' ? static_ : ctx.normalize([static_]);
   } else {
-    const messages = (node.i || node.items).reduce((acm, c) => [...acm, formatMessagePart(ctx, c)], []);
+    const messages = resolveItems(node).reduce((acm, c) => [...acm, formatMessagePart(ctx, c)], []);
     return ctx.normalize(messages);
   }
 }
+const PROPS_STATIC = ['s', 'static'];
+function resolveStatic(node) {
+  return resolveProps(node, PROPS_STATIC);
+}
+const PROPS_ITEMS = ['i', 'items'];
+function resolveItems(node) {
+  return resolveProps(node, PROPS_ITEMS, []);
+}
 function formatMessagePart(ctx, node) {
-  const type = node.t || node.type;
+  const type = resolveType(node);
   switch (type) {
     case 3 /* NodeTypes.Text */:
       {
-        const text = node;
-        return text.v || text.value;
+        return resolveValue$1(node, type);
       }
     case 9 /* NodeTypes.Literal */:
       {
-        const literal = node;
-        return literal.v || literal.value;
+        return resolveValue$1(node, type);
       }
     case 4 /* NodeTypes.Named */:
       {
         const named = node;
-        return ctx.interpolate(ctx.named(named.k || named.key));
+        if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(named, 'k') && named.k) {
+          return ctx.interpolate(ctx.named(named.k));
+        }
+        if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(named, 'key') && named.key) {
+          return ctx.interpolate(ctx.named(named.key));
+        }
+        throw createUnhandleNodeError(type);
       }
     case 5 /* NodeTypes.List */:
       {
         const list = node;
-        return ctx.interpolate(ctx.list(list.i != null ? list.i : list.index));
+        if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(list, 'i') && (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isNumber */ .Et)(list.i)) {
+          return ctx.interpolate(ctx.list(list.i));
+        }
+        if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(list, 'index') && (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isNumber */ .Et)(list.index)) {
+          return ctx.interpolate(ctx.list(list.index));
+        }
+        throw createUnhandleNodeError(type);
       }
     case 6 /* NodeTypes.Linked */:
       {
         const linked = node;
-        const modifier = linked.m || linked.modifier;
-        return ctx.linked(formatMessagePart(ctx, linked.k || linked.key), modifier ? formatMessagePart(ctx, modifier) : undefined, ctx.type);
+        const modifier = resolveLinkedModifier(linked);
+        const key = resolveLinkedKey(linked);
+        return ctx.linked(formatMessagePart(ctx, key), modifier ? formatMessagePart(ctx, modifier) : undefined, ctx.type);
       }
     case 7 /* NodeTypes.LinkedKey */:
       {
-        const linkedKey = node;
-        return linkedKey.v || linkedKey.value;
+        return resolveValue$1(node, type);
       }
     case 8 /* NodeTypes.LinkedModifier */:
       {
-        const linkedModifier = node;
-        return linkedModifier.v || linkedModifier.value;
+        return resolveValue$1(node, type);
       }
     default:
-      throw new Error(`unhandled node type on format message part: ${type}`);
+      throw new Error(`unhandled node on format message part: ${type}`);
   }
+}
+const PROPS_TYPE = ['t', 'type'];
+function resolveType(node) {
+  return resolveProps(node, PROPS_TYPE);
+}
+const PROPS_VALUE = ['v', 'value'];
+function resolveValue$1(node, type) {
+  const resolved = resolveProps(node, PROPS_VALUE);
+  if (resolved) {
+    return resolved;
+  } else {
+    throw createUnhandleNodeError(type);
+  }
+}
+const PROPS_MODIFIER = ['m', 'modifier'];
+function resolveLinkedModifier(node) {
+  return resolveProps(node, PROPS_MODIFIER);
+}
+const PROPS_KEY = ['k', 'key'];
+function resolveLinkedKey(node) {
+  const resolved = resolveProps(node, PROPS_KEY);
+  if (resolved) {
+    return resolved;
+  } else {
+    throw createUnhandleNodeError(6 /* NodeTypes.Linked */);
+  }
+}
+function resolveProps(node, props, defaultValue) {
+  for (let i = 0; i < props.length; i++) {
+    const prop = props[i];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(node, prop) && node[prop] != null) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return node[prop];
+    }
+  }
+  return defaultValue;
+}
+function createUnhandleNodeError(type) {
+  return new Error(`unhandled node type: ${type}`);
 }
 const WARN_MESSAGE = (/* unused pure expression or super */ null && (`Detected HTML in '{source}' message. Recommend not using HTML messages to avoid XSS.`));
 function checkHtmlMessage(source, warnHtmlMessage) {
@@ -146,11 +215,13 @@ function checkHtmlMessage(source, warnHtmlMessage) {
   }
 }
 const defaultOnCacheKey = message => message;
-let compileCache = Object.create(null);
+let compileCache = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
 function clearCompileCache() {
-  compileCache = Object.create(null);
+  compileCache = create();
 }
-const isMessageAST = val => (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isObject */ .Gv)(val) && (val.t === 0 || val.type === 0) && ('b' in val || 'body' in val);
+function isMessageAST(val) {
+  return (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isObject */ .Gv)(val) && resolveType(val) === 0 && ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(val, 'b') || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .hasOwn */ .$3)(val, 'body'));
+}
 function baseCompile(message, options = {}) {
   // error detecting on compile
   let detectError = false;
@@ -667,7 +738,7 @@ function getWarnMessage(code, ...args) {
  * Intlify core-base version
  * @internal
  */
-const VERSION = '10.0.1';
+const VERSION = '10.0.5';
 const NOT_REOSLVED = -1;
 const DEFAULT_LOCALE = 'en-US';
 const MISSING_RESOLVE_VALUE = '';
@@ -736,17 +807,11 @@ function createCoreContext(options = {}) {
   const locale = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isString */ .Kg)(options.locale) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isFunction */ .Tn)(options.locale) ? options.locale : DEFAULT_LOCALE;
   const _locale = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isFunction */ .Tn)(locale) ? DEFAULT_LOCALE : locale;
   const fallbackLocale = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isArray */ .cy)(options.fallbackLocale) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.fallbackLocale) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isString */ .Kg)(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale;
-  const messages = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.messages) ? options.messages : {
-    [_locale]: {}
-  };
-  const datetimeFormats = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.datetimeFormats) ? options.datetimeFormats : {
-    [_locale]: {}
-  };
-  const numberFormats = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.numberFormats) ? options.numberFormats : {
-    [_locale]: {}
-  };
-  const modifiers = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .assign */ .kp)({}, options.modifiers || {}, getDefaultLinkedModifiers());
-  const pluralRules = options.pluralRules || {};
+  const messages = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.messages) ? options.messages : createResources(_locale);
+  const datetimeFormats = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.datetimeFormats) ? options.datetimeFormats : createResources(_locale);
+  const numberFormats = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isPlainObject */ .Qd)(options.numberFormats) ? options.numberFormats : createResources(_locale);
+  const modifiers = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .assign */ .kp)((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)(), options.modifiers, getDefaultLinkedModifiers());
+  const pluralRules = options.pluralRules || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
   const missing = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isFunction */ .Tn)(options.missing) ? options.missing : null;
   const missingWarn = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isBoolean */ .Lm)(options.missingWarn) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isRegExp */ .gd)(options.missingWarn) ? options.missingWarn : true;
   const fallbackWarn = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isBoolean */ .Lm)(options.fallbackWarn) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isRegExp */ .gd)(options.fallbackWarn) ? options.fallbackWarn : true;
@@ -803,6 +868,9 @@ function createCoreContext(options = {}) {
   if (false) {}
   return context;
 }
+const createResources = locale => ({
+  [locale]: (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)()
+});
 /** @internal */
 function isTranslateFallbackWarn(fallback, key) {
   return fallback instanceof RegExp ? fallback.test(key) : fallback;
@@ -921,8 +989,8 @@ const DATETIME_FORMAT_OPTIONS_KEYS = ['localeMatcher', 'weekday', 'era', 'year',
 /** @internal */
 function parseDateTimeArgs(...args) {
   const [arg1, arg2, arg3, arg4] = args;
-  const options = {};
-  let overrides = {};
+  const options = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
+  let overrides = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
   let value;
   if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isString */ .Kg)(arg1)) {
     // Only allow ISO strings - other date formats are often supported,
@@ -1046,8 +1114,8 @@ const NUMBER_FORMAT_OPTIONS_KEYS = ['localeMatcher', 'style', 'currency', 'curre
 /** @internal */
 function parseNumberArgs(...args) {
   const [arg1, arg2, arg3, arg4] = args;
-  const options = {};
-  let overrides = {};
+  const options = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
+  let overrides = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
   if (!(0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isNumber */ .Et)(arg1)) {
     throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
   }
@@ -1122,7 +1190,7 @@ function createMessageContext(options = {}) {
   const _list = options.list || [];
   const list = index => _list[index];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const _named = options.named || {};
+  const _named = options.named || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
   (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isNumber */ .Et)(options.pluralIndex) && normalizeNamed(pluralIndex, _named);
   const named = key => _named[key];
   function message(key, useLinked) {
@@ -1169,7 +1237,7 @@ function createMessageContext(options = {}) {
     ["type" /* HelperNameMap.TYPE */]: type,
     ["interpolate" /* HelperNameMap.INTERPOLATE */]: interpolate,
     ["normalize" /* HelperNameMap.NORMALIZE */]: normalize,
-    ["values" /* HelperNameMap.VALUES */]: (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .assign */ .kp)({}, _list, _named)
+    ["values" /* HelperNameMap.VALUES */]: (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .assign */ .kp)((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)(), _list, _named)
   };
   return ctx;
 }
@@ -1200,7 +1268,7 @@ function translate(context, ...args) {
   escapeParameter && escapeParams(options);
   // resolve message format
   // eslint-disable-next-line prefer-const
-  let [formatScope, targetLocale, message] = !resolvedMessage ? resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) : [key, locale, messages[locale] || {}];
+  let [formatScope, targetLocale, message] = !resolvedMessage ? resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) : [key, locale, messages[locale] || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)()];
   // NOTE:
   //  Fix to work around `ssrTransfrom` bug in Vite.
   //  https://github.com/vitejs/vite/issues/4306
@@ -1261,7 +1329,7 @@ function resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn
     localeFallbacker
   } = context;
   const locales = localeFallbacker(context, fallbackLocale, locale); // eslint-disable-line @typescript-eslint/no-explicit-any
-  let message = {};
+  let message = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
   let targetLocale;
   let format = null;
   let from = locale;
@@ -1272,7 +1340,7 @@ function resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn
     if (false) {}
     // for vue-devtools timeline event
     if (false) {}
-    message = messages[targetLocale] || {};
+    message = messages[targetLocale] || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
     // for vue-devtools timeline event
     let start = null;
     let startTag;
@@ -1343,7 +1411,7 @@ function evaluateMessage(context, msg, msgCtx) {
 /** @internal */
 function parseTranslateArgs(...args) {
   const [arg1, arg2, arg3] = args;
-  const options = {};
+  const options = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .create */ .vt)();
   if (!(0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isString */ .Kg)(arg1) && !(0,_intlify_shared__WEBPACK_IMPORTED_MODULE_8__/* .isNumber */ .Et)(arg1) && !isMessageFunction(arg1) && !isMessageAST(arg1)) {
     throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
   }
@@ -1478,7 +1546,7 @@ function getMessageContextOptions(context, locale, message, options) {
 
 
 /*!
-  * message-compiler v10.0.1
+  * message-compiler v10.0.5
   * (c) 2024 kazuya kawaguchi
   * Released under the MIT License.
   */
@@ -3055,13 +3123,14 @@ function baseCompile(source, options = {}) {
 /* harmony export */   gd: function() { return /* binding */ isRegExp; },
 /* harmony export */   kp: function() { return /* binding */ assign; },
 /* harmony export */   v_: function() { return /* binding */ toDisplayString; },
+/* harmony export */   vt: function() { return /* binding */ create; },
 /* harmony export */   yL: function() { return /* binding */ isPromise; }
 /* harmony export */ });
 /* unused harmony exports createEmitter, format, friendlyJSONstringify, generateCodeFrame, isSymbol, mark, measure, objectToString, toTypeString, warnOnce */
 /* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44114);
 
 /*!
-  * shared v10.0.1
+  * shared v10.0.5
   * (c) 2024 kazuya kawaguchi
   * Released under the MIT License.
   */
@@ -3098,10 +3167,12 @@ const isDate = val => toTypeString(val) === '[object Date]';
 const isRegExp = val => toTypeString(val) === '[object RegExp]';
 const isEmptyObject = val => isPlainObject(val) && Object.keys(val).length === 0;
 const assign = Object.assign;
+const _create = Object.create;
+const create = (obj = null) => _create(obj);
 let _globalThis;
 const getGlobalThis = () => {
   // prettier-ignore
-  return _globalThis || (_globalThis = typeof globalThis !== 'undefined' ? globalThis : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {});
+  return _globalThis || (_globalThis = typeof globalThis !== 'undefined' ? globalThis : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : create());
 };
 function escapeHtml(rawText) {
   return rawText.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
@@ -3131,11 +3202,7 @@ const isPromise = val => {
 };
 const objectToString = Object.prototype.toString;
 const toTypeString = value => objectToString.call(value);
-const isPlainObject = val => {
-  if (!isObject(val)) return false;
-  const proto = Object.getPrototypeOf(val);
-  return proto === null || proto.constructor === Object;
-};
+const isPlainObject = val => toTypeString(val) === '[object Object]';
 // for converting list and named values to displayed strings.
 const toDisplayString = val => {
   return val == null ? '' : isArray(val) || isPlainObject(val) && val.toString === objectToString ? JSON.stringify(val, null, 2) : String(val);
@@ -3243,8 +3310,17 @@ function deepCopy(src, des) {
       src,
       des
     } = stack.pop();
+    // using `Object.keys` which skips prototype properties
     Object.keys(src).forEach(key => {
-      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
+      if (key === '__proto__') {
+        return;
+      }
+      // if src[key] is an object/array, set des[key]
+      // to empty object/array to prevent setting by reference
+      if (isObject(src[key]) && !isObject(des[key])) {
+        des[key] = Array.isArray(src[key]) ? [] : create();
+      }
+      if (isNotObjectOrIsArray(des[key]) || isNotObjectOrIsArray(src[key])) {
         // replace with src[key] when:
         // src[key] or des[key] is not an object, or
         // src[key] or des[key] is an array

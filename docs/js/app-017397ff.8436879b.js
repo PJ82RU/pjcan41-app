@@ -1087,7 +1087,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 27159:
+/***/ 90971:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1099,7 +1099,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=411f2284&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=b0c5b12e&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
@@ -1225,9 +1225,25 @@ var datetime = __webpack_require__(9917);
     canbus/* default */.A.addListener(climate/* API_CLIMATE_VIEW_EVENT */.yt, data => store/* default */.A.commit("view/setClimate", data));
     canbus/* default */.A.addListener(doors/* API_DOORS_VIEW_EVENT */.Ww, data => store/* default */.A.commit("view/setDoors", data));
     canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_EVENT */.Zw, data => store/* default */.A.commit("view/setEngine", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_ENABLED_EVENT */.tn, data => store/* default */.A.commit("view/setEngineEnabled", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_TOTAL_WORKTIME_EVENT */.DM, data => store/* default */.A.commit("view/setEngineTotalWorktime", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_TOTAL_COUNT_RPM_EVENT */.w0, data => store/* default */.A.commit("view/setEngineTotalCountRPM", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_COOLANT_EVENT */.EX, data => store/* default */.A.commit("view/setEngineCoolant", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_RPM_EVENT */.f0, data => store/* default */.A.commit("view/setEngineRPM", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_LOAD_EVENT */.Ud, data => store/* default */.A.commit("view/setEngineLoad", data));
+    canbus/* default */.A.addListener(engine/* API_ENGINE_VIEW_THROTTLE_EVENT */.wN, data => store/* default */.A.commit("view/setEngineThrottle", data));
     canbus/* default */.A.addListener(fuel/* API_FUEL_VIEW_EVENT */.jC, data => store/* default */.A.commit("view/setFuel", data));
+    canbus/* default */.A.addListener(fuel/* API_FUEL_VIEW_CURRENT_EVENT */.jh, data => store/* default */.A.commit("view/setFuelCurrent", data));
+    canbus/* default */.A.addListener(fuel/* API_FUEL_VIEW_AVG_EVENT */.Cc, data => store/* default */.A.commit("view/setFuelAVG", data));
     canbus/* default */.A.addListener(movement/* API_MOVEMENT_VIEW_EVENT */.CE, data => store/* default */.A.commit("view/setMovement", data));
+    canbus/* default */.A.addListener(movement/* API_MOVEMENT_VIEW_SPEED_EVENT */.cJ, data => store/* default */.A.commit("view/setMovementSpeed", data));
+    canbus/* default */.A.addListener(movement/* API_MOVEMENT_VIEW_SPEED_AVG_EVENT */.hV, data => store/* default */.A.commit("view/setMovementSpeedAVG", data));
+    canbus/* default */.A.addListener(movement/* API_MOVEMENT_VIEW_REST_WAY_EVENT */.rL, data => store/* default */.A.commit("view/setMovementRestWay", data));
     canbus/* default */.A.addListener(sensors/* API_SENSORS_VIEW_EVENT */.en, data => store/* default */.A.commit("view/setSensors", data));
+    canbus/* default */.A.addListener(sensors/* API_SENSORS_VIEW_HANDBRAKE_EVENT */.fN, data => store/* default */.A.commit("view/setSensorsHandbrake", data));
+    canbus/* default */.A.addListener(sensors/* API_SENSORS_VIEW_REVERSE_EVENT */.Bj, data => store/* default */.A.commit("view/setSensorsReverse", data));
+    canbus/* default */.A.addListener(sensors/* API_SENSORS_VIEW_SEATBELT_EVENT */.rd, data => store/* default */.A.commit("view/setSensorsSeatbelt", data));
+    canbus/* default */.A.addListener(sensors/* API_SENSORS_VIEW_TURN_SIGNAL_EVENT */.he, data => store/* default */.A.commit("view/setSensorsTurnSignal", data));
     canbus/* default */.A.addListener(temperature/* API_TEMPERATURE_VIEW_EVENT */.P5, data => store/* default */.A.commit("view/setTemperature", data));
     // canbus.addListener(API_VOLUME_VIEW_EVENT, (data: DataView): void => store.commit("view/setVolume", data));
     canbus/* default */.A.addListener(datetime/* API_DATETIME_VIEW_EVENT */.kP, data => store/* default */.A.commit("view/setDatetime", data));
@@ -1287,7 +1303,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_scr
 /***/ (function(module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.5","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"^1.7.7","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.1","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.6","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"^1.7.7","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.5","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
 
 /***/ })
 

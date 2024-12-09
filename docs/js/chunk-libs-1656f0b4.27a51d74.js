@@ -38,7 +38,7 @@ exports.A = (sfc, props) => {
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(90144);
 
 /*!
-  * vue-i18n v10.0.1
+  * vue-i18n v10.0.5
   * (c) 2024 kazuya kawaguchi
   * Released under the MIT License.
   */
@@ -55,7 +55,7 @@ exports.A = (sfc, props) => {
  *
  * @VueI18nGeneral
  */
-const VERSION = '10.0.1';
+const VERSION = '10.0.5';
 /**
  * This is only called in esm-bundler builds.
  * istanbul-ignore-next
@@ -162,7 +162,7 @@ function handleFlatJson(obj) {
       let hasStringValue = false;
       for (let i = 0; i < lastIndex; i++) {
         if (!(subKeys[i] in currentObj)) {
-          currentObj[subKeys[i]] = {};
+          currentObj[subKeys[i]] = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)();
         }
         if (!(0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isObject */ .Gv)(currentObj[subKeys[i]])) {
            false && 0;
@@ -192,8 +192,8 @@ function getLocaleMessages(locale, options) {
     flatJson
   } = options;
   // prettier-ignore
-  const ret = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isPlainObject */ .Qd)(messages) ? messages : (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isArray */ .cy)(__i18n) ? {} : {
-    [locale]: {}
+  const ret = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isPlainObject */ .Qd)(messages) ? messages : (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isArray */ .cy)(__i18n) ? (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)() : {
+    [locale]: (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)()
   };
   // merge locale messages of i18n custom block
   if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isArray */ .cy)(__i18n)) {
@@ -204,7 +204,7 @@ function getLocaleMessages(locale, options) {
           resource
         } = custom;
         if (locale) {
-          ret[locale] = ret[locale] || {};
+          ret[locale] = ret[locale] || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)();
           (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .deepCopy */ .A4)(resource, ret[locale]);
         } else {
           (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .deepCopy */ .A4)(resource, ret);
@@ -228,7 +228,8 @@ function getComponentOptions(instance) {
   return instance.type;
 }
 function adjustI18nResources(gl, options, componentOptions) {
-  let messages = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isObject */ .Gv)(options.messages) ? options.messages : {};
+  // prettier-ignore
+  let messages = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isObject */ .Gv)(options.messages) ? options.messages : (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)();
   if ('__i18nGlobal' in componentOptions) {
     messages = getLocaleMessages(gl.locale.value, {
       messages,
@@ -1520,7 +1521,7 @@ keys) {
         arg[key] = slot();
       }
       return arg;
-    }, {});
+    }, (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)());
   }
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1554,7 +1555,7 @@ const TranslationImpl = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_4__/* .defi
     });
     return () => {
       const keys = Object.keys(slots).filter(key => key !== '_');
-      const options = {};
+      const options = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)();
       if (props.locale) {
         options.locale = props.locale;
       }
@@ -1564,7 +1565,7 @@ const TranslationImpl = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_4__/* .defi
       const arg = getInterpolateArg(context, keys);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const children = i18n[TranslateVNodeSymbol](props.keypath, arg, options);
-      const assignedAttrs = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .assign */ .kp)({}, attrs);
+      const assignedAttrs = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .assign */ .kp)((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)(), attrs);
       const tag = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isString */ .Kg)(props.tag) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isObject */ .Gv)(props.tag) ? props.tag : getFragmentableTag();
       return (0,vue__WEBPACK_IMPORTED_MODULE_4__.h)(tag, assignedAttrs, children);
     };
@@ -1637,7 +1638,7 @@ function renderFormatter(props, context, slotKeys, partFormatter) {
     const options = {
       part: true
     };
-    let overrides = {};
+    let overrides = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)();
     if (props.locale) {
       options.locale = props.locale;
     }
@@ -1651,11 +1652,11 @@ function renderFormatter(props, context, slotKeys, partFormatter) {
       }
       // Filter out number format options only
       overrides = Object.keys(props.format).reduce((options, prop) => {
-        return slotKeys.includes(prop) ? (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .assign */ .kp)({}, options, {
+        return slotKeys.includes(prop) ? (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .assign */ .kp)((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)(), options, {
           [prop]: props.format[prop]
         }) // eslint-disable-line @typescript-eslint/no-explicit-any
         : options;
-      }, {});
+      }, (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)());
     }
     const parts = partFormatter(...[props.value, options, overrides]);
     let children = [options.key];
@@ -1675,7 +1676,7 @@ function renderFormatter(props, context, slotKeys, partFormatter) {
     } else if ((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isString */ .Kg)(parts)) {
       children = [parts];
     }
-    const assignedAttrs = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .assign */ .kp)({}, attrs);
+    const assignedAttrs = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .assign */ .kp)((0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .create */ .vt)(), attrs);
     const tag = (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isString */ .Kg)(props.tag) || (0,_intlify_shared__WEBPACK_IMPORTED_MODULE_1__/* .isObject */ .Gv)(props.tag) ? props.tag : getFragmentableTag();
     return (0,vue__WEBPACK_IMPORTED_MODULE_4__.h)(tag, assignedAttrs, children);
   };

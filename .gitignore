@@ -23,14 +23,3 @@ pnpm-debug.log*
 # Package
 package-lock.json
 yarn.lock
-
-#my
-/devices
-/hash
-*.bin
-*.enc
-*.sig
-*.exe
-*.sfx
-*.csv
-*.json

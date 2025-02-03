@@ -100,7 +100,7 @@ var vue_i18n = __webpack_require__(85851);
       options: "Параметры"
     },
     update: "Обновить до {version}",
-    rollback: "Откатить до {version}",
+    rollback: "Понизить до {version}",
     install: "Установить",
     about: "О программе"
   },

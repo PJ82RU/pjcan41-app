@@ -200,12 +200,12 @@ var vue_i18n = __webpack_require__(85851);
         menu: "LCD: Напряжение"
       },
       temperatureIn: {
-        title: "Температура воздуха",
+        title: "Температура в салоне",
         description: "Показания температуры в салоне автомобиля",
         menu: "LCD: Температура воздуха"
       },
       temperatureOut: {
-        title: "Температура воздуха",
+        title: "Температура снаружи",
         description: "Показания внешней температуры автомобиля",
         menu: "LCD: Температура воздуха"
       },
@@ -218,6 +218,14 @@ var vue_i18n = __webpack_require__(85851);
         title: "Задний ход",
         description: "Ручка КПП в положении R",
         menu: "LCD: Задний ход"
+      },
+      light: {
+        title: "Подсветка",
+        description: "Контакт подсветки"
+      },
+      amp: {
+        title: "AMP Cont",
+        description: "Контакт вкл. Bose"
       },
       safetyBelt: {
         title: "Ремень безопасности",
@@ -784,8 +792,8 @@ var vue_i18n = __webpack_require__(85851);
       4: "Mazda 6 GH (тестируется)",
       5: "Mazda CX-7",
       6: "Mazda CX-7 rest",
-      7: "Mazda CX-9",
-      8: "Mazda CX-9 rest",
+      7: "Mazda CX-9 (gen1)",
+      8: "Mazda CX-9 (gen1) rest",
       9: "Mazda 5 (тестируется)"
     }
   },
@@ -970,13 +978,13 @@ var vue_i18n = __webpack_require__(85851);
         menu: "LCD: Voltage"
       },
       temperatureIn: {
-        title: "Air temperature",
-        description: "Temperature readings in the car interior",
+        title: "Temperature in the cabin",
+        description: "Temperature readings inside the car",
         menu: "LCD: Air temperature"
       },
       temperatureOut: {
-        title: "Air temperature",
-        description: "Reading the outside temperature of the car",
+        title: "Temperature outside",
+        description: "Vehicle outside temperature readings",
         menu: "LCD: Air temperature"
       },
       handbrake: {
@@ -988,6 +996,14 @@ var vue_i18n = __webpack_require__(85851);
         title: "Reverse",
         description: "Gear knob in R",
         menu: "LCD: Reverse"
+      },
+      light: {
+        title: "Backlight",
+        description: "Backlight pin"
+      },
+      amp: {
+        title: "AMP Cont",
+        description: "Bose power on pin"
       },
       safetyBelt: {
         title: "Safety belt",
@@ -1554,8 +1570,8 @@ var vue_i18n = __webpack_require__(85851);
       4: "Mazda 6 GH (tested)",
       5: "Mazda CX-7",
       6: "Mazda CX-7 rest",
-      7: "Mazda CX-9",
-      8: "Mazda CX-9 rest",
+      7: "Mazda CX-9 (gen1)",
+      8: "Mazda CX-9 (gen1) rest",
       9: "Mazda 5 (tested)"
     }
   },

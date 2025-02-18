@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 30859:
+/***/ 51703:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -59,9 +59,9 @@ var flicking_esm = __webpack_require__(22180);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=560943a2&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=778e431c&ts=true
 
-function InfoCardvue_type_template_id_560943a2_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_778e431c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
@@ -116,9 +116,24 @@ function InfoCardvue_type_template_id_560943a2_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.voltmeterViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isTemperatureOut ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isTemperature ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
         key: 1
-      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      }, [$setup.isTemperatureIn ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 0,
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_input_card_item, {
+          value: $setup.temperatureIn,
+          title: _ctx.$t('onboard.info.temperatureIn.title'),
+          description: _ctx.$t('onboard.info.temperatureIn.description'),
+          type: "temperature",
+          nodata: !$setup.temperatureValueLoaded,
+          disabled: !$setup.temperatureViewLoaded
+        }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isTemperatureOut ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 1,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -127,11 +142,11 @@ function InfoCardvue_type_template_id_560943a2_ts_true_render(_ctx, _cache, $pro
           title: _ctx.$t('onboard.info.temperatureOut.title'),
           description: _ctx.$t('onboard.info.temperatureOut.description'),
           type: "temperature",
-          nodata: !$setup.temperatureValueLoaded || $setup.temperatureOut > 99,
+          nodata: !$setup.temperatureValueLoaded,
           disabled: !$setup.temperatureViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -158,7 +173,20 @@ function InfoCardvue_type_template_id_560943a2_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSeatbelt ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          "model-value": $setup.amp,
+          title: _ctx.$t('onboard.info.' + ($setup.isAmp ? 'amp' : 'light') + '.title'),
+          description: _ctx.$t('onboard.info.' + ($setup.isAmp ? 'amp' : 'light') + '.description'),
+          color: "warning",
+          nodata: !$setup.sensorValueLoaded,
+          disabled: !$setup.sensorViewLoaded
+        }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), $setup.isSeatbelt ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
         key: 3,
         cols: "12",
         class: "pt-0 pb-0"
@@ -225,7 +253,10 @@ var IconCardItem = __webpack_require__(58847);
 var ViewSettingDialog = __webpack_require__(12586);
 // EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
 var onboard = __webpack_require__(32280);
+// EXTERNAL MODULE: ./src/models/pjcan/device/EDeviceType.ts
+var EDeviceType = __webpack_require__(55819);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=script&lang=ts
+
 
 
 
@@ -257,17 +288,23 @@ var onboard = __webpack_require__(32280);
     const sensorViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/sensors"].isData);
     const temperatureViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/temperature"].isData);
     const isVoltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const hardware = store/* default */.A.getters["value/device"].hardware;
-      return hardware.major === 4 && hardware.minor >= 1 && hardware.build <= 1;
+      const type = store/* default */.A.getters["value/device"].type;
+      return type >= EDeviceType/* EDeviceType */.U.PJCAN_41A;
     });
     const disableVoltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/device"].disableVoltmeter);
-    const isTemperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+    const isTemperature = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const carModel = store/* default */.A.getters["config/carModel"];
       return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST;
     });
+    const isTemperatureIn = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].isIn);
+    const isTemperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].isOut);
     const isReverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const carModel = store/* default */.A.getters["config/carModel"];
       return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
+    });
+    const isAmp = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const carModel = store/* default */.A.getters["config/carModel"];
+      return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9;
     });
     const isSeatbelt = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       return store/* default */.A.getters["config/carModel"] === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK;
@@ -281,9 +318,11 @@ var onboard = __webpack_require__(32280);
     const acc = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].acc);
     const worktime = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].worktime);
     const voltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].voltmeter / 100);
-    const temperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].out / 10);
+    const temperatureIn = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].in);
+    const temperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].out);
     const handbrake = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].handbrake);
-    const reverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].reverse);
+    const reverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].stateReverse);
+    const amp = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].stateAmpIllum);
     const seatbeltDriver = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].seatbeltDriver);
     const seatbeltPassenger = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].seatbeltPassenger);
     const signalLeft = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].turnSignalLeft);
@@ -362,17 +401,22 @@ var onboard = __webpack_require__(32280);
       temperatureViewLoaded,
       isVoltmeter,
       disableVoltmeter,
+      isTemperature,
+      isTemperatureIn,
       isTemperatureOut,
       isReverse,
+      isAmp,
       isSeatbelt,
       isSignal,
       isMenu,
       acc,
       worktime,
       voltmeter,
+      temperatureIn,
       temperatureOut,
       handbrake,
       reverse,
+      amp,
       seatbeltDriver,
       seatbeltPassenger,
       signalLeft,
@@ -396,7 +440,7 @@ var exportHelper = __webpack_require__(71241);
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_560943a2_ts_true_render]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_778e431c_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (__exports__);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=508e229c&ts=true
@@ -2547,8 +2591,8 @@ var bose = __webpack_require__(89100);
 const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_b50974fc_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
-var device = __webpack_require__(29801);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 9 modules
+var device = __webpack_require__(88909);
 // EXTERNAL MODULE: ./src/models/pjcan/sensors/index.ts + 2 modules
 var sensors = __webpack_require__(57411);
 // EXTERNAL MODULE: ./src/models/pjcan/temperature/index.ts + 1 modules
@@ -5057,8 +5101,8 @@ const resetSW1 = ({
   mutations: mutations_namespaceObject,
   actions: actions_namespaceObject
 });
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
-var device = __webpack_require__(29801);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 9 modules
+var device = __webpack_require__(88909);
 // EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
 var head_unit = __webpack_require__(19661);
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules

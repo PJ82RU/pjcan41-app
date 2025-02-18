@@ -8,9 +8,9 @@
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
-var App = __webpack_require__(90971);
+var App = __webpack_require__(37559);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(30859);
+var router = __webpack_require__(51703);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
@@ -885,6 +885,24 @@ class DatetimeConfig extends base/* BaseModel */.t {
 
 /***/ }),
 
+/***/ 55819:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   U: function() { return /* binding */ EDeviceType; }
+/* harmony export */ });
+var EDeviceType;
+(function (EDeviceType) {
+  EDeviceType[EDeviceType["PJCAN_UNDEFINED"] = 0] = "PJCAN_UNDEFINED";
+  EDeviceType[EDeviceType["PJCAN_40"] = 1] = "PJCAN_40";
+  EDeviceType[EDeviceType["PJCAN_41A"] = 2] = "PJCAN_41A";
+  EDeviceType[EDeviceType["PJCAN_41B"] = 3] = "PJCAN_41B";
+  EDeviceType[EDeviceType["PJCAN_41_REV1_1"] = 4] = "PJCAN_41_REV1_1";
+  EDeviceType[EDeviceType["PJCAN_42_REV1_0"] = 5] = "PJCAN_42_REV1_0"; // PJCAN 4.2 rev.1.0
+})(EDeviceType || (EDeviceType = {}));
+
+/***/ }),
+
 /***/ 80314:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -908,7 +926,7 @@ var EDeviceUpdateError;
 
 /***/ }),
 
-/***/ 29801:
+/***/ 88909:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1106,9 +1124,22 @@ class DeviceInfo extends base/* BaseModel */.t {
   hardware: bluetooth/* BluetoothStruct */.iy.char(32)
 });
 (0,defineProperty/* default */.A)(DeviceInfo, "size", 175);
+// EXTERNAL MODULE: ./src/models/pjcan/device/EDeviceType.ts
+var EDeviceType = __webpack_require__(55819);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/EDeviceAddons.ts
+var EDeviceAddons;
+(function (EDeviceAddons) {
+  EDeviceAddons[EDeviceAddons["ADDONS_STANDARD"] = 0] = "ADDONS_STANDARD";
+  EDeviceAddons[EDeviceAddons["ADDONS_R_CAM"] = 1] = "ADDONS_R_CAM";
+  EDeviceAddons[EDeviceAddons["ADDONS_ENCODER"] = 2] = "ADDONS_ENCODER";
+  EDeviceAddons[EDeviceAddons["ADDONS_POTENTIOMETER"] = 3] = "ADDONS_POTENTIOMETER";
+  EDeviceAddons[EDeviceAddons["ADDONS_R_CAM_POTENTIOMETER"] = 4] = "ADDONS_R_CAM_POTENTIOMETER"; // Стандартная версия + R_CAM + потенциометр (4.2 rev.1.0d)
+})(EDeviceAddons || (EDeviceAddons = {}));
 ;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceValue.ts
 
 var _DeviceValue;
+
+
 
 
 const API_DEVICE_VALUE_EXEC = 0x03;
@@ -1132,6 +1163,8 @@ class DeviceValue extends base/* BaseModel */.t {
     (0,defineProperty/* default */.A)(this, "led", 0);
     (0,defineProperty/* default */.A)(this, "voltmeter", 0);
     (0,defineProperty/* default */.A)(this, "worktime", 0);
+    (0,defineProperty/* default */.A)(this, "type", EDeviceType/* EDeviceType */.U.PJCAN_UNDEFINED);
+    (0,defineProperty/* default */.A)(this, "addons", EDeviceAddons.ADDONS_STANDARD);
     this.skipActivationCheck = true;
     if (data) this.set(data);
   }
@@ -1140,7 +1173,55 @@ class DeviceValue extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return this._set(this, this.exec, DeviceValue.size, new bluetooth/* BluetoothStruct */.iy(DeviceValue.struct), buf);
+    const result = this._set(this, this.exec, DeviceValue.size, new bluetooth/* BluetoothStruct */.iy(DeviceValue.struct), buf);
+    if (result && this.hardware.major === 4) {
+      switch (this.hardware.minor) {
+        case 0:
+          // PJCAN 4.0
+          this.type = EDeviceType/* EDeviceType */.U.PJCAN_40;
+          break;
+        case 1:
+          // PJCAN 4.1
+          switch (this.hardware.build) {
+            case 0:
+              // PJCAN 4.1a
+              this.type = EDeviceType/* EDeviceType */.U.PJCAN_41A;
+              break;
+            case 1:
+              // PJCAN 4.1b
+              this.type = EDeviceType/* EDeviceType */.U.PJCAN_41B;
+              this.addons = EDeviceAddons.ADDONS_R_CAM;
+              break;
+            case 2:
+              // PJCAN 4.1 rev.1.1
+              this.type = EDeviceType/* EDeviceType */.U.PJCAN_41_REV1_1;
+              break;
+          }
+          break;
+        case 2:
+          // PJCAN 4.2
+          this.type = EDeviceType/* EDeviceType */.U.PJCAN_42_REV1_0;
+          switch (this.hardware.build) {
+            case 0:
+              this.addons = EDeviceAddons.ADDONS_STANDARD;
+              break;
+            case 1:
+              this.addons = EDeviceAddons.ADDONS_R_CAM;
+              break;
+            case 2:
+              this.addons = EDeviceAddons.ADDONS_ENCODER;
+              break;
+            case 3:
+              this.addons = EDeviceAddons.ADDONS_POTENTIOMETER;
+              break;
+            case 4:
+              this.addons = EDeviceAddons.ADDONS_R_CAM_POTENTIOMETER;
+              break;
+          }
+          break;
+      }
+    }
+    return result;
   }
   /** Чтение данных */
   get() {
@@ -2428,10 +2509,33 @@ const API_TEMPERATURE_VIEW_EXEC = 0xd3;
 const API_TEMPERATURE_VIEW_EVENT = "TemperatureView";
 /** Модель значений температуры */
 class TemperatureValue extends base/* BaseModel */.t {
+  /**
+   * Обновить версию структуры
+   * @param {IVersion} version Версия протокола
+   */
+  static update(version) {
+    if (version && version.major >= 4 && version.minor >= 1 && version.build >= 2) {
+      TemperatureValue.struct = {
+        isIn: bluetooth/* BluetoothStruct */.iy.bit(),
+        isOut: bluetooth/* BluetoothStruct */.iy.bit(),
+        in: bluetooth/* BluetoothStruct */.iy.int8(),
+        out: bluetooth/* BluetoothStruct */.iy.int8()
+      };
+      TemperatureValue.size = 3;
+    } else {
+      TemperatureValue.struct = {
+        in: bluetooth/* BluetoothStruct */.iy.int16(),
+        out: bluetooth/* BluetoothStruct */.iy.int16()
+      };
+      TemperatureValue.size = 4;
+    }
+  }
   constructor(data) {
     super(API_TEMPERATURE_VALUE_EXEC);
-    (0,defineProperty/* default */.A)(this, "in", 1000);
-    (0,defineProperty/* default */.A)(this, "out", 1000);
+    (0,defineProperty/* default */.A)(this, "isIn", false);
+    (0,defineProperty/* default */.A)(this, "isOut", false);
+    (0,defineProperty/* default */.A)(this, "in", 0);
+    (0,defineProperty/* default */.A)(this, "out", 0);
     if (data) this.set(data);
   }
   /**
@@ -2439,18 +2543,21 @@ class TemperatureValue extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    return this._set(this, this.exec, TemperatureValue.size, new bluetooth/* BluetoothStruct */.iy(TemperatureValue.struct), buf);
+    const result = this._set(this, this.exec, TemperatureValue.size, new bluetooth/* BluetoothStruct */.iy(TemperatureValue.struct), buf);
+    if (result && TemperatureValue.size === 4) {
+      this.isOut = true;
+      this.out /= 10;
+    }
+    return result;
   }
   /** Чтение данных */
   get() {
     return this._get(this, this.exec);
   }
 }
-(0,defineProperty/* default */.A)(TemperatureValue, "struct", {
-  in: bluetooth/* BluetoothStruct */.iy.int16(),
-  out: bluetooth/* BluetoothStruct */.iy.int16()
-});
-(0,defineProperty/* default */.A)(TemperatureValue, "size", 4);
+(0,defineProperty/* default */.A)(TemperatureValue, "struct", void 0);
+(0,defineProperty/* default */.A)(TemperatureValue, "size", void 0);
+TemperatureValue.update();
 ;// CONCATENATED MODULE: ./src/models/pjcan/temperature/index.ts
 
 

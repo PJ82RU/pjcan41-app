@@ -156,7 +156,7 @@ var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(30859);
+var router = __webpack_require__(51703);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
@@ -174,9 +174,9 @@ var UpdateFirmwareDialog = __webpack_require__(66422);
 // EXTERNAL MODULE: ./src/components/MenuDots.vue + 3 modules
 var MenuDots = __webpack_require__(69815);
 // EXTERNAL MODULE: ./src/components/dialogs/AboutDialog.vue + 29 modules
-var AboutDialog = __webpack_require__(91801);
+var AboutDialog = __webpack_require__(3447);
 // EXTERNAL MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue + 5 modules
-var OnboardButtonsDialog = __webpack_require__(38862);
+var OnboardButtonsDialog = __webpack_require__(42793);
 // EXTERNAL MODULE: ./src/components/dialogs/MessageDialog.vue + 3 modules
 var MessageDialog = __webpack_require__(22885);
 // EXTERNAL MODULE: ./src/components/common/icon-custom/IconCustom.vue + 5 modules
@@ -187,8 +187,8 @@ var LocaleDialog = __webpack_require__(51977);
 var ChoosingCarModelDialog = __webpack_require__(89813);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
-var device = __webpack_require__(29801);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 9 modules
+var device = __webpack_require__(88909);
 // EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
 var onboard = __webpack_require__(32280);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=script&lang=ts

@@ -156,7 +156,7 @@ var es_array_push = __webpack_require__(44114);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(51703);
+var router = __webpack_require__(1785);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs

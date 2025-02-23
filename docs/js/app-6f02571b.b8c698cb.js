@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 51703:
+/***/ 1785:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -59,9 +59,9 @@ var flicking_esm = __webpack_require__(22180);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=778e431c&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=5242db83&ts=true
 
-function InfoCardvue_type_template_id_778e431c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_5242db83_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
@@ -173,21 +173,22 @@ function InfoCardvue_type_template_id_778e431c_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isAmp ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 3,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
           "model-value": $setup.amp,
-          title: _ctx.$t('onboard.info.' + ($setup.isAmp ? 'amp' : 'light') + '.title'),
-          description: _ctx.$t('onboard.info.' + ($setup.isAmp ? 'amp' : 'light') + '.description'),
+          title: _ctx.$t('onboard.info.amp.title'),
+          description: _ctx.$t('onboard.info.amp.description'),
           color: "warning",
           nodata: !$setup.sensorValueLoaded,
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), $setup.isSeatbelt ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 3,
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSeatbelt ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 4,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -207,7 +208,7 @@ function InfoCardvue_type_template_id_778e431c_ts_true_render(_ctx, _cache, $pro
         }, null, 8, ["model-value", "title", "description", "colorsTrue", "colorsFalse", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSignal ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 4,
+        key: 5,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -440,7 +441,7 @@ var exportHelper = __webpack_require__(71241);
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_778e431c_ts_true_render]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_5242db83_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (__exports__);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=508e229c&ts=true

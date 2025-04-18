@@ -8,9 +8,9 @@
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
-var App = __webpack_require__(37559);
+var App = __webpack_require__(37030);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(1785);
+var router = __webpack_require__(26801);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
@@ -462,7 +462,8 @@ var TButtonExec;
   TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_FADE_DOWN"] = 38] = "BUTTON_EXEC_BOSE_FADE_DOWN";
   TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_TREBLE_UP"] = 39] = "BUTTON_EXEC_BOSE_TREBLE_UP";
   TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_TREBLE_DOWN"] = 40] = "BUTTON_EXEC_BOSE_TREBLE_DOWN";
-  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_CENTER_POINT"] = 41] = "BUTTON_EXEC_BOSE_CENTER_POINT"; // BOSE: переключение режимов Center Point (циклично)
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_CENTER_POINT"] = 41] = "BUTTON_EXEC_BOSE_CENTER_POINT";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_PAUSE_PLAY"] = 42] = "BUTTON_EXEC_HEAD_UNIT_PAUSE_PLAY"; // ГУ: Пауза/играть
 })(TButtonExec || (TButtonExec = {}));
 ;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SW3Config.ts
 
@@ -1990,10 +1991,9 @@ __webpack_require__.d(__webpack_exports__, {
   Ut: function() { return /* reexport */ API_HEAD_UNIT_VIEW_EVENT; },
   NA: function() { return /* reexport */ API_HEAD_UNIT_VIEW_EXEC; },
   Hq: function() { return /* reexport */ HeadUnitConfig; },
+  Ox: function() { return /* reexport */ HeadUnitValue; },
   Tm: function() { return /* reexport */ TProtocol; }
 });
-
-// UNUSED EXPORTS: HeadUnitValue
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
 var defineProperty = __webpack_require__(91114);
@@ -2068,6 +2068,43 @@ const API_HEAD_UNIT_VIEW_EXEC = 0x53;
 const API_HEAD_UNIT_VIEW_EVENT = "HeadUnitView";
 /** Модель значения текста Head Unit */
 class HeadUnitValue extends base/* BaseModel */.t {
+  /**
+   * Обновить версию структуры
+   * @param {IVersion} version Версия протокола
+   */
+  static update(version) {
+    if (version && version.major >= 4 && version.minor >= 1 && version.build >= 5) {
+      HeadUnitValue.struct = {
+        clock: bluetooth/* BluetoothStruct */.iy.struct({
+          hour: bluetooth/* BluetoothStruct */.iy.uint8(),
+          minutes: bluetooth/* BluetoothStruct */.iy.uint8(),
+          seconds: bluetooth/* BluetoothStruct */.iy.uint8()
+        }),
+        button: bluetooth/* BluetoothStruct */.iy.uint8(),
+        text: bluetooth/* BluetoothStruct */.iy.char(13),
+        ico_af: bluetooth/* BluetoothStruct */.iy.bit(),
+        ico_rdm: bluetooth/* BluetoothStruct */.iy.bit(),
+        ico_rpt: bluetooth/* BluetoothStruct */.iy.bit(),
+        ico_cd_in: bluetooth/* BluetoothStruct */.iy.bit(),
+        char_s4: bluetooth/* BluetoothStruct */.iy.bit(),
+        char_s3: bluetooth/* BluetoothStruct */.iy.bit(),
+        char_s2: bluetooth/* BluetoothStruct */.iy.bit(),
+        char_s1: bluetooth/* BluetoothStruct */.iy.bit()
+      };
+      HeadUnitValue.size = 18;
+    } else {
+      HeadUnitValue.struct = {
+        clock: bluetooth/* BluetoothStruct */.iy.struct({
+          hour: bluetooth/* BluetoothStruct */.iy.uint8(),
+          minutes: bluetooth/* BluetoothStruct */.iy.uint8(),
+          seconds: bluetooth/* BluetoothStruct */.iy.uint8()
+        }),
+        button: bluetooth/* BluetoothStruct */.iy.uint8(),
+        text: bluetooth/* BluetoothStruct */.iy.char(13)
+      };
+      HeadUnitValue.size = 17;
+    }
+  }
   constructor(data) {
     super(API_HEAD_UNIT_VALUE_EXEC);
     (0,defineProperty/* default */.A)(this, "clock", {
@@ -2077,6 +2114,14 @@ class HeadUnitValue extends base/* BaseModel */.t {
     });
     (0,defineProperty/* default */.A)(this, "button", 0);
     (0,defineProperty/* default */.A)(this, "text", "");
+    (0,defineProperty/* default */.A)(this, "ico_af", false);
+    (0,defineProperty/* default */.A)(this, "ico_rdm", false);
+    (0,defineProperty/* default */.A)(this, "ico_rpt", false);
+    (0,defineProperty/* default */.A)(this, "ico_cd_in", false);
+    (0,defineProperty/* default */.A)(this, "char_s4", false);
+    (0,defineProperty/* default */.A)(this, "char_s3", false);
+    (0,defineProperty/* default */.A)(this, "char_s2", false);
+    (0,defineProperty/* default */.A)(this, "char_s1", false);
     if (data) this.set(data);
   }
   /**
@@ -2094,16 +2139,8 @@ class HeadUnitValue extends base/* BaseModel */.t {
     return request ? this._get(this, this.exec) : this._get(this, this.exec, HeadUnitValue.size, new bluetooth/* BluetoothStruct */.iy(HeadUnitValue.struct));
   }
 }
-(0,defineProperty/* default */.A)(HeadUnitValue, "struct", {
-  clock: bluetooth/* BluetoothStruct */.iy.struct({
-    hour: bluetooth/* BluetoothStruct */.iy.uint8(),
-    minutes: bluetooth/* BluetoothStruct */.iy.uint8(),
-    seconds: bluetooth/* BluetoothStruct */.iy.uint8()
-  }),
-  button: bluetooth/* BluetoothStruct */.iy.uint8(),
-  text: bluetooth/* BluetoothStruct */.iy.char(13)
-});
-(0,defineProperty/* default */.A)(HeadUnitValue, "size", 17);
+(0,defineProperty/* default */.A)(HeadUnitValue, "struct", void 0);
+(0,defineProperty/* default */.A)(HeadUnitValue, "size", void 0);
 ;// CONCATENATED MODULE: ./src/models/pjcan/head-unit/index.ts
 
 

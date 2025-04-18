@@ -1087,7 +1087,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 37559:
+/***/ 37030:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1099,7 +1099,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=5c5799dc&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=5e668bcf&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
@@ -1189,7 +1189,9 @@ var datetime = __webpack_require__(9917);
     // записываем входящую конфигурацию в store
     canbus/* default */.A.addListener(version/* API_VERSION_EVENT */.dD, data => {
       store/* default */.A.commit("config/setVersion", data);
-      temperature/* TemperatureValue */.sY.update(store/* default */.A.getters["config/version"]);
+      const version = store/* default */.A.getters["config/version"];
+      head_unit/* HeadUnitValue */.Ox.update(version);
+      temperature/* TemperatureValue */.sY.update(version);
     });
     canbus/* default */.A.addListener(device/* API_DEVICE_INFO_EVENT */.Os, data => store/* default */.A.commit("config/setInfo", data));
     canbus/* default */.A.addListener(device/* API_DEVICE_CONFIG_EVENT */.iX, data => store/* default */.A.commit("config/setDevice", data));
@@ -1306,7 +1308,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_scr
 /***/ (function(module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.9","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"1.7.8","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.5","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.10","private":true,"description":"CanBus project for Mazda","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build 4.1":"vue-cli-service build --mode pjcan41","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.11.4","@mdi/font":"7.4.47","axios":"1.7.8","bitset":"^5.1.1","core-js":"^3.38.1","eventemitter3":"^5.0.1","moment":"^2.30.1","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.5.12","vue-i18n":"^10.0.5","vue-router":"^4.4.5","vue3-toastify":"^0.2.3","vuedraggable":"^4.1.0","vuetify":"^3.7.2","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^22.5.5","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^8.6.0","@typescript-eslint/parser":"^8.6.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^13.0.0","@vueuse/core":"^11.1.0","eslint":"~8.57.1","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^3.3.3","sass":"^1.79.1","sass-loader":"^16.0.1","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.9.5","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^3.0.3"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCAN App"}');
 
 /***/ })
 

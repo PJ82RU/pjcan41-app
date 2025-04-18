@@ -565,6 +565,7 @@ var vue_i18n = __webpack_require__(85851);
       16: "ГУ: поиск волны радио",
       17: "ГУ: открыть камеру",
       18: "ГУ: открыть телефон",
+      42: "ГУ: пауза/играть",
       19: "БК: кнопка INFO (информация БК)",
       20: "БК: кнопка CLOCK (время на БК)",
       21: "БК: кнопка CLOCK H (часы)",
@@ -660,7 +661,8 @@ var vue_i18n = __webpack_require__(85851);
           1: "Raise HM_ND00 2017.12.11 (19200)",
           2: "Raise HM_ND01 2019.06.21 (38400)",
           3: "Raise HM_ND03 2022.11.11 (19200)",
-          4: "SimpleSoft RP5_MZ_002 (38400)"
+          4: "SimpleSoft RP5_MZ_002 (38400)",
+          5: "Hiworld MZF1.2 (GB) 1N4MZF10B"
         }
       },
       reverseUart: {
@@ -1343,6 +1345,7 @@ var vue_i18n = __webpack_require__(85851);
       16: "Head Unit: search for a radio wave",
       17: "Head Unit: open the camera",
       18: "Head Unit: open the phone",
+      42: "Head Unit: play/pause",
       19: "On-board: INFO button (on-board information)",
       20: "On-board: CLOCK button (time on the on-board)",
       21: "On-board: CLOCK H button (hour)",
@@ -1438,7 +1441,8 @@ var vue_i18n = __webpack_require__(85851);
           1: "Raise HM_ND00 2017.12.11 (19200)",
           2: "Raise HM_ND01 2019.06.21 (38400)",
           3: "Raise HM_ND03 2022.11.11 (19200)",
-          4: "SimpleSoft RP5_MZ_002 (38400)"
+          4: "SimpleSoft RP5_MZ_002 (38400)",
+          5: "Hiworld MZF1.2 (GB) 1N4MZF10B"
         }
       },
       reverseUart: {
